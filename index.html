@@ -16,6 +16,7 @@ html,body{margin:0;background:#0f1319;color:var(--text);
 a{color:var(--brand);text-decoration:none}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 
+/* NAV */
 nav{position:sticky;top:0;background:rgba(15,19,25,.85);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);z-index:10}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -23,6 +24,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .links a{margin-left:18px;color:#cfd2da}
 .links a:hover{color:#fff}
 
+/* HERO */
 .hero{
   position:relative;border-bottom:1px solid var(--line);
   background:
@@ -44,24 +46,45 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   padding:10px 16px;border-radius:10px;border:0}
 .btn.sec{background:#0e1622;color:#e6f8fb;border:1px solid #194352}
 
+/* PHOTO */
 img.photo{width:100%;max-width:320px;border-radius:50%;border:3px solid var(--brand);
   box-shadow:0 8px 30px rgba(0,0,0,.5)}
 
+/* LAYOUT SECTIONS */
 .section{padding:48px 0}
 h2{margin:0 0 16px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.list{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
 
-.logos .badgegrid{display:flex;flex-wrap:wrap;gap:10px}
-.logos img{height:32px;image-rendering:auto;display:block;border-radius:8px}
-
-.proj ul{margin:8px 0 0 18px}
-.quote{background:#141a25;border-left:3px solid var(--brand);padding:14px;border-radius:10px}
+/* === UNIFIED CARD STYLES (Case Studies & Testimonials) === */
+.card, .quote{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:260px;          /* makes heights match */
+}
+.card .btns{margin-top:auto}  /* pins buttons to bottom */
 .quote small{color:#a7adba}
 
+/* CASE STUDIES GRID */
+.list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  align-items:stretch;       /* stretch to equal height */
+}
+
+/* TOOLS */
+.logos .badgegrid{display:flex;flex-wrap:wrap;gap:10px}
+.logos img{height:32px;display:block;border-radius:8px}
+
+/* FOOTER */
 footer{padding:28px 0;color:#9da3ae;border-top:1px solid var(--line)}
 
+/* Responsive */
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}
   .two-col,.list{grid-template-columns:1fr}
@@ -95,7 +118,6 @@ footer{padding:28px 0;color:#9da3ae;border-top:1px solid var(--line)}
         </div>
       </div>
       <div>
-        <!-- Put your photo at /assets/erique-photo.png -->
         <img class="photo" src="assets/erique-photo.png" alt="Eriq Berdos portrait" />
       </div>
     </div>
@@ -224,10 +246,10 @@ footer{padding:28px 0;color:#9da3ae;border-top:1px solid var(--line)}
     <div class="wrap">
       <h2>What Clients Say</h2>
       <div class="two-col">
-        <div class="quote">“Our follow-ups used to slip through the cracks. Eriq mapped the pipeline and automated confirmations—bookings increased without adding ad spend.”<br><small>Operations Lead, US Real Estate Team</small></div>
-        <div class="quote">“We hired a VA through Eriq and hit the ground running. Clean CRM, clear tasks, and real momentum in the first two weeks.”<br><small>Founder, Staffing & Recruiting</small></div>
-        <div class="quote">“He rebuilt our nurture sequences and fixed deliverability. Replies became actual conversations instead of spam complaints.”<br><small>Agency Owner, Digital Marketing</small></div>
-        <div class="quote">“Clear SOPs, sensible automations, and a dashboard we actually check. The system finally supports the team.”<br><small>COO, E-commerce Brand</small></div>
+        <div class="quote card">“Our follow-ups used to slip through the cracks. Eriq mapped the pipeline and automated confirmations—bookings increased without adding ad spend.”<br><small>Operations Lead, US Real Estate Team</small></div>
+        <div class="quote card">“We hired a VA through Eriq and hit the ground running. Clean CRM, clear tasks, and real momentum in the first two weeks.”<br><small>Founder, Staffing & Recruiting</small></div>
+        <div class="quote card">“He rebuilt our nurture sequences and fixed deliverability. Replies became actual conversations instead of spam complaints.”<br><small>Agency Owner, Digital Marketing</small></div>
+        <div class="quote card">“Clear SOPs, sensible automations, and a dashboard we actually check. The system finally supports the team.”<br><small>COO, E-commerce Brand</small></div>
       </div>
       <div class="btns" style="margin-top:16px">
         <a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a>
