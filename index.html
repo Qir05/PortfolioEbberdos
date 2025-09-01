@@ -1,129 +1,110 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eriq Berdos — CRM & Automation Specialist</title>
-  <meta name="description" content="CRM & Automation Specialist and VA Staffing Expert. Funnels, automations, lead gen, staffing, and video editing for real estate and SMBs." />
-  <link rel="preconnect" href="https://img.shields.io">
-  <style>
-    :root{
-      --card:#171c26;
-      --muted:#cfd2da;
-      --text:#ffffff;
-      --brand:#11e0ff;
-      --line:#222836;
-      --pill:#1a202c;
-      --pill-border:#263042;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:#0f1319;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
-    a{color:var(--brand);text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eriq Berdos — CRM & Automation Specialist</title>
+<link rel="preconnect" href="https://img.shields.io">
+<style>
+:root{
+  --bg:#0f1319; --bg2:#121722; --card:#171c26; --muted:#cfd2da; --text:#ffffff;
+  --brand:#11e0ff; --line:#222836; --pill:#1a202c; --pill-border:#263042;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#0f1319;color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+a{color:var(--brand);text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 
-    header{position:sticky;top:0;background:rgba(17,20,27,.8);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line);z-index:50}
-    nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    nav .links a{margin-left:18px;color:#cfd2da}
-    nav .links a:hover{color:#fff}
+nav{position:sticky;top:0;background:rgba(15,19,25,.85);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);z-index:10}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;letter-spacing:.3px}
+.links a{margin-left:18px;color:#cfd2da}
+.links a:hover{color:#fff}
 
-    /* HERO with background */
-    .hero{
-      padding:72px 0 36px;
-      border-bottom:1px solid var(--line);
-      background:url("assets/hero-bg.jpg") center center/cover no-repeat;
-      position:relative;
-      color:var(--text);
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(15,15,18,0.65); /* overlay */
-    }
-    .hero .wrap{position:relative;z-index:1}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .hero h1{font-size:40px;line-height:1.12;margin:0 0 12px}
-    .hero p{color:#e0e2e8;margin:8px 0 18px}
-    .badge{display:inline-block;font-size:12px;border:1px solid var(--pill-border);background:var(--pill);padding:6px 10px;border-radius:999px;margin-bottom:10px;color:#cfd2da}
+.hero{
+  position:relative;border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(17,224,255,.12), transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, rgba(104,125,255,.10), transparent 60%),
+    url("assets/computer-bg.jpg") center/cover no-repeat;
+  padding:96px 0 48px;
+}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(10,12,16,.60)}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+.badge{display:inline-block;font-size:12px;border:1px solid var(--pill-border);
+  background:var(--pill);padding:6px 10px;border-radius:999px;margin-bottom:10px;color:#cfd2da}
+.hero h1{font-size:40px;line-height:1.12;margin:0 0 12px}
+.hero p{color:#e0e2e8;margin:8px 0 18px}
 
-    .btns{display:flex;gap:12px;flex-wrap:wrap}
-    .btn, .btn.sec{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid var(--brand);transition:.2s ease;background:var(--brand);color:#001015;font-weight:600}
-    .btn.sec{background:transparent;color:var(--brand)}
-    .btn:hover{filter:brightness(1.05)}
-    .btn.sec:hover{background:rgba(17,224,255,.10)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--brand);color:#001018;font-weight:600;
+  padding:10px 16px;border-radius:10px;border:0}
+.btn.sec{background:#0e1622;color:#e6f8fb;border:1px solid #194352}
 
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-    .section{padding:40px 0;border-bottom:1px solid var(--line)}
-    h2{font-size:26px;margin:0 0 14px}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .logos{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .logos .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:22px 0}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
-    .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
-    .kpi b{font-size:20px}
-    .list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .proj{display:grid;grid-template-columns:1fr;gap:8px}
-    .proj h3{margin:0;font-size:18px}
-    .quote{background:#141a25;border-left:3px solid var(--brand);padding:14px;border-radius:10px}
-    .quote small{color:#a7adba}
-    footer{padding:28px 0;color:#9da3ae}
+img.photo{width:100%;max-width:320px;border-radius:50%;border:3px solid var(--brand);
+  box-shadow:0 8px 30px rgba(0,0,0,.5)}
 
-    /* Profile photo */
-    img.photo{width:100%;max-width:320px;border-radius:50%;border:3px solid var(--brand);box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.section{padding:48px 0}
+h2{margin:0 0 16px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.list{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
 
-    @media (max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-      .two-col,.list{grid-template-columns:1fr}
-      .kpis{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:600px){
-      .kpis{grid-template-columns:1fr}
-      .hero h1{font-size:32px}
-    }
-    html{scroll-behavior:smooth}
-  </style>
+.logos .badgegrid{display:flex;flex-wrap:wrap;gap:10px}
+.logos img{height:32px;image-rendering:auto;display:block;border-radius:8px}
+
+.proj ul{margin:8px 0 0 18px}
+.quote{background:#141a25;border-left:3px solid var(--brand);padding:14px;border-radius:10px}
+.quote small{color:#a7adba}
+
+footer{padding:28px 0;color:#9da3ae;border-top:1px solid var(--line)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .two-col,.list{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-<header>
-  <nav class="wrap">
-    <div><strong>Eriq Berdos</strong></div>
+<nav>
+  <div class="wrap">
+    <div class="logo">Eriq Berdos</div>
     <div class="links">
-      <a href="#services">Services</a>
-      <a href="#stack">Toolstack</a>
+      <a href="#stack">Tools</a>
       <a href="#projects">Case Studies</a>
-      <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
     </div>
-  </nav>
-</header>
+  </div>
+</nav>
 
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
       <div>
-        <span class="badge">CRM & Automation Specialist • VA Staffing Expert</span>
-        <h1>Build funnels, automate follow-ups, and scale with a trained VA—without the guesswork.</h1>
-        <p>I design end-to-end systems for real estate and SMBs: landing pages, lead capture, CRM setup, pipeline logic, automated email/SMS, and repeatable VA hiring.</p>
-        <div class="kpis">
-          <div class="kpi"><b>8+ yrs</b><br><small>Automation & CRM</small></div>
-          <div class="kpi"><b>100k+</b><br><small>Automated messages sent</small></div>
-          <div class="kpi"><b>50+</b><br><small>Funnels & workflows built</small></div>
-        </div>
-        <div class="btns" style="margin-top:16px">
-          <a href="#projects" class="btn">See Case Studies</a>
-          <a href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener" class="btn sec">Book a Call</a>
+        <span class="badge">CRM • Automations • VA Staffing</span>
+        <h1>Build funnels, automate follow-ups, and scale with a trained VA—without the chaos.</h1>
+        <p>A seasoned CRM & Automation Specialist and VA Staffing Expert.
+           I design end-to-end systems: landing pages → pipelines → email/SMS workflows.</p>
+        <div class="btns">
+          <a class="btn" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
+          <a class="btn sec" href="#projects">See Case Studies</a>
         </div>
       </div>
       <div>
+        <!-- Put your photo at /assets/erique-photo.png -->
         <img class="photo" src="assets/erique-photo.png" alt="Eriq Berdos portrait" />
       </div>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- SERVICES -->
-  <section id="services" class="section">
+<main>
+  <!-- WHAT I DO -->
+  <section class="section">
     <div class="wrap">
       <h2>What I Do</h2>
       <div class="two-col">
@@ -134,21 +115,38 @@
         <div class="card"><h3>Video Editing & Reels</h3><p>Adobe Premiere & Canva edits for social, ads, and branded reels.</p></div>
         <div class="card"><h3>Advanced Integrations</h3><p>Make, n8n, Zapier, and Phantombuster automations with error handling.</p></div>
       </div>
+      <div class="btns" style="margin-top:16px">
+        <a class="btn" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn sec" href="#projects">See Case Studies</a>
+      </div>
     </div>
   </section>
 
   <!-- TOOLSTACK -->
   <section id="stack" class="section logos">
     <div class="wrap">
-      <img src="https://img.shields.io/badge/Zapier-000?style=for-the-badge&logo=zapier&logoColor=FF4F00" alt="Zapier">
-      <img src="https://img.shields.io/badge/Make-000?style=for-the-badge&logo=make&logoColor=7F52FF" alt="Make">
-      <img src="https://img.shields.io/badge/n8n-000?style=for-the-badge&logo=n8n&logoColor=FF6B6B" alt="n8n">
-      <img src="https://img.shields.io/badge/Phantombuster-000?style=for-the-badge&logo=ghostery&logoColor=00E5FF" alt="Phantombuster">
-      <img src="https://img.shields.io/badge/HubSpot-000?style=for-the-badge&logo=hubspot&logoColor=FF7A59" alt="HubSpot">
-      <img src="https://img.shields.io/badge/Salesforce-000?style=for-the-badge&logo=salesforce&logoColor=00A1E0" alt="Salesforce">
-      <img src="https://img.shields.io/badge/Go%20High%20Level-000?style=for-the-badge&logo=google-analytics&logoColor=00E5FF" alt="GHL">
-      <img src="https://img.shields.io/badge/Canva-000?style=for-the-badge&logo=canva&logoColor=00C4CC" alt="Canva">
-      <img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-000?style=for-the-badge&logo=adobepremierepro&logoColor=9999FF" alt="Premiere Pro">
+      <h2>Tools I Use</h2>
+      <div class="badgegrid">
+        <img src="https://img.shields.io/badge/Go%20High%20Level-000?style=for-the-badge&logo=google-analytics&logoColor=00E5FF" alt="Go High Level">
+        <img src="https://img.shields.io/badge/HubSpot-000?style=for-the-badge&logo=hubspot&logoColor=FF7A59" alt="HubSpot">
+        <img src="https://img.shields.io/badge/Salesforce-000?style=for-the-badge&logo=salesforce&logoColor=00A1E0" alt="Salesforce">
+        <img src="https://img.shields.io/badge/Zapier-000?style=for-the-badge&logo=zapier&logoColor=FF4F00" alt="Zapier">
+        <img src="https://img.shields.io/badge/Make-000?style=for-the-badge&logo=make&logoColor=7F52FF" alt="Make">
+        <img src="https://img.shields.io/badge/n8n-000?style=for-the-badge&logo=n8n&logoColor=FF6B6B" alt="n8n">
+        <img src="https://img.shields.io/badge/Phantombuster-000?style=for-the-badge&logo=ghostery&logoColor=00E5FF" alt="Phantombuster">
+        <img src="https://img.shields.io/badge/Instantly-000?style=for-the-badge&logo=minutemailer&logoColor=00E5FF" alt="Instantly">
+        <img src="https://img.shields.io/badge/LinkedIn%20SN-000?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn Sales Navigator">
+        <img src="https://img.shields.io/badge/Hunter.io-000?style=for-the-badge&logo=mailboxdotorg&logoColor=FF4F00" alt="Hunter.io">
+        <img src="https://img.shields.io/badge/ContactOut-000?style=for-the-badge&logo=maildotru&logoColor=00E5FF" alt="ContactOut">
+        <img src="https://img.shields.io/badge/D7%20Lead%20Finder-000?style=for-the-badge&logo=search&logoColor=00E5FF" alt="D7 Lead Finder">
+        <img src="https://img.shields.io/badge/Calendly-000?style=for-the-badge&logo=calendly&logoColor=00A2FF" alt="Calendly">
+        <img src="https://img.shields.io/badge/Kajabi-000?style=for-the-badge&logo=readme&logoColor=00E5FF" alt="Kajabi">
+        <img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-000?style=for-the-badge&logo=adobepremierepro&logoColor=9999FF" alt="Adobe Premiere Pro">
+        <img src="https://img.shields.io/badge/Canva-000?style=for-the-badge&logo=canva&logoColor=00C4CC" alt="Canva">
+        <img src="https://img.shields.io/badge/Zoom-000?style=for-the-badge&logo=zoom&logoColor=2D8CFF" alt="Zoom">
+        <img src="https://img.shields.io/badge/RingCentral-000?style=for-the-badge&logo=ringcentral&logoColor=FF7A00" alt="RingCentral">
+        <img src="https://img.shields.io/badge/Gmail-000?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Gmail">
+      </div>
     </div>
   </section>
 
@@ -157,21 +155,79 @@
     <div class="wrap">
       <h2>Case Studies (Snapshots)</h2>
       <div class="list">
-        <div class="card proj"><h3>Make — Multi-Branch Router</h3><p>Leads split by budget & timeline, each branch triggers different nurtures.</p></div>
-        <div class="card proj"><h3>n8n — Lead Enrichment</h3><p>Scrapes signals, enriches contact data, scores intent, and tags stages.</p></div>
-        <div class="card proj"><h3>Zapier — No-Show Recovery</h3><p>Detects no-shows, sends reschedule SMS, and updates CRM notes.</p></div>
-        <div class="card proj"><h3>Phantombuster — LinkedIn Warm-Up</h3><p>Visits profiles, captures public data, and feeds outreach sequence.</p></div>
+        <div class="card proj">
+          <h3>Real Estate Lead Capture → Calendar</h3>
+          <p>Landing + follow-up system that moves leads to booked calls with reminders and stage changes.</p>
+          <ul>
+            <li>Form → CRM pipeline with tags</li>
+            <li>Confirmation & SMS/Email reminders</li>
+            <li>No-show recovery sequence</li>
+          </ul>
+          <div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div>
+        </div>
+        <div class="card proj">
+          <h3>VA Hiring Pipeline</h3>
+          <p>End-to-end VA recruitment workflow with scorecards, screening, onboarding, and KPI dashboards.</p>
+          <ul>
+            <li>Automated screening & scheduling</li>
+            <li>Task boards + SOP handoff</li>
+            <li>Weekly performance snapshots</li>
+          </ul>
+          <div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div>
+        </div>
+        <div class="card proj">
+          <h3>Make (Integromat) — Multi-Branch Router</h3>
+          <p>Qualified leads split by budget and timeline; each branch triggers different nurtures and tasks.</p>
+          <ul>
+            <li>Routers + Filters + Data Stores</li>
+            <li>Webhook → CRM → Sheets sync</li>
+            <li>Automatic retry & error handler</li>
+          </ul>
+          <div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div>
+        </div>
+        <div class="card proj">
+          <h3>n8n — Lead Enrichment & Scoring</h3>
+          <p>Scrapes public signals, enriches contact data, scores intent, and tags the right pipeline stage.</p>
+          <ul>
+            <li>HTTP Request + Code + If nodes</li>
+            <li>Rate limiting & queues</li>
+            <li>Daily cron with roll-up report</li>
+          </ul>
+          <div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div>
+        </div>
+        <div class="card proj">
+          <h3>Zapier — No-Show Recovery Loop</h3>
+          <p>Detects no-shows from calendar, sends personalized reschedule SMS, and updates CRM notes.</p>
+          <ul>
+            <li>Paths + Sub-Zaps + Storage</li>
+            <li>Calendly/GHL → SMS → CRM</li>
+            <li>Lock to prevent double sends</li>
+          </ul>
+          <div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div>
+        </div>
+        <div class="card proj">
+          <h3>Phantombuster — LinkedIn Warm-Up</h3>
+          <p>Visits profiles, captures public data, and feeds a compliant, low-volume outreach sequence.</p>
+          <ul>
+            <li>Daily batches with safety limits</li>
+            <li>CSV → CRM import with dedupe</li>
+            <li>Reply detection → handoff to rep</li>
+          </ul>
+          <div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="section">
+  <section class="section">
     <div class="wrap">
       <h2>What Clients Say</h2>
       <div class="two-col">
-        <div class="quote">“Our follow-ups used to slip. Eriq mapped the pipeline and automated confirmations—bookings increased.”<br><small>Ops Lead, Real Estate</small></div>
-        <div class="quote">“We hired a VA through Eriq. Clean CRM, clear tasks, and momentum in the first 2 weeks.”<br><small>Founder, Staffing</small></div>
+        <div class="quote">“Our follow-ups used to slip through the cracks. Eriq mapped the pipeline and automated confirmations—bookings increased without adding ad spend.”<br><small>Operations Lead, US Real Estate Team</small></div>
+        <div class="quote">“We hired a VA through Eriq and hit the ground running. Clean CRM, clear tasks, and real momentum in the first two weeks.”<br><small>Founder, Staffing & Recruiting</small></div>
+        <div class="quote">“He rebuilt our nurture sequences and fixed deliverability. Replies became actual conversations instead of spam complaints.”<br><small>Agency Owner, Digital Marketing</small></div>
+        <div class="quote">“Clear SOPs, sensible automations, and a dashboard we actually check. The system finally supports the team.”<br><small>COO, E-commerce Brand</small></div>
       </div>
       <div class="btns" style="margin-top:16px">
         <a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a>
@@ -184,8 +240,18 @@
     <div class="wrap">
       <h2>Contact</h2>
       <div class="two-col">
-        <div class="card"><p>Have a project or need a VA placement plan? Let’s talk.</p><div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div></div>
-        <div class="card"><h3>Scope in 3 bullets</h3><ol><li>Your #1 outcome</li><li>Your tools (GHL, HubSpot, Zapier…)</li><li>Timeline / constraints</li></ol></div>
+        <div class="card">
+          <p>Have a project, want a systems audit, or need a VA placement plan? Let’s talk.</p>
+          <div class="btns"><a class="btn" target="_blank" rel="noopener" href="https://calendly.com/ebberdos/eriq-personal-meeting">Book a Call</a></div>
+        </div>
+        <div class="card">
+          <h3>Scope in 3 bullets</h3>
+          <ol>
+            <li>Your #1 outcome (e.g., more booked calls)</li>
+            <li>Your tools (GHL, HubSpot, Zapier, etc.)</li>
+            <li>Timeline / constraints</li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
