@@ -1,483 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eriq Berdos — Software & Web Developer | Automation & CRM Specialist</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eriq Berdos — Software, Web & Automation Engineer</title>
 
-  <style>
-    :root{
-      --bg:#070b12;
-      --bg2:#0b1320;
-      --card:rgba(18, 24, 36, .72);
-      --card2:rgba(18, 24, 36, .58);
-      --muted:#cfd6e6;
-      --text:#ffffff;
-      --brand:#11e0ff;
-      --brand2:#6a7dff;
-      --line:rgba(255,255,255,.08);
-      --pill:rgba(17,224,255,.10);
-      --pill-border:rgba(17,224,255,.22);
-      --shadow: 0 18px 50px rgba(0,0,0,.55);
-    }
+<style>
+:root{
+  --bg:#070b12;
+  --bg2:#0b1320;
+  --card:rgba(18,24,36,.78);
+  --text:#ffffff;
+  --muted:#aab4c6;
+  --brand:#18e0ff;
+  --brand2:#6adfff;
+  --border:rgba(255,255,255,.08);
+}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.55;
-      background: linear-gradient(180deg, var(--bg), var(--bg2));
-      overflow-x:hidden;
-    }
-    a{color:var(--brand);text-decoration:none}
-    a:hover{opacity:.95}
-    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-    .section{padding:72px 0}
-    .section-title{
-      font-size:28px; letter-spacing:.2px; margin:0 0 18px;
-    }
-    .section-sub{margin:0 0 26px;color:rgba(207,214,230,.86);max-width:72ch}
+/* RESET */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
 
-    /* =========================================================
-       FULL-PAGE ANIMATED "MICROCHIP / CIRCUIT" BACKGROUND
-       - fixed across whole page
-       - keeps moving even when scrolling
-       ========================================================= */
+/* ANIMATED CIRCUIT BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(transparent 95%, rgba(24,224,255,.15) 96%),
+    linear-gradient(90deg, transparent 95%, rgba(24,224,255,.12) 96%);
+  background-size:120px 120px;
+  animation:moveBg 30s linear infinite;
+  pointer-events:none;
+  z-index:-2;
+}
+@keyframes moveBg{
+  from{background-position:0 0}
+  to{background-position:1000px 1000px}
+}
 
-    /* Layer 1: animated circuit SVG tiles */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-3;
-      pointer-events:none;
+.container{max-width:1200px;margin:auto;padding:80px 24px}
 
-      /* Inline SVG circuit pattern (original) */
-      background-image:
-        radial-gradient(1200px 700px at 15% 0%, rgba(17,224,255,.18), transparent 60%),
-        radial-gradient(1000px 600px at 90% 10%, rgba(106,125,255,.14), transparent 62%),
-        radial-gradient(900px 700px at 55% 100%, rgba(17,224,255,.08), transparent 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2311e0ff' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%236a7dff' stop-opacity='.35'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2.2' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='520' height='520' fill='none'/%3E%3Cg filter='url(%23glow)' stroke='url(%23g)' stroke-width='1.2' fill='none' stroke-linecap='round'%3E%3Cpath d='M40 110H210M210 110V70H310M310 70H470'/%3E%3Cpath d='M60 210H180M180 210V320H310M310 320H460'/%3E%3Cpath d='M90 420H240M240 420V260H410M410 260V120'/%3E%3Cpath d='M80 60V160H120M120 160V260H60'/%3E%3Cpath d='M460 460H340V400H260V460H60'/%3E%3Cpath d='M300 150H360V210H440'/%3E%3Cpath d='M150 360H210V300H260'/%3E%3C/g%3E%3Cg fill='%2311e0ff' fill-opacity='.25'%3E%3Ccircle cx='210' cy='110' r='4'/%3E%3Ccircle cx='310' cy='70' r='4'/%3E%3Ccircle cx='180' cy='210' r='4'/%3E%3Ccircle cx='310' cy='320' r='4'/%3E%3Ccircle cx='410' cy='260' r='4'/%3E%3Ccircle cx='340' cy='400' r='4'/%3E%3Ccircle cx='260' cy='460' r='4'/%3E%3Ccircle cx='360' cy='210' r='4'/%3E%3Ccircle cx='210' cy='300' r='4'/%3E%3C/g%3E%3C/svg%3E");
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(7,11,18,.7);
+  border-bottom:1px solid var(--border);
+}
+.nav-wrap{
+  max-width:1200px;margin:auto;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 24px;
+}
+.logo{font-weight:700;letter-spacing:.5px}
+.nav a{
+  color:#cfd6e6;text-decoration:none;margin-left:20px;font-size:14px
+}
+.nav a:hover{color:#fff}
 
-      background-size: cover, cover, cover, 520px 520px;
-      background-repeat: no-repeat, no-repeat, no-repeat, repeat;
-      opacity:1;
-      transform: translateZ(0);
-      animation: bgDrift 16s linear infinite;
-    }
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:center;
+}
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(24,224,255,.12);
+  border:1px solid rgba(24,224,255,.25);
+  color:var(--brand);
+  font-size:13px;
+  margin-bottom:16px;
+}
+.hero h1{
+  font-size:48px;
+  line-height:1.15;
+  margin:0 0 16px;
+}
+.hero p{
+  color:var(--muted);
+  max-width:680px;
+}
+.cta{
+  margin-top:28px;
+  display:flex;gap:14px;flex-wrap:wrap;
+}
+.btn{
+  padding:12px 18px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#0f1726;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+.btn.primary{
+  background:var(--brand);
+  color:#00131a;
+  border:none;
+}
 
-    /* Layer 2: moving scanlines */
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      pointer-events:none;
-      background:
-        repeating-linear-gradient(
-          180deg,
-          rgba(17,224,255,.045) 0px,
-          rgba(17,224,255,.045) 1px,
-          rgba(0,0,0,0) 6px,
-          rgba(0,0,0,0) 12px
-        );
-      mix-blend-mode:screen;
-      opacity:.35;
-      animation: scan 10s linear infinite;
-    }
+/* PROFILE */
+.profile{
+  width:260px;height:260px;
+  border-radius:50%;
+  overflow:hidden;
+  border:4px solid var(--brand);
+  box-shadow:0 0 60px rgba(24,224,255,.4);
+  justify-self:center;
+}
+.profile img{
+  width:100%;height:100%;object-fit:cover;
+}
 
-    /* Extra overlay for depth (subtle vignette + noise-ish) */
-    .bg-vignette{
-      position:fixed; inset:0; z-index:-1; pointer-events:none;
-      background:
-        radial-gradient(900px 520px at 50% 0%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(900px 520px at 50% 100%, rgba(0,0,0,.55), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55));
-      opacity:.9;
-    }
+/* SECTIONS */
+section{margin-top:120px}
+h2{font-size:32px;margin-bottom:10px}
+.section-sub{color:var(--muted);max-width:800px}
 
-    @keyframes bgDrift{
-      0%   { background-position: 0% 0%, 0% 0%, 0% 0%, 0 0; filter:hue-rotate(0deg); }
-      50%  { background-position: 10% 6%, -8% 4%, 5% -6%, -260px 180px; filter:hue-rotate(10deg); }
-      100% { background-position: 0% 0%, 0% 0%, 0% 0%, -520px 360px; filter:hue-rotate(0deg); }
-    }
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  margin-top:40px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+}
 
-    @keyframes scan{
-      0%   { transform: translateY(-40px); }
-      100% { transform: translateY(40px); }
-    }
+/* TOOLS */
+.tools{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+}
+.tool{
+  padding:8px 14px;
+  border-radius:999px;
+  background:#0e1624;
+  border:1px solid var(--border);
+  font-size:13px;
+}
 
-    /* NAV */
-    nav{
-      position:sticky; top:0; z-index:50;
-      background: rgba(7, 11, 18, .70);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    nav .wrap{
-      display:flex; align-items:center; justify-content:space-between; height:64px;
-    }
-    .logo{
-      font-weight:800; letter-spacing:.4px;
-      display:flex; align-items:center; gap:10px;
-    }
-    .logo-dot{
-      width:10px;height:10px;border-radius:50%;
-      background: var(--brand);
-      box-shadow: 0 0 22px rgba(17,224,255,.9);
-    }
-    .links a{
-      margin-left:18px;
-      color: rgba(207,214,230,.92);
-      font-weight:600;
-      font-size:14px;
-    }
-    .links a:hover{color:#fff}
+/* FOOTER */
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:60px 20px;
+  margin-top:120px;
+  border-top:1px solid var(--border);
+}
 
-    /* HERO */
-    .hero{ padding:92px 0 58px; border-bottom:1px solid var(--line); }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:28px;
-      align-items:center;
-    }
-    .badge{
-      display:inline-block;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      background: var(--pill);
-      border:1px solid var(--pill-border);
-      color: rgba(207,214,230,.95);
-      margin-bottom:12px;
-    }
-    .hero h1{
-      margin:0 0 12px;
-      font-size:44px;
-      line-height:1.08;
-      letter-spacing:.2px;
-      text-shadow: 0 10px 40px rgba(0,0,0,.55);
-    }
-    .hero p{
-      margin:0 0 18px;
-      color: rgba(207,214,230,.88);
-      max-width: 62ch;
-    }
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 16px; border-radius:12px;
-      font-weight:800; font-size:14px;
-      border:1px solid transparent;
-      cursor:pointer;
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-    }
-    .btn.primary{
-      background: var(--brand); color:#061018;
-    }
-    .btn.secondary{
-      background: rgba(18,24,36,.55);
-      color: rgba(235,242,255,.94);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(8px);
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .photo-wrap{
-      display:flex; justify-content:center;
-    }
-    .photo{
-      width: 220px; height:220px;
-      border-radius: 50%;
-      border: 3px solid rgba(17,224,255,.85);
-      box-shadow: 0 0 0 10px rgba(17,224,255,.08), 0 30px 70px rgba(0,0,0,.55);
-      object-fit: cover;
-      background: rgba(255,255,255,.05);
-    }
-
-    /* CARDS */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:18px;
-    }
-    .card{
-      background: var(--card);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:16px;
-      padding:18px 18px 16px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-    .card h3{margin:0 0 10px;font-size:16px}
-    .card p{margin:0;color: rgba(207,214,230,.88); font-size:14px}
-
-    /* TOOLS pills */
-    .pill-row{display:flex;flex-wrap:wrap;gap:10px}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(18,24,36,.55);
-      border:1px solid rgba(255,255,255,.10);
-      color: rgba(235,242,255,.92);
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.2px;
-      backdrop-filter: blur(8px);
-    }
-    .pill .dot{
-      width:7px;height:7px;border-radius:50%;
-      background: var(--brand);
-      box-shadow:0 0 12px rgba(17,224,255,.85);
-    }
-
-    /* CASES */
-    .cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .case{
-      background: var(--card2);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:16px;
-      padding:18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      display:flex; flex-direction:column; gap:10px;
-      min-height: 230px;
-    }
-    .case h4{margin:0;font-size:15px}
-    .case p{margin:0;color: rgba(207,214,230,.88); font-size:13.5px}
-    .case ul{margin:6px 0 0 18px;color: rgba(207,214,230,.88); font-size:13.5px}
-    .case .btn{margin-top:auto; width: fit-content}
-
-    /* CONTACT */
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .small{font-size:13px;color: rgba(207,214,230,.86)}
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:26px 0;
-      color: rgba(207,214,230,.70);
-      font-size:13px;
-    }
-
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr; text-align:left}
-      .photo-wrap{justify-content:flex-start}
-      .hero h1{font-size:38px}
-      .cases{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .contact-grid{grid-template-columns:1fr}
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+}
+</style>
 </head>
 
 <body>
-  <div class="bg-vignette"></div>
 
-  <nav>
-    <div class="wrap">
-      <div class="logo"><span class="logo-dot"></span> Eriq Berdos</div>
-      <div class="links">
-        <a href="#services">What I Do</a>
-        <a href="#tools">Tools</a>
-        <a href="#cases">Case Studies</a>
-        <a href="#contact">Contact</a>
-      </div>
+<nav>
+  <div class="nav-wrap">
+    <div class="logo">● Eriq Berdos</div>
+    <div class="nav">
+      <a href="#services">What I Do</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <header class="hero">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <div class="badge">Software & Web Developer • Automation & CRM Specialist</div>
-          <h1>Build backend automation, integrate APIs, and streamline CRMs—clean and scalable.</h1>
-          <p>
-            I design reliable systems for businesses: workflow automation, multi-platform integrations,
-            and CRM architecture across tools like Zapier, n8n, webhooks, GoHighLevel, HubSpot, and more.
-          </p>
+<div class="container">
 
-          <div class="btns">
-            <a class="btn primary" href="#contact">Book a Call</a>
-            <a class="btn secondary" href="#cases">See Case Studies</a>
-          </div>
-          <p class="small" style="margin-top:14px;">
-            Focus: Backend Automation • CRM Systems • Webhooks • API Integrations • Data Sync • Error Handling
-          </p>
-        </div>
-
-        <div class="photo-wrap">
-          <!-- PROFILE PICTURE (you said goods na) -->
-          <img class="photo" src="assets/profile.jpg" alt="Eriq Berdos" />
-        </div>
-      </div>
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="badge">Software • Web • Automation • CRM Engineer</div>
+    <h1>
+      Build software systems, automate operations,<br>
+      and scale businesses — end-to-end.
+    </h1>
+    <p>
+      I design and build <strong>web applications, backend systems, APIs,
+      automation workflows, and CRM architectures</strong>.
+      From website → backend → integrations → operations.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank">Book a Call</a>
+      <a class="btn" href="#services">What I Do</a>
     </div>
-  </header>
+  </div>
 
-  <section id="services" class="section">
-    <div class="wrap">
-      <h2 class="section-title">What I Do</h2>
-      <p class="section-sub">
-        Strong IT background—software + web development foundation with hands-on expertise in automation,
-        CRM workflows, and integrations.
+  <div class="profile">
+    <img src="assets/erique-photo.png" alt="Eriq Berdos">
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="services">
+  <h2>What I Do</h2>
+  <p class="section-sub">
+    Strong software & IT foundation — not just automation.
+    I build systems properly from the ground up.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Software & Web Development</h3>
+      <p>
+        Build websites and web apps from scratch —
+        frontend, backend, databases, routing, and performance.
       </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Backend Automation & Orchestration</h3>
-          <p>Build multi-step workflows with retries, routers, fallbacks, logging, and safe error handling using Zapier / n8n / webhooks.</p>
-        </div>
-        <div class="card">
-          <h3>CRM Setup & Lifecycle Automation</h3>
-          <p>GoHighLevel / HubSpot pipelines, lead routing, tagging, scoring, dedupe logic, and lifecycle workflows.</p>
-        </div>
-        <div class="card">
-          <h3>API Integrations & Webhooks</h3>
-          <p>Connect apps via REST APIs, webhook events, and structured payload mapping—clean, testable, and documented.</p>
-        </div>
-        <div class="card">
-          <h3>Data Sync, Sheets, & Reporting</h3>
-          <p>Build reporting pipelines and dashboards from multiple sources (CRM → Sheets/DB → KPI snapshots).</p>
-        </div>
-        <div class="card">
-          <h3>Web Development (Support Layer)</h3>
-          <p>Landing pages / simple web apps, form tracking, routing, and performance-friendly frontend tweaks when needed.</p>
-        </div>
-        <div class="card">
-          <h3>System Audits & Cleanup</h3>
-          <p>Fix broken automations, reduce duplicate triggers, improve reliability, and document SOPs for long-term stability.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:22px;">
-        <a class="btn primary" href="#contact">Book a Call</a>
-      </div>
     </div>
-  </section>
 
-  <section id="tools" class="section" style="padding-top:10px;">
-    <div class="wrap">
-      <h2 class="section-title">Tools I Use</h2>
-      <p class="section-sub">Common stack for automation + CRM engineering and operations workflows.</p>
-
-      <div class="pill-row">
-        <span class="pill"><span class="dot"></span> GoHighLevel</span>
-        <span class="pill"><span class="dot"></span> HubSpot</span>
-        <span class="pill"><span class="dot"></span> Zapier</span>
-        <span class="pill"><span class="dot"></span> n8n</span>
-        <span class="pill"><span class="dot"></span> Webhooks / APIs</span>
-        <span class="pill"><span class="dot"></span> Make (Integromat)</span>
-        <span class="pill"><span class="dot"></span> Google Sheets</span>
-        <span class="pill"><span class="dot"></span> Calendly</span>
-        <span class="pill"><span class="dot"></span> Gmail</span>
-        <span class="pill"><span class="dot"></span> Zoom</span>
-        <span class="pill"><span class="dot"></span> GitHub Pages</span>
-      </div>
+    <div class="card">
+      <h3>Backend Systems & APIs</h3>
+      <p>
+        REST APIs, webhooks, auth, error handling, logging,
+        scalable backend architecture.
+      </p>
     </div>
-  </section>
 
-  <section id="cases" class="section">
-    <div class="wrap">
-      <h2 class="section-title">Case Studies (Snapshots)</h2>
-      <p class="section-sub">Short examples of real workflow patterns I build (architecture-first, reliability-focused).</p>
-
-      <div class="cases">
-        <div class="case">
-          <h4>Lead Capture → CRM → Booking Flow</h4>
-          <p>Form capture + tagging + pipeline movement + automated reminders (SMS/Email).</p>
-          <ul>
-            <li>Webhook → Router → CRM create/update</li>
-            <li>Dedupe + lifecycle stage updates</li>
-            <li>Confirmation + reminders + no-show recovery</li>
-          </ul>
-          <a class="btn secondary" href="#contact">Ask for details</a>
-        </div>
-
-        <div class="case">
-          <h4>Multi-Branch Router (Budget/Service Split)</h4>
-          <p>Clean branching logic that routes leads based on answers + rules.</p>
-          <ul>
-            <li>Filters + paths + structured mapping</li>
-            <li>Retry + rate limit safety</li>
-            <li>Fallback alerts + logging</li>
-          </ul>
-          <a class="btn secondary" href="#contact">Ask for details</a>
-        </div>
-
-        <div class="case">
-          <h4>CRM Cleanup + Reliable Automation</h4>
-          <p>Stabilize systems that are double-triggering / missing events.</p>
-          <ul>
-            <li>Audit triggers + remove duplicates</li>
-            <li>Standardize tags + pipeline stages</li>
-            <li>Document SOPs for the team</li>
-          </ul>
-          <a class="btn secondary" href="#contact">Ask for details</a>
-        </div>
-      </div>
+    <div class="card">
+      <h3>Automation & Orchestration</h3>
+      <p>
+        Zapier, n8n, Make workflows with retries, routers,
+        fallbacks, queues, and safe execution.
+      </p>
     </div>
-  </section>
 
-  <section id="contact" class="section" style="padding-top:10px;">
-    <div class="wrap">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-sub">Have a project, want a systems audit, or need automation help? Send your scope and tools.</p>
-
-      <div class="contact-grid">
-        <div class="card">
-          <h3>Let’s talk</h3>
-          <p class="small">Share your #1 outcome (bookings, lead response speed, reporting, etc.).</p>
-          <p class="small" style="margin-top:10px;">Then list your tools (GHL, HubSpot, Zapier, n8n, etc.) and timeline.</p>
-
-          <!-- Replace this link later with your real booking link (Calendly/GHL booking) -->
-          <div style="margin-top:16px;">
-            <a class="btn primary" href="mailto:your.email@example.com?subject=Automation%20Project%20Inquiry">Email Me</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Scope in 3 bullets</h3>
-          <ol class="small" style="margin:0 0 0 18px;">
-            <li>Your #1 outcome (e.g., faster lead response)</li>
-            <li>Your tools (GHL, HubSpot, Zapier, n8n, etc.)</li>
-            <li>Timeline / constraints</li>
-          </ol>
-          <p class="small" style="margin-top:14px;">
-            I’ll reply with a clear plan + recommended workflow architecture.
-          </p>
-        </div>
-      </div>
+    <div class="card">
+      <h3>CRM Systems & Lifecycle Automation</h3>
+      <p>
+        GoHighLevel, HubSpot, Salesforce pipelines,
+        lead routing, tagging, scoring, dedupe, lifecycle flows.
+      </p>
     </div>
-  </section>
 
-  <footer>
-    <div class="wrap">
-      © <span id="y"></span> Eriq Berdos — Software & Web Developer • Automation & CRM Specialist
+    <div class="card">
+      <h3>Data Sync & Reporting</h3>
+      <p>
+        CRM → Sheets / DB → dashboards,
+        KPI snapshots, reporting pipelines.
+      </p>
     </div>
-  </footer>
 
-  <script>
-    // Year
-    document.getElementById("y").textContent = new Date().getFullYear();
+    <div class="card">
+      <h3>System Cleanup & Scaling</h3>
+      <p>
+        Fix broken automations, reduce tech debt,
+        document SOPs, and scale safely.
+      </p>
+    </div>
+  </div>
+</section>
 
-    // Optional: subtle parallax feel based on scroll (background still moves even when scrolling)
-    // This does NOT stop the animation; it adds a small depth shift.
-    (function(){
-      let ticking = false;
-      window.addEventListener("scroll", function(){
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(function(){
-          const y = window.scrollY || 0;
-          // tiny shift so it feels "alive" while scrolling
-          document.body.style.backgroundPosition = `0 ${y * 0.02}px`;
-          ticking = false;
-        });
-      }, { passive:true });
-    })();
-  </script>
+<!-- TOOLS -->
+<section id="tools">
+  <h2>Tools I Use</h2>
+  <p class="section-sub">
+    Full IT, development, automation, CRM, and VA-support stack.
+  </p>
+
+  <div class="tools">
+    <span class="tool">HTML / CSS / JS</span>
+    <span class="tool">Backend APIs</span>
+    <span class="tool">Webhooks</span>
+    <span class="tool">Zapier</span>
+    <span class="tool">n8n</span>
+    <span class="tool">Make (Integromat)</span>
+    <span class="tool">GoHighLevel</span>
+    <span class="tool">HubSpot</span>
+    <span class="tool">Salesforce</span>
+    <span class="tool">Google Sheets</span>
+    <span class="tool">Calendly</span>
+    <span class="tool">Gmail</span>
+    <span class="tool">Zoom</span>
+    <span class="tool">GitHub Pages</span>
+    <span class="tool">CRM Data Cleanup</span>
+    <span class="tool">VA Ops & SOPs</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="section-sub">
+    Need software, automation, CRM cleanup, or a full system build?
+  </p>
+  <div class="cta">
+    <a class="btn primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank">Book a Call</a>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  © 2026 Eriq Berdos — Software, Web & Automation Engineer
+</footer>
+
 </body>
 </html>
