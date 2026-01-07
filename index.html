@@ -40,8 +40,6 @@
 
     /* =========================================================
        FULL-PAGE ANIMATED "MICROCHIP / CIRCUIT" BACKGROUND
-       - fixed across whole page
-       - keeps moving even when scrolling
        ========================================================= */
     body::before{
       content:"";
@@ -253,12 +251,11 @@
     /* =========================================================
        ✅ ADDED ONLY: "Full-bleed" Docs section (README + Wiki)
        - Full-width (100vw) background band
-       - Pulls README.md + Wiki Home.md from GitHub raw
        ========================================================= */
     .fullbleed{
       width:100vw;
       margin-left:calc(50% - 50vw);
-      padding:0 0;
+      padding:0;
     }
     .docs-band{
       padding:54px 0 64px;
@@ -385,7 +382,6 @@
         <a href="#services">What I Do</a>
         <a href="#tools">Tools</a>
         <a href="#cases">Case Studies</a>
-        <!-- ✅ ADDED ONLY: Docs anchor -->
         <a href="#docs">Docs</a>
         <a href="#contact">Contact</a>
       </div>
@@ -414,7 +410,6 @@
         </div>
 
         <div class="photo-wrap">
-          <!-- ✅ FIX: use your existing file in /assets -->
           <img class="photo" src="assets/erique-photo.png" alt="Eriq Berdos" />
         </div>
       </div>
@@ -471,28 +466,19 @@
         <p class="section-sub">Full stack across IT + Web Dev + Automation + CRM + VA operations.</p>
 
         <div class="pill-row">
-          <!-- Dev / Web -->
           <span class="pill"><span class="dot"></span> HTML / CSS / JS</span>
           <span class="pill"><span class="dot"></span> GitHub / GitHub Pages</span>
           <span class="pill"><span class="dot"></span> Domains / DNS</span>
           <span class="pill"><span class="dot"></span> Webhooks</span>
           <span class="pill"><span class="dot"></span> REST APIs</span>
-
-          <!-- Automation -->
           <span class="pill"><span class="dot"></span> Zapier</span>
           <span class="pill"><span class="dot"></span> n8n</span>
           <span class="pill"><span class="dot"></span> Make (Integromat)</span>
-
-          <!-- CRM -->
           <span class="pill"><span class="dot"></span> GoHighLevel</span>
           <span class="pill"><span class="dot"></span> HubSpot</span>
-
-          <!-- Data -->
           <span class="pill"><span class="dot"></span> Google Sheets</span>
           <span class="pill"><span class="dot"></span> Airtable</span>
           <span class="pill"><span class="dot"></span> CSV Imports/Exports</span>
-
-          <!-- Ops -->
           <span class="pill"><span class="dot"></span> Calendly</span>
           <span class="pill"><span class="dot"></span> Gmail</span>
           <span class="pill"><span class="dot"></span> Zoom</span>
@@ -545,17 +531,13 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         ✅ ADDED ONLY: DOCS (Full-bleed) — README + Wiki Home
-         - Shows inside portfolio
-         - Full width band background
-         ========================================================= -->
+    <!-- ✅ DOCS FULL-BLEED -->
     <section id="docs" class="fullbleed">
       <div class="docs-band">
         <div class="wrap">
           <h2 class="section-title">Docs (README + Wiki)</h2>
           <p class="section-sub">
-            Full documentation preview inside the portfolio. (Auto-pulled from GitHub: README.md + Wiki Home)
+            Documentation preview inside the portfolio. (Auto-pulled from GitHub: README.md + Wiki Home)
           </p>
 
           <div class="docs-grid">
@@ -576,7 +558,7 @@
               </div>
             </div>
 
-            <!-- WIKI -->
+            <!-- WIKI HOME -->
             <div class="doc-card">
               <div class="doc-head">
                 <div>
@@ -593,6 +575,10 @@
               </div>
             </div>
           </div>
+
+          <p class="section-sub" style="margin-top:14px;font-size:12.5px;opacity:.9">
+            If your browser blocks external fetch, this page auto-falls back to a safe text proxy so the docs still show.
+          </p>
 
         </div>
       </div>
@@ -619,14 +605,15 @@
     document.getElementById("y").textContent = new Date().getFullYear();
 
     /* =========================================================
-       ✅ ADDED ONLY: Fetch + render README + Wiki (basic markdown)
-       Sources:
-       - README: https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md
-       - Wiki:   https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md
+       ✅ ADDED ONLY: Fetch + render README + Wiki (CORS-safe)
+       Strategy:
+       1) Try direct fetch (raw.githubusercontent.com)
+       2) If blocked, fallback to Jina proxy:
+          https://r.jina.ai/http(s)://...
        ========================================================= */
 
-    const README_URL = "https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md";
-    const WIKI_HOME_URL = "https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md";
+    const README_RAW = "https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md";
+    const WIKI_HOME_RAW = "https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md";
 
     function escapeHtml(str){
       return str
@@ -662,61 +649,4 @@
       out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, `<a href="$2" target="_blank" rel="noopener">$1</a>`);
 
       // unordered lists
-      // Convert lines starting with - or * into <li>, then wrap consecutive lis in <ul>
-      out = out.replace(/^(?:-|\*)\s+(.+)$/gm, "<li>$1</li>");
-      out = out.replace(/(<li>[\s\S]*?<\/li>)(?!\s*<li>)/g, "$1"); // keep
-      out = out.replace(/(?:<li>[\s\S]*?<\/li>\s*)+/g, (block) => `<ul>${block}</ul>`);
-
-      // paragraphs (wrap remaining plain lines)
-      const lines = out.split("\n");
-      let html = "";
-      let buffer = [];
-
-      const flush = () => {
-        if (!buffer.length) return;
-        const text = buffer.join(" ").trim();
-        if (text) html += `<p>${text}</p>`;
-        buffer = [];
-      };
-
-      for (const line of lines){
-        const t = line.trim();
-        if (!t){
-          flush();
-          continue;
-        }
-        // If it's already a block element, flush buffer then append line as-is
-        if (/^<(h1|h2|h3|ul|pre|hr)\b/.test(t)){
-          flush();
-          html += t;
-        } else {
-          buffer.push(t);
-        }
-      }
-      flush();
-      return html || `<div class="muted">No content.</div>`;
-    }
-
-    async function loadMd(url, elId){
-      const el = document.getElementById(elId);
-      try{
-        const res = await fetch(url, { cache: "no-store" });
-        if(!res.ok) throw new Error("HTTP " + res.status);
-        const md = await res.text();
-        el.innerHTML = renderMarkdown(md);
-      } catch (e){
-        el.innerHTML = `
-          <div class="muted">
-            Could not load documentation automatically. You can still open it here:
-            <br><br>
-            <a href="${url}" target="_blank" rel="noopener">${url}</a>
-          </div>
-        `;
-      }
-    }
-
-    loadMd(README_URL, "readmeOut");
-    loadMd(WIKI_HOME_URL, "wikiOut");
-  </script>
-</body>
-</html>
+      out = out.replace
