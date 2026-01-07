@@ -249,6 +249,129 @@
       .cases{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr}
     }
+
+    /* =========================================================
+       ✅ ADDED ONLY: "Full-bleed" Docs section (README + Wiki)
+       - Full-width (100vw) background band
+       - Pulls README.md + Wiki Home.md from GitHub raw
+       ========================================================= */
+    .fullbleed{
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      padding:0 0;
+    }
+    .docs-band{
+      padding:54px 0 64px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1200px 620px at 20% 0%, rgba(17,224,255,.08), transparent 60%),
+        radial-gradient(900px 540px at 90% 30%, rgba(106,125,255,.07), transparent 62%),
+        rgba(18,24,36,.10);
+      backdrop-filter: blur(6px);
+    }
+    .docs-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:18px;
+      align-items:start;
+    }
+    .doc-card{
+      background: var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      min-height: 420px;
+      overflow:hidden;
+    }
+    .doc-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .doc-head h3{margin:0;font-size:16px}
+    .doc-head .mini{
+      font-size:12px;
+      color: rgba(207,214,230,.78);
+      margin-top:2px;
+    }
+    .doc-actions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .doc-actions a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:7px 10px;
+      border-radius:10px;
+      font-weight:800;
+      font-size:12px;
+      background: rgba(18,24,36,.55);
+      border:1px solid rgba(255,255,255,.10);
+      color: rgba(235,242,255,.92);
+      backdrop-filter: blur(8px);
+    }
+    .doc-actions a:hover{opacity:.95}
+
+    .md{
+      color: rgba(235,242,255,.92);
+      font-size:13.5px;
+      line-height:1.65;
+      max-height: 340px;
+      overflow:auto;
+      padding-right:6px;
+    }
+    .md h1,.md h2,.md h3{margin:14px 0 8px; line-height:1.2}
+    .md h1{font-size:18px}
+    .md h2{font-size:16px}
+    .md h3{font-size:14px}
+    .md p{margin:8px 0; color: rgba(207,214,230,.90)}
+    .md a{color: var(--brand)}
+    .md ul{margin:8px 0 8px 18px; color: rgba(207,214,230,.90)}
+    .md li{margin:4px 0}
+    .md code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12.5px;
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+      padding:2px 6px;
+      border-radius:8px;
+    }
+    .md pre{
+      background: rgba(0,0,0,.40);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;
+      padding:12px;
+      overflow:auto;
+      margin:10px 0;
+    }
+    .md pre code{
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    .md hr{
+      border:0;
+      border-top:1px solid rgba(255,255,255,.10);
+      margin:12px 0;
+    }
+    .md .muted{
+      color: rgba(207,214,230,.72);
+      font-size: 12.5px;
+      margin-top: 8px;
+    }
+    @media (max-width: 920px){
+      .docs-grid{grid-template-columns:1fr}
+      .doc-card{min-height: 360px}
+      .md{max-height: 260px}
+    }
   </style>
 </head>
 
@@ -262,6 +385,8 @@
         <a href="#services">What I Do</a>
         <a href="#tools">Tools</a>
         <a href="#cases">Case Studies</a>
+        <!-- ✅ ADDED ONLY: Docs anchor -->
+        <a href="#docs">Docs</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -420,6 +545,59 @@
       </div>
     </section>
 
+    <!-- =========================================================
+         ✅ ADDED ONLY: DOCS (Full-bleed) — README + Wiki Home
+         - Shows inside portfolio
+         - Full width band background
+         ========================================================= -->
+    <section id="docs" class="fullbleed">
+      <div class="docs-band">
+        <div class="wrap">
+          <h2 class="section-title">Docs (README + Wiki)</h2>
+          <p class="section-sub">
+            Full documentation preview inside the portfolio. (Auto-pulled from GitHub: README.md + Wiki Home)
+          </p>
+
+          <div class="docs-grid">
+            <!-- README -->
+            <div class="doc-card">
+              <div class="doc-head">
+                <div>
+                  <h3>README.md</h3>
+                  <div class="mini">Repo overview + professional summary</div>
+                </div>
+                <div class="doc-actions">
+                  <a href="https://github.com/Qir05/PortfolioEbberdos" target="_blank" rel="noopener">Open Repo</a>
+                  <a href="https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md" target="_blank" rel="noopener">Raw</a>
+                </div>
+              </div>
+              <div id="readmeOut" class="md">
+                <div class="muted">Loading README…</div>
+              </div>
+            </div>
+
+            <!-- WIKI -->
+            <div class="doc-card">
+              <div class="doc-head">
+                <div>
+                  <h3>Wiki — Home</h3>
+                  <div class="mini">Automation documentation & workflows</div>
+                </div>
+                <div class="doc-actions">
+                  <a href="https://github.com/Qir05/PortfolioEbberdos/wiki" target="_blank" rel="noopener">Open Wiki</a>
+                  <a href="https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md" target="_blank" rel="noopener">Raw</a>
+                </div>
+              </div>
+              <div id="wikiOut" class="md">
+                <div class="muted">Loading Wiki Home…</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="section" style="padding-top:10px;">
       <div class="wrap">
@@ -439,9 +617,106 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    /* =========================================================
+       ✅ ADDED ONLY: Fetch + render README + Wiki (basic markdown)
+       Sources:
+       - README: https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md
+       - Wiki:   https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md
+       ========================================================= */
+
+    const README_URL = "https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md";
+    const WIKI_HOME_URL = "https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md";
+
+    function escapeHtml(str){
+      return str
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;");
+    }
+
+    // Minimal markdown renderer (headings, bold, links, code blocks, inline code, lists, hr, paragraphs)
+    function renderMarkdown(md){
+      const safe = escapeHtml(md);
+
+      // code blocks ``` ```
+      let out = safe.replace(/```([\s\S]*?)```/g, (m, code) => {
+        return `<pre><code>${code.replace(/^\n/,"")}</code></pre>`;
+      });
+
+      // hr
+      out = out.replace(/^\s*---\s*$/gm, "<hr>");
+
+      // headings
+      out = out.replace(/^###\s+(.+)$/gm, "<h3>$1</h3>");
+      out = out.replace(/^##\s+(.+)$/gm, "<h2>$1</h2>");
+      out = out.replace(/^#\s+(.+)$/gm, "<h1>$1</h1>");
+
+      // bold **text**
+      out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+      // inline code `code`
+      out = out.replace(/`([^`]+)`/g, "<code>$1</code>");
+
+      // links [text](url)
+      out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, `<a href="$2" target="_blank" rel="noopener">$1</a>`);
+
+      // unordered lists
+      // Convert lines starting with - or * into <li>, then wrap consecutive lis in <ul>
+      out = out.replace(/^(?:-|\*)\s+(.+)$/gm, "<li>$1</li>");
+      out = out.replace(/(<li>[\s\S]*?<\/li>)(?!\s*<li>)/g, "$1"); // keep
+      out = out.replace(/(?:<li>[\s\S]*?<\/li>\s*)+/g, (block) => `<ul>${block}</ul>`);
+
+      // paragraphs (wrap remaining plain lines)
+      const lines = out.split("\n");
+      let html = "";
+      let buffer = [];
+
+      const flush = () => {
+        if (!buffer.length) return;
+        const text = buffer.join(" ").trim();
+        if (text) html += `<p>${text}</p>`;
+        buffer = [];
+      };
+
+      for (const line of lines){
+        const t = line.trim();
+        if (!t){
+          flush();
+          continue;
+        }
+        // If it's already a block element, flush buffer then append line as-is
+        if (/^<(h1|h2|h3|ul|pre|hr)\b/.test(t)){
+          flush();
+          html += t;
+        } else {
+          buffer.push(t);
+        }
+      }
+      flush();
+      return html || `<div class="muted">No content.</div>`;
+    }
+
+    async function loadMd(url, elId){
+      const el = document.getElementById(elId);
+      try{
+        const res = await fetch(url, { cache: "no-store" });
+        if(!res.ok) throw new Error("HTTP " + res.status);
+        const md = await res.text();
+        el.innerHTML = renderMarkdown(md);
+      } catch (e){
+        el.innerHTML = `
+          <div class="muted">
+            Could not load documentation automatically. You can still open it here:
+            <br><br>
+            <a href="${url}" target="_blank" rel="noopener">${url}</a>
+          </div>
+        `;
+      }
+    }
+
+    loadMd(README_URL, "readmeOut");
+    loadMd(WIKI_HOME_URL, "wikiOut");
   </script>
 </body>
 </html>
-
-
-
