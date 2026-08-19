@@ -1,105 +1,160 @@
-# Erique Berdos Portfolio
+# Eriq Berdos Technical Portfolio
 
-This repository contains my technical portfolio covering **Software Development, Web Systems, Backend Integrations, CRM Architecture, Workflow Automation, Analytics Implementation, Technical SEO, Deployment, QA, and Systems Operations**.
+This repository contains my technical portfolio covering **software engineering, backend systems, databases, web applications, API integrations, CRM architecture, workflow automation, analytics, deployment, observability concepts, QA, and technical operations**.
 
-The portfolio reflects practical implementation work across multiple platforms and technical environments. Production work and demonstration projects are clearly separated so the scope stays accurate and easy to evaluate.
+My work focuses on building connected systems rather than isolated pages or single platform automations.
 
-## Professional Focus
+The portfolio includes both real implementation work and clearly labeled architecture demonstrations.
 
-I work across connected technical systems rather than treating websites, automation, CRM, analytics, and backend logic as separate pieces.
+## Technical Profile
 
-My work commonly includes:
+I work across multiple layers of a technical system:
 
-* Web application and website implementation
-* Backend APIs and webhook integrations
+* Application and web development
+* Backend services and business logic
+* Database design and data handling
+* API and webhook integrations
 * CRM architecture and lifecycle automation
-* Workflow automation and operational logic
+* Workflow orchestration
 * Analytics and conversion tracking
-* Technical SEO and search readiness
-* Deployment and production verification
-* Data synchronization and reporting
-* Internal business systems
-* QA, troubleshooting, and technical documentation
+* Deployment and infrastructure configuration
+* Production QA and troubleshooting
+* Monitoring and observability architecture concepts
 
-My software and web development background helps me approach automation and CRM work with an engineering mindset focused on structure, maintainability, testing, and reliable system behavior.
+## System Architecture Focus
 
-## Core Technical Areas
+My approach is based on understanding how each layer connects.
 
-### Software and Web Development
+### Application Layer
+
+Work includes:
+
+* Web applications
+* Internal tools
+* Dashboards
+* Forms
+* Booking systems
+* CRM connected interfaces
+* Responsive frontend implementation
+* Client and admin workflows
+
+Technologies include:
 
 * HTML
 * CSS
 * JavaScript
-* Next.js
 * React
-* Responsive interface implementation
-* Forms and routing
-* Performance and mobile QA
-* Production deployment
+* Next.js
 
-### Backend and Integrations
+### Backend Layer
+
+Backend work includes:
+
+* REST API implementation
+* Webhook endpoints
+* Server side business logic
+* Data validation
+* Authentication aware workflows
+* Role based behavior
+* Structured JSON processing
+* Retry logic
+* Failure handling
+* Logging
+* Integration orchestration
+
+The goal is to keep backend logic maintainable, testable, and predictable under real operational conditions.
+
+### Database and Data Layer
+
+Database related work includes:
+
+* Supabase
+* PostgreSQL style relational data structures
+* Role based data access
+* Operational records
+* Employee and internal system data
+* Form submission storage
+* CRM synchronized data
+* Audit friendly records
+* Structured exports
+* CSV workflows
+* Reporting data
+
+I design data flows with attention to ownership, consistency, access control, and downstream reporting.
+
+### Integration Layer
+
+I connect systems using:
 
 * REST APIs
 * Webhooks
-* JSON payload handling
-* Data mapping
-* Authentication aware integrations
-* Third party system connections
-* Error handling
-* Retry logic
-* Logging and troubleshooting
+* JSON payloads
+* Zapier
+* n8n
+* Make
+* GoHighLevel
+* HubSpot
+* PracticeQ
+* IntakeQ
+* Google Sheets
+* Airtable
 
-### CRM Architecture and Automation
+Integration work typically includes:
+
+* Payload mapping
+* Record creation and updates
+* Conditional routing
+* Duplicate prevention
+* State handling
+* Error recovery
+* Logging
+* Retry logic
+* Data synchronization
+
+## CRM and Workflow Architecture
+
+CRM work includes:
+
+* Pipeline architecture
+* Lead lifecycle stages
+* Lead routing
+* Tags
+* Booking workflows
+* Email automation
+* SMS automation
+* Follow up sequences
+* Pause and resume logic
+* No show recovery
+* CRM cleanup
+* Operational workflows
+
+Platforms include:
 
 * GoHighLevel
 * HubSpot
 * PracticeQ
 * IntakeQ
-* Pipeline architecture
-* Lead lifecycle workflows
-* Lead routing
-* Tags and stages
-* Booking workflows
-* Follow up automation
-* Email and SMS sequences
-* CRM cleanup and optimization
 
-### Workflow Automation
+## Analytics and Measurement
 
-* Zapier
-* n8n
-* Make
-* Conditional workflow logic
-* Multi step automation
-* Scheduled processes
-* Retry and fallback handling
-* Data synchronization
-* Operational workflow design
-
-### Analytics and Tracking
+Analytics implementation includes:
 
 * Google Tag Manager
 * Google Analytics 4
 * Custom event tracking
 * Conversion tracking
 * UTM persistence
-* Funnel and CTA measurement
-* Analytics implementation audits
+* Funnel measurement
+* CTA tracking
+* Analytics audits
 * Duplicate event review
 * Microsoft Clarity
 
-### Technical SEO and Search
+I treat analytics as part of system architecture rather than a separate reporting task.
 
-* Technical SEO audits
-* Metadata implementation
-* Heading structure
-* Crawl and indexation controls
-* Local search optimization
-* Search visibility improvements
-* AEO implementation concepts
-* GEO implementation concepts
+## Deployment and Technical Operations
 
-### Deployment and Web Operations
+Production and deployment work includes:
 
 * Git
 * GitHub
@@ -111,115 +166,308 @@ My software and web development background helps me approach automation and CRM 
 * Squarespace
 * DNS
 * SSL
+* Domain configuration
+* SPF
+* DKIM
+* DMARC
+* Production builds
+* Regression testing
+* Responsive QA
+* Release verification
+
+## Backend Reliability
+
+Backend systems are designed around practical operational concerns such as:
+
+* Validation
+* Error handling
+* Retry behavior
+* Duplicate prevention
+* Data integrity
+* Role based access
+* Logging
+* Clear state transitions
+* Production verification
+
+The goal is to avoid fragile workflows that only work under ideal conditions.
+
+## Selected Technical Work
+
+### Full Stack Web and Backend Systems
+
+Implementation work includes frontend interfaces, backend logic, APIs, data handling, routing, forms, tracking, deployment, and production QA.
+
+### API and Webhook Integration Systems
+
+Implementation work includes REST integrations, webhook processing, payload mapping, authentication aware connections, logging, retries, and multi platform synchronization.
+
+### Internal Business Applications
+
+Work includes role aware internal systems involving:
+
+* Employee records
+* Attendance
+* Tasks
+* Leave
+* Payroll related workflows
+* Permissions
+* AI assisted lookup
+* Backend orchestration
+* Automated testing
+* Production build validation
+
+### CRM Lifecycle Systems
+
+Work includes:
+
+* Lead intake
+* Pipeline movement
+* Tags
+* Lifecycle logic
+* Booking flows
+* Email and SMS automation
+* Follow up systems
+* Pause and resume logic
+* Operational cleanup
+
+### Analytics Architecture
+
+Work includes:
+
+* GTM deployment
+* GA4 event architecture
+* Conversion events
+* UTM handling
+* Tracking audits
+* Production verification
+
+### Technical SEO and Search Readiness
+
+Work includes:
+
+* Metadata
+* Heading structure
+* Indexation controls
+* Local search support
+* Technical SEO
+* AEO concepts
+* GEO concepts
+
+## Enterprise Monitoring and Observability Architecture Lab
+
+The portfolio includes a separate demonstration environment focused on enterprise monitoring and observability.
+
+This lab is used to demonstrate architecture thinking and is not presented as a live client production environment.
+
+The architecture covers:
+
+### Monitoring
+
+* Infrastructure health
+* Application health
+* API performance
+* Database status
+* Service availability
+* Resource utilization
+
+### Logging
+
+* Centralized logs
+* Error logs
+* Application logs
+* Integration logs
+* Correlation identifiers
+* Severity levels
+
+### Application Performance Monitoring
+
+Concepts include:
+
+* Request volume
+* Response time
+* P95 latency
+* Error rate
+* Dependency performance
+* Slow endpoint identification
+
+### Azure Monitoring Concepts
+
+The lab demonstrates architecture concepts related to:
+
+* Azure Monitor
+* Log Analytics
+* KQL
+* Service health
+* Application telemetry
+
+### Observability Dashboards
+
+Dashboard concepts include:
+
+* Service health
+* Infrastructure metrics
+* Application performance
+* Incident state
+* Alert status
+* Dependency health
+
+Grafana style dashboards may be used to demonstrate visualization concepts.
+
+### Incident Management
+
+The lab includes simulated incident workflows such as:
+
+* Incident severity
+* Service ownership
+* Status
+* SLA tracking
+* MTTA
+* MTTR
+* Escalation
+
+### ServiceNow ITOM Concepts
+
+The architecture demonstrates concepts related to:
+
+* Service visibility
+* Service dependency mapping
+* Incident integration
+* Operational ownership
+* Service health
+
+### AIOps Concepts
+
+The lab includes simulated correlation logic such as:
+
+* Baseline deviation
+* Related alerts
+* Service impact
+* Anomaly detection
+* Incident correlation
+
+### Automation and Remediation
+
+The architecture demonstrates remediation concepts using:
+
+* Threshold based triggers
+* Automation workflows
+* Ansible style playbooks
+* Verification steps
+* Escalation logic
+
+## Technical Stack
+
+### Development
+
+* HTML
+* CSS
+* JavaScript
+* React
+* Next.js
+* Git
+* GitHub
+
+### Backend
+
+* REST APIs
+* Webhooks
+* JSON
+* Server side logic
+* Authentication aware workflows
+* Role based logic
+
+### Database
+
+* Supabase
+* PostgreSQL concepts
+* Relational data
+* Operational records
+* Role based data access
+
+### Automation
+
+* Zapier
+* n8n
+* Make
+
+### CRM
+
+* GoHighLevel
+* HubSpot
+* PracticeQ
+* IntakeQ
+
+### Analytics
+
+* Google Tag Manager
+* Google Analytics 4
+* Microsoft Clarity
+
+### Deployment
+
+* Vercel
+* GitHub Pages
+* Cloudways
+* WordPress
+* Squarespace
+
+### Infrastructure and Operations
+
+* DNS
+* SSL
 * SPF
 * DKIM
 * DMARC
 * Production QA
 * Regression testing
+* Source control
 
-### Data and Internal Systems
+### Observability Architecture Lab
 
-* Supabase
-* Google Sheets
-* Airtable
-* CSV workflows
-* Structured JSON
-* Operational reporting
-* Role aware business systems
-* Internal workflow tools
-
-## Selected Technical Work
-
-### Production Website and Conversion Systems
-
-Implementation work includes responsive frontend development, forms, booking and inquiry routing, performance checks, production deployment, tracking, and regression testing.
-
-### Analytics Architecture
-
-Implementation work includes Google Tag Manager deployment, GA4 event configuration, conversion measurement, UTM handling, analytics audits, and production verification.
-
-### CRM Lifecycle Systems
-
-Implementation work includes lead intake, pipeline movement, lifecycle stages, tags, follow up workflows, booking logic, communication sequences, and operational cleanup.
-
-### API and Webhook Integrations
-
-Implementation work includes REST APIs, webhooks, payload mapping, data routing, error handling, logging, retry logic, and multi platform integrations.
-
-### Internal Business Applications
-
-Implementation work includes role aware application behavior, employee and operational records, attendance, tasks, leave, payroll related workflows, AI assisted lookup, automated testing, and production build validation.
-
-### Technical SEO and Production Operations
-
-Implementation work includes metadata, heading structure, indexation review, search readiness, DNS, domains, deployment, and production QA.
-
-## Architecture Lab
-
-### Enterprise Monitoring and Observability
-
-This portfolio includes a separate **demonstration environment** focused on enterprise monitoring and observability architecture.
-
-The lab is designed to demonstrate practical understanding of concepts related to:
-
-* Azure Monitor
-* Log Analytics
+* Azure Monitor concepts
+* Log Analytics concepts
 * KQL
-* Application Performance Monitoring
-* Service health
-* Centralized logging
-* Grafana style dashboards
-* Incident workflows
-* Alerting
+* APM
+* Grafana style visualization
 * ServiceNow ITOM concepts
 * AIOps concepts
-* Service dependency mapping
-* Ansible based remediation concepts
+* Ansible concepts
 
-The monitoring environment uses simulated operational data and is not presented as a live enterprise client deployment.
-
-## Engineering Approach
-
-I typically work through four stages.
+## Engineering Process
 
 ### Audit
 
-Review the current system, integrations, data flow, dependencies, technical issues, and production constraints.
+Review the current system, architecture, data flow, integrations, dependencies, and production risks.
 
 ### Design
 
-Define the workflow, system ownership, integration logic, tracking requirements, error handling, and implementation plan.
+Define the system structure, database relationships, APIs, workflow logic, integration points, monitoring requirements, and failure handling.
 
 ### Implement
 
-Build or configure the required frontend, backend, API, CRM, automation, analytics, deployment, or operational components.
+Build the required frontend, backend, database, integration, automation, tracking, and deployment components.
 
 ### Verify
 
-Run build checks, responsive QA, production testing, regression review, source control checks, and technical validation.
+Run build checks, test APIs, review logs, validate data, perform responsive QA, regression testing, and production verification.
 
-## Technical Principles
+## Engineering Principles
 
 I focus on systems that are:
 
-* Understandable
 * Maintainable
 * Testable
+* Observable
 * Reliable
-* Properly documented
+* Structured
+* Secure by role
 * Easier to troubleshoot
-* Designed to reduce duplicate logic and fragile workflows
+* Documented clearly
 
 ## Live Portfolio
-
-**Portfolio Website**
 
 https://qir05.github.io/PortfolioEbberdos/
 
 ## GitHub
 
 https://github.com/Qir05/PortfolioEbberdos
-
-## Contact
-
-If you are reviewing this portfolio for a software, web development, automation, CRM, systems integration, analytics, technical implementation, or operations role, the live portfolio contains the main technical overview and contact information.
