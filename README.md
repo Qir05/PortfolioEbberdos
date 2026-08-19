@@ -1,99 +1,225 @@
-# Portfolio — Software & Web Developer | Automation & CRM Specialist
+# Erique Berdos Portfolio
 
-This repository contains my personal portfolio showcasing my work as a **Software & Web Developer turned Automation & CRM Specialist**, focused on building reliable backend systems, workflow automation, and multi-platform integrations.
+This repository contains my technical portfolio covering **Software Development, Web Systems, Backend Integrations, CRM Architecture, Workflow Automation, Analytics Implementation, Technical SEO, Deployment, QA, and Systems Operations**.
 
-The projects and examples here reflect **real-world production systems**, not demos — designed for scalability, maintainability, and error handling.
-
----
+The portfolio reflects practical implementation work across multiple platforms and technical environments. Production work and demonstration projects are clearly separated so the scope stays accurate and easy to evaluate.
 
 ## Professional Focus
 
-I work at the intersection of **software development, backend automation, and CRM systems**, helping teams streamline operations, automate workflows, and maintain clean, reliable data flows.
+I work across connected technical systems rather than treating websites, automation, CRM, analytics, and backend logic as separate pieces.
 
-My background in **Software & Web Development** allows me to approach automation with an engineering mindset — prioritizing structure, logic, and long-term stability over quick setups.
+My work commonly includes:
 
----
+* Web application and website implementation
+* Backend APIs and webhook integrations
+* CRM architecture and lifecycle automation
+* Workflow automation and operational logic
+* Analytics and conversion tracking
+* Technical SEO and search readiness
+* Deployment and production verification
+* Data synchronization and reporting
+* Internal business systems
+* QA, troubleshooting, and technical documentation
 
-## What This Portfolio Demonstrates
+My software and web development background helps me approach automation and CRM work with an engineering mindset focused on structure, maintainability, testing, and reliable system behavior.
 
-- Backend workflow automation and system design  
-- CRM architecture and lifecycle automation  
-- API and webhook-based integrations  
-- Multi-branch logic with conditions, filters, and error handling  
-- Scalable automation built for real business use cases  
+## Core Technical Areas
 
----
+### Software and Web Development
 
-## Core Areas of Work
+* HTML
+* CSS
+* JavaScript
+* Next.js
+* React
+* Responsive interface implementation
+* Forms and routing
+* Performance and mobile QA
+* Production deployment
 
-### Backend Automation
-- Workflow orchestration using Zapier, n8n, and Make  
-- Conditional logic, routers, retries, and error handling  
-- Scheduled automations, queues, and rate-safe processing  
+### Backend and Integrations
 
-### CRM Systems
-- CRM setup and optimization (GoHighLevel, HubSpot)  
-- Pipeline architecture and lifecycle workflows  
-- Lead routing, tagging, scoring, and deduplication  
+* REST APIs
+* Webhooks
+* JSON payload handling
+* Data mapping
+* Authentication aware integrations
+* Third party system connections
+* Error handling
+* Retry logic
+* Logging and troubleshooting
 
-### Integrations & APIs
-- Webhook-driven integrations  
-- API-based data sync across tools  
-- Form → CRM → automation → reporting pipelines  
+### CRM Architecture and Automation
 
----
+* GoHighLevel
+* HubSpot
+* PracticeQ
+* IntakeQ
+* Pipeline architecture
+* Lead lifecycle workflows
+* Lead routing
+* Tags and stages
+* Booking workflows
+* Follow up automation
+* Email and SMS sequences
+* CRM cleanup and optimization
 
-## Tools & Technologies
+### Workflow Automation
 
-**Automation & Integration**
-- Zapier  
-- n8n  
-- Make  
-- Webhooks & APIs  
+* Zapier
+* n8n
+* Make
+* Conditional workflow logic
+* Multi step automation
+* Scheduled processes
+* Retry and fallback handling
+* Data synchronization
+* Operational workflow design
 
-**CRM Platforms**
-- GoHighLevel  
-- HubSpot  
+### Analytics and Tracking
 
-**Development & Deployment**
-- HTML / CSS  
-- GitHub Pages  
+* Google Tag Manager
+* Google Analytics 4
+* Custom event tracking
+* Conversion tracking
+* UTM persistence
+* Funnel and CTA measurement
+* Analytics implementation audits
+* Duplicate event review
+* Microsoft Clarity
 
----
+### Technical SEO and Search
+
+* Technical SEO audits
+* Metadata implementation
+* Heading structure
+* Crawl and indexation controls
+* Local search optimization
+* Search visibility improvements
+* AEO implementation concepts
+* GEO implementation concepts
+
+### Deployment and Web Operations
+
+* Git
+* GitHub
+* GitHub Pages
+* Vercel
+* Cloudways
+* WordPress
+* Kadence
+* Squarespace
+* DNS
+* SSL
+* SPF
+* DKIM
+* DMARC
+* Production QA
+* Regression testing
+
+### Data and Internal Systems
+
+* Supabase
+* Google Sheets
+* Airtable
+* CSV workflows
+* Structured JSON
+* Operational reporting
+* Role aware business systems
+* Internal workflow tools
+
+## Selected Technical Work
+
+### Production Website and Conversion Systems
+
+Implementation work includes responsive frontend development, forms, booking and inquiry routing, performance checks, production deployment, tracking, and regression testing.
+
+### Analytics Architecture
+
+Implementation work includes Google Tag Manager deployment, GA4 event configuration, conversion measurement, UTM handling, analytics audits, and production verification.
+
+### CRM Lifecycle Systems
+
+Implementation work includes lead intake, pipeline movement, lifecycle stages, tags, follow up workflows, booking logic, communication sequences, and operational cleanup.
+
+### API and Webhook Integrations
+
+Implementation work includes REST APIs, webhooks, payload mapping, data routing, error handling, logging, retry logic, and multi platform integrations.
+
+### Internal Business Applications
+
+Implementation work includes role aware application behavior, employee and operational records, attendance, tasks, leave, payroll related workflows, AI assisted lookup, automated testing, and production build validation.
+
+### Technical SEO and Production Operations
+
+Implementation work includes metadata, heading structure, indexation review, search readiness, DNS, domains, deployment, and production QA.
+
+## Architecture Lab
+
+### Enterprise Monitoring and Observability
+
+This portfolio includes a separate **demonstration environment** focused on enterprise monitoring and observability architecture.
+
+The lab is designed to demonstrate practical understanding of concepts related to:
+
+* Azure Monitor
+* Log Analytics
+* KQL
+* Application Performance Monitoring
+* Service health
+* Centralized logging
+* Grafana style dashboards
+* Incident workflows
+* Alerting
+* ServiceNow ITOM concepts
+* AIOps concepts
+* Service dependency mapping
+* Ansible based remediation concepts
+
+The monitoring environment uses simulated operational data and is not presented as a live enterprise client deployment.
+
+## Engineering Approach
+
+I typically work through four stages.
+
+### Audit
+
+Review the current system, integrations, data flow, dependencies, technical issues, and production constraints.
+
+### Design
+
+Define the workflow, system ownership, integration logic, tracking requirements, error handling, and implementation plan.
+
+### Implement
+
+Build or configure the required frontend, backend, API, CRM, automation, analytics, deployment, or operational components.
+
+### Verify
+
+Run build checks, responsive QA, production testing, regression review, source control checks, and technical validation.
+
+## Technical Principles
+
+I focus on systems that are:
+
+* Understandable
+* Maintainable
+* Testable
+* Reliable
+* Properly documented
+* Easier to troubleshoot
+* Designed to reduce duplicate logic and fragile workflows
 
 ## Live Portfolio
 
-🔗 **Portfolio Website:**  
+**Portfolio Website**
+
 https://qir05.github.io/PortfolioEbberdos/
 
----
+## GitHub
 
-## Work Philosophy
+https://github.com/Qir05/PortfolioEbberdos
 
-I don’t just “connect tools.”  
-I design **systems** — automation that is understandable, debuggable, and resilient under real-world usage.
+## Contact
 
-My goal is to ensure that workflows continue working even as teams, data volume, and complexity grow.
-
----
-
-## Scope of Projects
-
-Typical systems I build or maintain include:
-- Lead capture to CRM pipelines  
-- Automated follow-ups and lifecycle sequences  
-- No-show recovery and re-engagement loops  
-- Multi-tool data synchronization  
-- System audits, cleanup, and optimization  
-
----
-
-## Background
-
-- Software & Web Development foundation  
-- Strong hands-on experience in CRM and automation systems  
-- Focused on backend reliability, not surface-level setups  
-
----
-
-If you’re reviewing this portfolio as a recruiter, technical lead, or client, feel free to explore the live site for detailed case studies and workflow examples.
+If you are reviewing this portfolio for a software, web development, automation, CRM, systems integration, analytics, technical implementation, or operations role, the live portfolio contains the main technical overview and contact information.
