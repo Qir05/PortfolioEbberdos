@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Eriq Berdos technical portfolio. 10+ years across software development, web engineering, backend systems, databases, APIs, CRM automation, analytics, deployment, technical operations, QA, and systems integration." />
+  <meta name="description" content="Eriq Berdos technical portfolio covering software engineering, full stack web development, backend systems, databases, APIs, CRM automation, analytics, deployment, QA, and systems operations." />
   <title>Eriq Berdos | Senior Software, Web, Backend and Systems Engineer</title>
 
   <style>
     :root{
       --bg:#071019;
       --bg2:#0b1520;
-      --panel:#111c29;
-      --panel2:#0d1722;
-      --text:#f6fbff;
-      --muted:#b9c7d6;
+      --panel:#101b28;
+      --panel-soft:#0d1722;
+      --text:#f7fbff;
+      --muted:#b8c6d6;
       --soft:#8394a8;
       --line:rgba(255,255,255,.085);
-      --line2:rgba(255,255,255,.13);
+      --line-strong:rgba(255,255,255,.13);
       --accent:#37d7f4;
       --accent-soft:rgba(55,215,244,.09);
       --accent-line:rgba(55,215,244,.24);
@@ -53,14 +53,13 @@
         linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
       background-size:44px 44px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.10));
     }
 
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%}
     .wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
     .section{padding:82px 0}
-    .section.compact{padding-top:30px}
+    .compact{padding-top:30px}
 
     nav{
       position:sticky;
@@ -84,7 +83,6 @@
       align-items:center;
       gap:10px;
       font-weight:900;
-      letter-spacing:.01em;
     }
 
     .brand-dot{
@@ -122,7 +120,6 @@
 
     .badge{
       display:inline-flex;
-      align-items:center;
       padding:7px 11px;
       border-radius:999px;
       border:1px solid var(--accent-line);
@@ -167,30 +164,24 @@
       border:1px solid transparent;
       font-size:14px;
       font-weight:900;
-      transition:.18s ease;
     }
-
-    .btn:hover{transform:translateY(-1px)}
 
     .btn.primary{
       color:#041117;
       background:var(--accent);
-      box-shadow:0 12px 30px rgba(55,215,244,.16);
     }
 
     .btn.secondary{
       color:#eef6fc;
       background:rgba(255,255,255,.035);
-      border-color:var(--line2);
+      border-color:var(--line-strong);
     }
 
     .profile{
       padding:28px;
-      border:1px solid var(--line2);
+      border:1px solid var(--line-strong);
       border-radius:24px;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(55,215,244,.09), transparent 36%),
-        rgba(17,28,41,.82);
+      background:rgba(16,27,40,.82);
       box-shadow:var(--shadow);
     }
 
@@ -200,7 +191,7 @@
       object-fit:cover;
       border-radius:50%;
       border:3px solid rgba(55,215,244,.80);
-      box-shadow:0 0 0 9px rgba(55,215,244,.06),0 22px 58px rgba(0,0,0,.36);
+      box-shadow:0 0 0 9px rgba(55,215,244,.06);
       margin-bottom:20px;
     }
 
@@ -221,17 +212,19 @@
       height:9px;
       border-radius:50%;
       background:var(--success);
-      box-shadow:0 0 14px rgba(98,209,141,.65);
     }
 
-    .tags{
+    .tags,
+    .tool-list{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      margin-top:18px;
     }
 
-    .tag{
+    .tags{margin-top:18px}
+
+    .tag,
+    .tool{
       padding:7px 10px;
       border-radius:999px;
       border:1px solid var(--line);
@@ -268,7 +261,6 @@
       height:8px;
       border-radius:50%;
       background:var(--accent);
-      box-shadow:0 0 14px rgba(55,215,244,.75);
     }
 
     .section-title{
@@ -292,63 +284,33 @@
       gap:18px;
     }
 
-    .grid-4{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:16px;
-    }
-
-    .card{
-      padding:22px;
-      border:1px solid var(--line2);
+    .card,
+    .tool-group,
+    .work-card,
+    .layer{
+      border:1px solid var(--line-strong);
       border-radius:var(--radius);
-      background:rgba(17,28,41,.75);
-      box-shadow:var(--shadow);
+      background:rgba(16,27,40,.75);
     }
 
+    .card{padding:22px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 8px;font-size:17px}
     .card p{margin:0;color:var(--muted);font-size:14px}
     .card ul{margin:14px 0 0 18px;padding:0;color:#cbd6e2;font-size:13.5px}
     .card li{margin:5px 0}
 
-    .layer{
-      padding:20px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:rgba(255,255,255,.025);
-    }
-
+    .layer{padding:20px}
     .layer h3{margin:0 0 7px;font-size:15px}
     .layer p{margin:0;color:var(--muted);font-size:13px}
 
-    .tool-group{
-      padding:20px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:rgba(13,23,34,.74);
-    }
-
+    .tool-group{padding:20px}
     .tool-group h3{margin:0 0 14px;font-size:14px}
-    .tool-list{display:flex;flex-wrap:wrap;gap:8px}
-
-    .tool{
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:#d8e3ee;
-      font-size:12px;
-      font-weight:750;
-    }
 
     .work-card{
-      min-height:330px;
+      min-height:320px;
       display:flex;
       flex-direction:column;
       padding:22px;
-      border-radius:var(--radius);
-      border:1px solid var(--line2);
-      background:rgba(13,23,34,.76);
       box-shadow:var(--shadow);
     }
 
@@ -374,11 +336,9 @@
 
     .architecture-panel{
       padding:24px;
-      border:1px solid var(--line2);
+      border:1px solid var(--line-strong);
       border-radius:22px;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(55,215,244,.08), transparent 36%),
-        rgba(17,28,41,.76);
+      background:rgba(16,27,40,.76);
       box-shadow:var(--shadow);
     }
 
@@ -394,26 +354,8 @@
       color:#f6deb0;
       font-size:11px;
       font-weight:900;
-      letter-spacing:.06em;
       text-transform:uppercase;
     }
-
-    .metrics{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:10px;
-      margin-top:18px;
-    }
-
-    .metric{
-      padding:14px;
-      border:1px solid var(--line);
-      border-radius:13px;
-      background:rgba(0,0,0,.18);
-    }
-
-    .metric strong{display:block;margin-bottom:4px;font-size:18px}
-    .metric span{color:var(--soft);font-size:12px}
 
     .arch-items{display:grid;gap:11px}
 
@@ -444,30 +386,19 @@
     .process-step h3{margin:0 0 7px;font-size:15px}
     .process-step p{margin:0;color:var(--muted);font-size:13px}
 
-    .repo-card,
     .contact-card{
       display:grid;
       grid-template-columns:1fr auto;
       gap:22px;
       align-items:center;
-      padding:27px;
+      padding:28px;
       border-radius:22px;
-      border:1px solid var(--line2);
-      background:rgba(17,28,41,.72);
+      border:1px solid var(--accent-line);
+      background:rgba(16,27,40,.78);
       box-shadow:var(--shadow);
     }
 
-    .contact-card{
-      border-color:var(--accent-line);
-      background:
-        radial-gradient(circle at 0% 0%, rgba(55,215,244,.08), transparent 35%),
-        rgba(17,28,41,.74);
-    }
-
-    .repo-card h3,
     .contact-card h2{margin:0 0 8px}
-
-    .repo-card p,
     .contact-card p{margin:0;color:var(--muted)}
 
     footer{
@@ -479,21 +410,9 @@
 
     @media(max-width:1000px){
       .hero-grid,
-      .architecture{
-        grid-template-columns:1fr;
-      }
-
-      .grid-4{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .grid-3{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .process{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
+      .architecture{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .process{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
 
     @media(max-width:720px){
@@ -505,13 +424,8 @@
       .hero h1{max-width:none}
       .grid-2,
       .grid-3,
-      .grid-4,
-      .process,
-      .metrics{
-        grid-template-columns:1fr;
-      }
+      .process{grid-template-columns:1fr}
       .section-head{align-items:flex-start;flex-direction:column}
-      .repo-card,
       .contact-card{grid-template-columns:1fr}
       .photo{width:132px;height:132px}
     }
@@ -528,12 +442,12 @@
 
       <div class="nav-links">
         <a href="#capabilities">Capabilities</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#development">Development</a>
-        <a href="#tools">Tools</a>
-        <a href="#work">Work</a>
+        <a href="#architecture">Systems Architecture</a>
+        <a href="#development">Development Expertise</a>
+        <a href="#tools">Tools and Platforms</a>
+        <a href="#work">Technical Work</a>
         <a href="#lab">Observability Lab</a>
-        <a href="#process">Process</a>
+        <a href="#process">Engineering Process</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -543,40 +457,38 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <div class="badge">10+ Years in Software, Web, Backend, Automation and Systems Work</div>
+          <div class="badge">10+ Years Across Software Development, Web Engineering, Backend Systems, Automation and Technical Operations</div>
 
           <h1>Full stack systems built for real operations.</h1>
 
           <p>
             I design, build, integrate, and support <strong>web applications, backend services, databases, APIs,
             CRM systems, automation workflows, analytics, deployment environments, and production operations</strong>.
-            My work covers the complete technical path from interface and application logic to data, integrations,
-            reliability, monitoring, QA, and production verification.
+            My work covers the complete technical lifecycle from application interfaces and backend logic to data,
+            integrations, reliability, monitoring, QA, and production verification.
           </p>
 
           <div class="buttons">
-            <a class="btn primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
-            <a class="btn secondary" href="#work">View Technical Work</a>
+            <a class="btn primary" href="#work">View Technical Work</a>
+            <a class="btn secondary" href="#architecture">View Systems Architecture</a>
             <a class="btn secondary" href="https://github.com/Qir05" target="_blank" rel="noopener">Open GitHub</a>
           </div>
 
           <div class="hero-note">
-            Core focus includes software engineering, full stack web development, backend systems, databases, APIs, integrations, CRM architecture, automation, analytics, deployment, QA, and technical operations.
+            Core Focus: Software Engineering, Full Stack Web Development, Backend Systems, Databases, APIs, Integrations, CRM Architecture, Automation, Analytics, Deployment, QA, and Technical Operations.
           </div>
         </div>
 
         <aside class="profile">
           <img class="photo" src="assets/erique-photo.png" alt="Eriq Berdos" />
-
           <div class="profile-role">Senior Software, Web, Backend and Systems Engineer</div>
-
           <div class="profile-copy">
             Technical implementation across application, backend, database, integration, automation, analytics, deployment, and operations layers.
           </div>
 
           <div class="status">
             <span class="status-dot"></span>
-            <span>Remote technical implementation and systems work</span>
+            <span>Remote Technical Implementation and Systems Work</span>
           </div>
 
           <div class="tags">
@@ -601,62 +513,43 @@
       <div class="wrap">
         <div class="section-head">
           <div class="section-copy">
-            <div class="kicker">Capabilities</div>
-            <h2 class="section-title">Complete technical implementation from application to production</h2>
+            <div class="kicker">Technical Capabilities</div>
+            <h2 class="section-title">Complete Technical Implementation from Application to Production</h2>
             <p class="section-sub">
-              I work across multiple disciplines that are often split between developers, backend engineers, database specialists,
-              automation engineers, CRM admins, analytics implementers, and technical operations teams.
+              I work across multiple technical disciplines that are often divided between frontend developers, backend engineers, database specialists, automation engineers, analytics implementers, and technical operations teams.
             </p>
           </div>
         </div>
 
         <div class="grid-2">
           <article class="card">
-            <h3>Software Engineering and Application Development</h3>
-            <p>
-              Web applications, internal tools, responsive interfaces, application logic, routing, forms, dashboards,
-              user flows, admin workflows, state handling, integrations, testing, deployment, and production support.
-            </p>
+            <h3>Software and Application Engineering</h3>
+            <p>Web applications, internal applications, admin interfaces, responsive interfaces, forms, routing, reusable components, application workflows, testing, deployment, and production support.</p>
           </article>
 
           <article class="card">
             <h3>Backend Engineering and API Systems</h3>
-            <p>
-              REST APIs, webhook endpoints, server side business rules, structured payload processing, validation,
-              authentication aware logic, role based access, error handling, retry behavior, logging, and integration orchestration.
-            </p>
+            <p>REST APIs, webhook endpoints, server side business logic, JSON processing, validation, authentication aware workflows, role based authorization logic, retries, logging, failure recovery, and third party integrations.</p>
           </article>
 
           <article class="card">
             <h3>Database Architecture and Data Operations</h3>
-            <p>
-              Supabase and PostgreSQL based systems, relational data structures, operational records, submissions,
-              permissions, data synchronization, reporting data, structured exports, audit friendly records, and data integrity checks.
-            </p>
+            <p>Supabase, PostgreSQL, relational data structures, operational records, submissions, permissions, CRM synchronized data, reporting data, structured JSON, CSV workflows, and data integrity checks.</p>
           </article>
 
           <article class="card">
             <h3>CRM Architecture and Business Automation</h3>
-            <p>
-              GoHighLevel and HubSpot systems covering lead capture, lifecycle stages, pipelines, tags, routing,
-              booking, communications, follow up logic, recovery flows, cleanup, and operational automation.
-            </p>
+            <p>GoHighLevel, HubSpot, PracticeQ, IntakeQ, pipeline architecture, lead lifecycle logic, tags, routing, booking workflows, email automation, SMS automation, recovery logic, and system cleanup.</p>
           </article>
 
           <article class="card">
             <h3>Analytics, Tracking and Search Systems</h3>
-            <p>
-              Google Tag Manager, GA4, custom events, conversion tracking, UTM persistence, analytics audits,
-              Microsoft Clarity, technical SEO, local search, indexation controls, AEO, and GEO implementation.
-            </p>
+            <p>Google Tag Manager, Google Analytics 4, Microsoft Clarity, custom events, conversion tracking, UTM persistence, technical SEO, local SEO, AEO, GEO, and search readiness.</p>
           </article>
 
           <article class="card">
             <h3>Deployment, Reliability and Technical Operations</h3>
-            <p>
-              Git checkpoints, production builds, Vercel, Cloudways, GitHub Pages, DNS, SSL, sending domain configuration,
-              responsive QA, regression testing, troubleshooting, release validation, and production verification.
-            </p>
+            <p>Git, GitHub, Vercel, Cloudways, GitHub Pages, DNS, SSL, email domain configuration, production builds, responsive QA, regression testing, troubleshooting, release validation, and production verification.</p>
           </article>
         </div>
       </div>
@@ -666,10 +559,10 @@
       <div class="wrap">
         <div class="section-head">
           <div class="section-copy">
-            <div class="kicker">System Architecture</div>
-            <h2 class="section-title">Engineering across every major system layer</h2>
+            <div class="kicker">Systems Architecture</div>
+            <h2 class="section-title">Engineering Across the Complete Application Lifecycle</h2>
             <p class="section-sub">
-              The portfolio is structured around system responsibility, not just tools. Each layer has clear ownership, data flow, validation, failure handling, and operational visibility.
+              Each system layer has a clear responsibility so application behavior, data flow, integrations, reliability, and production operations remain understandable and maintainable.
             </p>
           </div>
         </div>
@@ -677,32 +570,32 @@
         <div class="grid-3">
           <div class="layer">
             <h3>Application Layer</h3>
-            <p>Web applications, portals, dashboards, forms, booking flows, user interfaces, internal tools, and admin experiences.</p>
+            <p>Web Applications, Internal Tools, Dashboards, Forms, Booking Interfaces, Admin Interfaces, and User Workflows.</p>
           </div>
 
           <div class="layer">
             <h3>Backend Layer</h3>
-            <p>APIs, webhook processing, server logic, validation, authentication, permissions, retries, error handling, and business rules.</p>
+            <p>REST APIs, Webhook Processing, Business Logic, Validation, Authentication, Authorization Concepts, Role Based Access, Retry Handling, Error Handling, and Logging.</p>
           </div>
 
           <div class="layer">
             <h3>Database Layer</h3>
-            <p>Relational records, operational data, submissions, user data, access control, CRM synchronized records, reporting data, and audit history.</p>
+            <p>Supabase, PostgreSQL, Relational Records, Operational Data, Submissions, Permissions, Reporting Data, Audit Friendly Records, and Integration Identifiers.</p>
           </div>
 
           <div class="layer">
             <h3>Integration Layer</h3>
-            <p>REST integrations, webhooks, Zapier, n8n, Make, CRM platforms, third party services, data mapping, and synchronization.</p>
+            <p>REST APIs, Webhooks, Zapier, n8n, Make, CRM Platforms, Third Party Services, Payload Mapping, and Data Synchronization.</p>
           </div>
 
           <div class="layer">
             <h3>Observability Layer</h3>
-            <p>Logs, errors, service health, API performance, monitoring concepts, alerting, telemetry, investigation, and production verification.</p>
+            <p>Application Logs, API Telemetry, Service Health, Database Health, Performance Metrics, Error Tracking, Alerting Concepts, and Operational Investigation.</p>
           </div>
 
           <div class="layer">
             <h3>Operations Layer</h3>
-            <p>Source control, deployment, DNS, SSL, email deliverability, QA, regression checks, production releases, troubleshooting, and documentation.</p>
+            <p>Source Control, Deployment, DNS, SSL, Production QA, Regression Testing, Release Validation, Troubleshooting, and Technical Documentation.</p>
           </div>
         </div>
       </div>
@@ -713,10 +606,7 @@
         <div class="section-head">
           <div class="section-copy">
             <div class="kicker">Development Expertise</div>
-            <h2 class="section-title">Strong web, application, backend, and platform implementation</h2>
-            <p class="section-sub">
-              This section shows the actual development responsibilities behind the portfolio rather than listing only HTML, CSS, and JavaScript.
-            </p>
+            <h2 class="section-title">Strong Frontend, Backend, Database and Engineering Operations Capability</h2>
           </div>
         </div>
 
@@ -724,72 +614,88 @@
           <article class="card">
             <h3>Frontend and Web Engineering</h3>
             <ul>
-              <li>Semantic HTML and responsive CSS</li>
-              <li>JavaScript application behavior</li>
-              <li>React and Next.js applications</li>
-              <li>Responsive layout systems</li>
-              <li>Reusable component architecture</li>
-              <li>Forms and validation</li>
-              <li>Client side and server side routing</li>
-              <li>Dynamic content and state driven UI</li>
-              <li>API connected interfaces</li>
-              <li>Mobile and cross browser QA</li>
-              <li>Performance and usability review</li>
-              <li>Analytics and event tracking integration</li>
+              <li>Semantic HTML</li>
+              <li>Modern CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Responsive Layout Systems</li>
+              <li>Reusable Components</li>
+              <li>Component Architecture</li>
+              <li>Forms and Validation</li>
+              <li>Client Side Routing</li>
+              <li>Server Side Routing</li>
+              <li>Dynamic Content</li>
+              <li>State Driven Interfaces</li>
+              <li>API Connected Interfaces</li>
+              <li>Mobile QA</li>
+              <li>Cross Browser QA</li>
+              <li>Performance Review</li>
+              <li>Analytics Integration</li>
+              <li>Accessibility Awareness</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Backend Engineering</h3>
             <ul>
-              <li>REST API design and integration</li>
-              <li>Webhook endpoints and event processing</li>
-              <li>Server side business logic</li>
-              <li>JSON request and response handling</li>
-              <li>Data validation and mapping</li>
-              <li>Authentication aware workflows</li>
-              <li>Role based permissions and access logic</li>
-              <li>Error handling and failure recovery</li>
-              <li>Retry logic and duplicate prevention</li>
-              <li>Logging and troubleshooting</li>
-              <li>Third party service integration</li>
-              <li>Backend orchestration for internal systems</li>
+              <li>REST API Implementation</li>
+              <li>Webhook Endpoints</li>
+              <li>Server Side Logic</li>
+              <li>JSON Request and Response Processing</li>
+              <li>Payload Validation</li>
+              <li>Data Mapping</li>
+              <li>Authentication Aware Workflows</li>
+              <li>Role Based Authorization Logic</li>
+              <li>Business Rules</li>
+              <li>Error Handling</li>
+              <li>Retry Logic</li>
+              <li>Duplicate Prevention</li>
+              <li>Logging</li>
+              <li>Third Party Integrations</li>
+              <li>Backend Orchestration</li>
+              <li>Internal Application Workflows</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Database and Data Engineering</h3>
             <ul>
-              <li>Supabase application data</li>
-              <li>PostgreSQL relational data concepts</li>
-              <li>Table and record structure</li>
-              <li>Role based data access</li>
-              <li>Submission and operational data storage</li>
-              <li>CRM synchronized data</li>
-              <li>Employee and internal business records</li>
-              <li>Structured JSON data</li>
-              <li>CSV imports and exports</li>
-              <li>Google Sheets and Airtable data flows</li>
-              <li>Reporting data preparation</li>
-              <li>Data integrity and duplicate prevention</li>
+              <li>Supabase</li>
+              <li>PostgreSQL</li>
+              <li>Relational Data Structures</li>
+              <li>Application Records</li>
+              <li>Operational Data</li>
+              <li>Submission Storage</li>
+              <li>Role Based Data Access</li>
+              <li>CRM Synchronized Data</li>
+              <li>Structured JSON</li>
+              <li>CSV Imports and Exports</li>
+              <li>Google Sheets</li>
+              <li>Airtable</li>
+              <li>Reporting Data Preparation</li>
+              <li>Data Integrity Checks</li>
+              <li>Duplicate Prevention</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Engineering Quality and Production Readiness</h3>
             <ul>
-              <li>Git based source control</li>
-              <li>Branch and repository checkpoints</li>
-              <li>Production build validation</li>
-              <li>Automated test coverage where applicable</li>
-              <li>Regression testing</li>
+              <li>Git Source Control</li>
+              <li>Repository Checkpoints</li>
+              <li>Production Build Validation</li>
+              <li>TypeScript Validation Where Applicable</li>
+              <li>Linting</li>
+              <li>Automated Testing Where Applicable</li>
+              <li>Regression Testing</li>
+              <li>API Validation</li>
               <li>Responsive QA</li>
-              <li>Browser console review</li>
-              <li>API behavior validation</li>
-              <li>Production verification</li>
-              <li>Error investigation and troubleshooting</li>
-              <li>Technical documentation</li>
-              <li>Release safety and rollback awareness</li>
+              <li>Console Error Review</li>
+              <li>Production Verification</li>
+              <li>Technical Troubleshooting</li>
+              <li>Technical Documentation</li>
+              <li>Release Safety</li>
             </ul>
           </article>
         </div>
@@ -801,10 +707,8 @@
         <div class="section-head">
           <div class="section-copy">
             <div class="kicker">Tools and Platforms</div>
-            <h2 class="section-title">Technical stack used across implementation work</h2>
-            <p class="section-sub">
-              Tools are grouped by responsibility so reviewers can understand how they are used inside the system.
-            </p>
+            <h2 class="section-title">Technical Stack Used Across Implementation Work</h2>
+            <p class="section-sub">Tools are grouped by responsibility so reviewers can see how they fit into the system.</p>
           </div>
         </div>
 
@@ -833,7 +737,7 @@
               <span class="tool">Server Logic</span>
               <span class="tool">Validation</span>
               <span class="tool">Role Based Logic</span>
-              <span class="tool">Retries</span>
+              <span class="tool">Retry Handling</span>
               <span class="tool">Logging</span>
               <span class="tool">Error Handling</span>
             </div>
@@ -845,10 +749,10 @@
               <span class="tool">Supabase</span>
               <span class="tool">PostgreSQL</span>
               <span class="tool">Relational Data</span>
+              <span class="tool">Structured JSON</span>
               <span class="tool">Google Sheets</span>
               <span class="tool">Airtable</span>
               <span class="tool">CSV</span>
-              <span class="tool">Structured JSON</span>
               <span class="tool">Operational Reporting</span>
             </div>
           </div>
@@ -861,7 +765,7 @@
               <span class="tool">Make</span>
               <span class="tool">Conditional Logic</span>
               <span class="tool">Scheduled Workflows</span>
-              <span class="tool">Retry Handling</span>
+              <span class="tool">Retries</span>
               <span class="tool">Data Synchronization</span>
             </div>
           </div>
@@ -874,8 +778,8 @@
               <span class="tool">PracticeQ</span>
               <span class="tool">IntakeQ</span>
               <span class="tool">Calendly</span>
+              <span class="tool">Pipeline Architecture</span>
               <span class="tool">Lifecycle Automation</span>
-              <span class="tool">Pipelines</span>
               <span class="tool">Lead Routing</span>
             </div>
           </div>
@@ -887,7 +791,8 @@
               <span class="tool">Google Analytics 4</span>
               <span class="tool">Microsoft Clarity</span>
               <span class="tool">Custom Events</span>
-              <span class="tool">UTM Tracking</span>
+              <span class="tool">Conversion Tracking</span>
+              <span class="tool">UTM Persistence</span>
               <span class="tool">Technical SEO</span>
               <span class="tool">Local SEO</span>
               <span class="tool">AEO</span>
@@ -903,23 +808,14 @@
               <span class="tool">GitHub Pages</span>
               <span class="tool">Vercel</span>
               <span class="tool">Cloudways</span>
+              <span class="tool">WordPress</span>
+              <span class="tool">Kadence</span>
+              <span class="tool">Squarespace</span>
               <span class="tool">DNS</span>
               <span class="tool">SSL</span>
               <span class="tool">SPF</span>
               <span class="tool">DKIM</span>
               <span class="tool">DMARC</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>CMS and Web Platforms</h3>
-            <div class="tool-list">
-              <span class="tool">WordPress</span>
-              <span class="tool">Kadence</span>
-              <span class="tool">Squarespace</span>
-              <span class="tool">GitHub Pages</span>
-              <span class="tool">Vercel Hosting</span>
-              <span class="tool">Cloudways Hosting</span>
             </div>
           </div>
 
@@ -935,6 +831,20 @@
               <span class="tool">Source Control Checks</span>
             </div>
           </div>
+
+          <div class="tool-group">
+            <h3>Observability Architecture Lab</h3>
+            <div class="tool-list">
+              <span class="tool">Azure Monitor Concepts</span>
+              <span class="tool">Log Analytics</span>
+              <span class="tool">KQL</span>
+              <span class="tool">APM</span>
+              <span class="tool">Grafana Style Dashboards</span>
+              <span class="tool">ServiceNow ITOM Concepts</span>
+              <span class="tool">AIOps Concepts</span>
+              <span class="tool">Ansible Concepts</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -944,10 +854,7 @@
         <div class="section-head">
           <div class="section-copy">
             <div class="kicker">Selected Technical Work</div>
-            <h2 class="section-title">Production systems, backend workflows, analytics, and internal applications</h2>
-            <p class="section-sub">
-              Client details remain private. These examples describe the technical responsibilities, architecture, and system behavior.
-            </p>
+            <h2 class="section-title">Production Systems, Backend Workflows, Analytics and Internal Applications</h2>
           </div>
         </div>
 
@@ -955,79 +862,37 @@
           <article class="work-card">
             <div class="work-type">Full Stack Engineering</div>
             <h3>Production Web Application and Backend Systems</h3>
-            <p>Frontend interfaces connected to backend logic, APIs, forms, routing, data handling, tracking, deployment, and production QA.</p>
-            <ul>
-              <li>Responsive application interfaces</li>
-              <li>Backend integration points</li>
-              <li>Forms and data capture</li>
-              <li>Production build validation</li>
-              <li>Mobile and regression QA</li>
-            </ul>
+            <p>Frontend interfaces connected to backend logic, forms, routing, APIs, data handling, tracking, deployment, and production QA.</p>
           </article>
 
           <article class="work-card">
             <div class="work-type">Backend and Database</div>
-            <h3>Role Aware Internal Business Systems</h3>
-            <p>Internal applications involving employee records, attendance, tasks, leave, payroll related workflows, permissions, AI assisted lookup, backend orchestration, and testing.</p>
-            <ul>
-              <li>Role based backend behavior</li>
-              <li>Structured data handling</li>
-              <li>Database connected application flows</li>
-              <li>Automated test coverage</li>
-              <li>Production build checks</li>
-            </ul>
+            <h3>Role Based Internal Business Systems</h3>
+            <p>Internal applications involving operational records, employee data, permissions, attendance, tasks, leave, payroll related workflows, backend orchestration, and testing.</p>
           </article>
 
           <article class="work-card">
             <div class="work-type">Integration Engineering</div>
             <h3>API and Webhook Data Systems</h3>
             <p>Multi platform integrations connecting web applications, forms, CRM systems, automation tools, and downstream operational processes.</p>
-            <ul>
-              <li>REST and webhook integration</li>
-              <li>Payload validation and mapping</li>
-              <li>Logging and failure handling</li>
-              <li>Retry and duplicate prevention</li>
-              <li>Data synchronization</li>
-            </ul>
           </article>
 
           <article class="work-card">
             <div class="work-type">CRM and Automation</div>
             <h3>Lead Lifecycle and Operational Automation</h3>
             <p>CRM workflows covering lead intake, pipelines, tags, routing, communications, booking logic, follow up automation, recovery flows, and system cleanup.</p>
-            <ul>
-              <li>GoHighLevel workflow configuration</li>
-              <li>Lifecycle and routing logic</li>
-              <li>Email and SMS automation</li>
-              <li>Pause and resume behavior</li>
-              <li>Operational cleanup</li>
-            </ul>
           </article>
 
           <article class="work-card">
             <div class="work-type">Analytics Engineering</div>
             <h3>GTM and GA4 Event Architecture</h3>
-            <p>Analytics audits and tracking implementations focused on centralized measurement, cleaner event architecture, and reliable production verification.</p>
-            <ul>
-              <li>Google Tag Manager deployment</li>
-              <li>GA4 custom events</li>
-              <li>UTM persistence</li>
-              <li>Duplicate tracking review</li>
-              <li>Live production verification</li>
-            </ul>
+            <p>Analytics audits and tracking implementations focused on centralized measurement, clean event architecture, and reliable production verification.</p>
           </article>
 
           <article class="work-card">
             <div class="work-type">Web Operations</div>
             <h3>Technical SEO, Deployment and Production Operations</h3>
-            <p>Search visibility and technical operations covering metadata, indexation, local search, domains, deployment, analytics, QA, and production verification.</p>
-            <ul>
-              <li>Technical SEO implementation</li>
-              <li>Local search and answer engine readiness</li>
-              <li>DNS and domain operations</li>
-              <li>SSL and sending domain configuration</li>
-              <li>Release and regression testing</li>
-            </ul>
+            <p>Search visibility and technical operations covering metadata, indexation, local search, DNS, SSL, deployment, analytics, QA, and production verification.</p>
           </article>
         </div>
       </div>
@@ -1039,9 +904,7 @@
           <div class="section-copy">
             <div class="kicker">Architecture Lab</div>
             <h2 class="section-title">Enterprise Monitoring and Observability</h2>
-            <p class="section-sub">
-              A clearly labeled portfolio demonstration used to show architecture thinking around service health, monitoring, logging, performance, incidents, correlation, and remediation.
-            </p>
+            <p class="section-sub">A clearly labeled demonstration environment used to show architecture thinking around monitoring, logging, performance, incidents, correlation, and remediation.</p>
           </div>
         </div>
 
@@ -1049,9 +912,7 @@
           <div class="architecture-panel">
             <div class="demo-label">Demonstration Environment</div>
             <h3>Observability Command Center</h3>
-            <p>
-              The lab models an enterprise environment with applications, APIs, databases, cloud resources, service dependencies, centralized telemetry, incidents, and remediation concepts.
-            </p>
+            <p>The lab models an enterprise environment with applications, APIs, databases, cloud resources, service dependencies, centralized telemetry, incidents, and remediation concepts.</p>
 
             <div class="tags">
               <span class="tag">Azure Monitor Concepts</span>
@@ -1063,35 +924,25 @@
               <span class="tag">AIOps Concepts</span>
               <span class="tag">Ansible Concepts</span>
             </div>
-
-            <div class="metrics">
-              <div class="metric"><strong>99.94%</strong><span>Simulated service availability</span></div>
-              <div class="metric"><strong>38 of 40</strong><span>Simulated healthy services</span></div>
-              <div class="metric"><strong>7</strong><span>Simulated open incidents</span></div>
-              <div class="metric"><strong>287 ms</strong><span>Simulated average API latency</span></div>
-            </div>
           </div>
 
           <div class="architecture-panel">
             <div class="arch-items">
               <div class="arch-item">
                 <strong>Application Performance</strong>
-                <span>Request volume, latency, error rate, endpoint health, dependencies, slow operations, and service status.</span>
+                <span>Request Volume, Latency, Error Rate, Endpoint Health, Dependencies, and Service Status.</span>
               </div>
-
               <div class="arch-item">
                 <strong>Database and Infrastructure Health</strong>
-                <span>Availability, connection pressure, resource utilization, database health, service health, cloud resources, and hybrid infrastructure.</span>
+                <span>Availability, Connection Pressure, Resource Utilization, Database Health, and Service Health.</span>
               </div>
-
               <div class="arch-item">
                 <strong>Logging and Investigation</strong>
-                <span>Centralized logs, correlation identifiers, severity levels, KQL style investigation, application errors, and operational events.</span>
+                <span>Centralized Logs, Correlation Identifiers, Severity Levels, KQL Style Investigation, and Operational Events.</span>
               </div>
-
               <div class="arch-item">
                 <strong>Incident and Response</strong>
-                <span>Alert rules, incident severity, service ownership, SLA awareness, AIOps style correlation, and automated remediation concepts.</span>
+                <span>Alert Rules, Incident Severity, Service Ownership, SLA Awareness, AIOps Style Correlation, and Remediation Concepts.</span>
               </div>
             </div>
           </div>
@@ -1104,10 +955,7 @@
         <div class="section-head">
           <div class="section-copy">
             <div class="kicker">Engineering Process</div>
-            <h2 class="section-title">A disciplined implementation and verification process</h2>
-            <p class="section-sub">
-              The process starts with understanding the current environment and ends with production validation.
-            </p>
+            <h2 class="section-title">A Disciplined Implementation and Verification Process</h2>
           </div>
         </div>
 
@@ -1115,42 +963,25 @@
           <div class="process-step">
             <div class="num">01</div>
             <h3>Audit</h3>
-            <p>Review architecture, code, data flow, integrations, dependencies, existing issues, and production risks.</p>
+            <p>Review Architecture, Code, Data Flow, Database Structure, Integrations, Dependencies, Analytics, Deployment, and Production Risks.</p>
           </div>
 
           <div class="process-step">
             <div class="num">02</div>
             <h3>Design</h3>
-            <p>Define system structure, database relationships, API behavior, workflow logic, monitoring needs, and failure handling.</p>
+            <p>Define Application Structure, Database Relationships, API Behavior, Permissions, Workflow Logic, Monitoring Needs, and Failure Handling.</p>
           </div>
 
           <div class="process-step">
             <div class="num">03</div>
             <h3>Implement</h3>
-            <p>Build the application, backend, database, integrations, automation, analytics, deployment, and operational components.</p>
+            <p>Build the Application, Backend, Database, Integrations, Automation, Analytics, Deployment, and Operational Components.</p>
           </div>
 
           <div class="process-step">
             <div class="num">04</div>
             <h3>Verify</h3>
-            <p>Run build checks, API validation, log review, data checks, responsive QA, regression testing, and production verification.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section compact">
-      <div class="wrap">
-        <div class="repo-card">
-          <div>
-            <h3>GitHub Repository</h3>
-            <p>
-              Source code and portfolio documentation are available in the repository. Public case studies focus on technical implementation while keeping private client systems confidential.
-            </p>
-          </div>
-
-          <div class="buttons" style="margin:0">
-            <a class="btn secondary" href="https://github.com/Qir05/PortfolioEbberdos" target="_blank" rel="noopener">Open Repository</a>
+            <p>Run Build Checks, API Validation, Log Review, Data Checks, Responsive QA, Regression Testing, and Production Verification.</p>
           </div>
         </div>
       </div>
@@ -1160,10 +991,8 @@
       <div class="wrap">
         <div class="contact-card">
           <div>
-            <h2>Need someone who can work across the full technical stack?</h2>
-            <p>
-              Software development, web applications, backend systems, databases, APIs, CRM automation, analytics, deployment, QA, and technical operations.
-            </p>
+            <h2>Need Someone Who Can Work Across the Full Technical Stack?</h2>
+            <p>Software Development, Web Applications, Backend Systems, Databases, APIs, CRM Automation, Analytics, Deployment, QA, and Technical Operations.</p>
           </div>
 
           <div class="buttons" style="margin:0">
