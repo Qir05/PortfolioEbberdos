@@ -3,650 +3,1293 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eriq Berdos — Software, Web & Automation Engineer</title>
+  <meta
+    name="description"
+    content="Eriq Berdos portfolio covering software development, web systems, backend integrations, CRM automation, analytics implementation, technical SEO, deployment, QA, and systems operations."
+  />
+  <title>Eriq Berdos | Software, Web, Automation and Systems Engineer</title>
 
   <style>
     :root{
-      --bg:#070b12;
-      --bg2:#0b1320;
-      --card:rgba(18, 24, 36, .72);
-      --card2:rgba(18, 24, 36, .58);
-      --muted:#cfd6e6;
-      --text:#ffffff;
-      --brand:#11e0ff;
-      --brand2:#6a7dff;
+      --bg:#071019;
+      --bg-soft:#0c1723;
+      --panel:#111c29;
+      --panel-soft:#0e1824;
+      --text:#f7fbff;
+      --muted:#b8c6d6;
+      --soft:#8091a5;
       --line:rgba(255,255,255,.08);
-      --pill:rgba(17,224,255,.10);
-      --pill-border:rgba(17,224,255,.22);
-      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --line-strong:rgba(255,255,255,.13);
+      --accent:#38d7f4;
+      --accent-soft:rgba(56,215,244,.10);
+      --accent-border:rgba(56,215,244,.24);
+      --success:#67d391;
+      --warning:#f2c86b;
+      --shadow:0 24px 70px rgba(0,0,0,.40);
+      --radius:18px;
+      --radius-small:12px;
+      --max:1160px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
+      min-height:100%;
       color:var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.55;
-      background: linear-gradient(180deg, var(--bg), var(--bg2));
+      background:
+        radial-gradient(circle at 15% 0%, rgba(56,215,244,.11), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(83,120,255,.08), transparent 25%),
+        linear-gradient(180deg, var(--bg), var(--bg-soft));
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.6;
       overflow-x:hidden;
     }
-    a{color:var(--brand);text-decoration:none}
-    a:hover{opacity:.95}
-    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-    .section{padding:72px 0}
-    .section-title{font-size:28px;letter-spacing:.2px;margin:0 0 18px}
-    .section-sub{margin:0 0 26px;color:rgba(207,214,230,.86);max-width:78ch}
 
-    /* =========================================================
-       FULL-PAGE ANIMATED "MICROCHIP / CIRCUIT" BACKGROUND
-       ========================================================= */
     body::before{
       content:"";
       position:fixed;
       inset:0;
-      z-index:-3;
-      pointer-events:none;
-      background-image:
-        radial-gradient(1200px 700px at 15% 0%, rgba(17,224,255,.18), transparent 60%),
-        radial-gradient(1000px 600px at 90% 10%, rgba(106,125,255,.14), transparent 62%),
-        radial-gradient(900px 700px at 55% 100%, rgba(17,224,255,.08), transparent 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2311e0ff' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%236a7dff' stop-opacity='.35'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2.2' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='520' height='520' fill='none'/%3E%3Cg filter='url(%23glow)' stroke='url(%23g)' stroke-width='1.2' fill='none' stroke-linecap='round'%3E%3Cpath d='M40 110H210M210 110V70H310M310 70H470'/%3E%3Cpath d='M60 210H180M180 210V320H310M310 320H460'/%3E%3Cpath d='M90 420H240M240 420V260H410M410 260V120'/%3E%3Cpath d='M80 60V160H120M120 160V260H60'/%3E%3Cpath d='M460 460H340V400H260V460H60'/%3E%3Cpath d='M300 150H360V210H440'/%3E%3Cpath d='M150 360H210V300H260'/%3E%3C/g%3E%3Cg fill='%2311e0ff' fill-opacity='.25'%3E%3Ccircle cx='210' cy='110' r='4'/%3E%3Ccircle cx='310' cy='70' r='4'/%3E%3Ccircle cx='180' cy='210' r='4'/%3E%3Ccircle cx='310' cy='320' r='4'/%3E%3Ccircle cx='410' cy='260' r='4'/%3E%3Ccircle cx='340' cy='400' r='4'/%3E%3Ccircle cx='260' cy='460' r='4'/%3E%3Ccircle cx='360' cy='210' r='4'/%3E%3Ccircle cx='210' cy='300' r='4'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: cover, cover, cover, 520px 520px;
-      background-repeat: no-repeat, no-repeat, no-repeat, repeat;
-      transform: translateZ(0);
-      animation: bgDrift 16s linear infinite;
-    }
-
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
+      z-index:-1;
       pointer-events:none;
       background:
-        repeating-linear-gradient(
-          180deg,
-          rgba(17,224,255,.045) 0px,
-          rgba(17,224,255,.045) 1px,
-          rgba(0,0,0,0) 6px,
-          rgba(0,0,0,0) 12px
-        );
-      mix-blend-mode:screen;
-      opacity:.35;
-      animation: scan 10s linear infinite;
+        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.15));
     }
 
-    .bg-vignette{
-      position:fixed; inset:0; z-index:-1; pointer-events:none;
-      background:
-        radial-gradient(900px 520px at 50% 0%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(900px 520px at 50% 100%, rgba(0,0,0,.55), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55));
-      opacity:.9;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    @keyframes bgDrift{
-      0%   { background-position: 0% 0%, 0% 0%, 0% 0%, 0 0; filter:hue-rotate(0deg); }
-      50%  { background-position: 10% 6%, -8% 4%, 5% -6%, -260px 180px; filter:hue-rotate(10deg); }
-      100% { background-position: 0% 0%, 0% 0%, 0% 0%, -520px 360px; filter:hue-rotate(0deg); }
-    }
-    @keyframes scan{
-      0%   { transform: translateY(-40px); }
-      100% { transform: translateY(40px); }
+    img{
+      max-width:100%;
+      display:block;
     }
 
-    /* NAV */
-    nav{
-      position:sticky; top:0; z-index:50;
-      background: rgba(7, 11, 18, .70);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
-    .logo{
-      font-weight:800; letter-spacing:.4px;
-      display:flex; align-items:center; gap:10px;
-    }
-    .logo-dot{
-      width:10px;height:10px;border-radius:50%;
-      background: var(--brand);
-      box-shadow: 0 0 22px rgba(17,224,255,.9);
-    }
-    .links a{
-      margin-left:18px;
-      color: rgba(207,214,230,.92);
-      font-weight:600;
-      font-size:14px;
-    }
-    .links a:hover{color:#fff}
-
-    /* HERO */
-    .hero{ padding:92px 0 58px; border-bottom:1px solid var(--line); }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:28px;
-      align-items:center;
-    }
-    .badge{
-      display:inline-block;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      background: var(--pill);
-      border:1px solid var(--pill-border);
-      color: rgba(207,214,230,.95);
-      margin-bottom:12px;
-    }
-    .hero h1{
-      margin:0 0 12px;
-      font-size:44px;
-      line-height:1.08;
-      letter-spacing:.2px;
-      text-shadow: 0 10px 40px rgba(0,0,0,.55);
-    }
-    .hero p{
-      margin:0 0 18px;
-      color: rgba(207,214,230,.88);
-      max-width: 68ch;
-    }
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 16px; border-radius:12px;
-      font-weight:800; font-size:14px;
-      border:1px solid transparent;
-      cursor:pointer;
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-    }
-    .btn.primary{background: var(--brand); color:#061018;}
-    .btn.secondary{
-      background: rgba(18,24,36,.55);
-      color: rgba(235,242,255,.94);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(8px);
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .photo-wrap{display:flex; justify-content:center;}
-    .photo{
-      width: 240px; height:240px;
-      border-radius: 50%;
-      border: 3px solid rgba(17,224,255,.85);
-      box-shadow: 0 0 0 10px rgba(17,224,255,.08), 0 30px 70px rgba(0,0,0,.55);
-      object-fit: cover;
-      background: rgba(255,255,255,.05);
+    .wrap{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
     }
 
-    /* CARDS */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:18px;
-    }
-    .card{
-      background: var(--card);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:16px;
-      padding:18px 18px 16px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-    .card h3{margin:0 0 10px;font-size:16px}
-    .card p{margin:0;color: rgba(207,214,230,.88); font-size:14px}
-
-    /* TOOLS pills */
-    .pill-row{display:flex;flex-wrap:wrap;gap:10px}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(18,24,36,.55);
-      border:1px solid rgba(255,255,255,.10);
-      color: rgba(235,242,255,.92);
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.2px;
-      backdrop-filter: blur(8px);
-    }
-    .pill .dot{
-      width:7px;height:7px;border-radius:50%;
-      background: var(--brand);
-      box-shadow:0 0 12px rgba(17,224,255,.85);
+    .section{
+      padding:78px 0;
     }
 
-    /* CASES */
-    .cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .case{
-      background: var(--card2);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:16px;
-      padding:18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      display:flex; flex-direction:column; gap:10px;
-      min-height: 230px;
-    }
-    .case h4{margin:0;font-size:15px}
-    .case p{margin:0;color: rgba(207,214,230,.88); font-size:13.5px}
-    .case ul{margin:6px 0 0 18px;color: rgba(207,214,230,.88); font-size:13.5px}
-    .case .btn{margin-top:auto; width: fit-content}
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:26px 0;
-      color: rgba(207,214,230,.70);
-      font-size:13px;
+    .section.compact{
+      padding-top:28px;
     }
 
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr;}
-      .photo-wrap{justify-content:flex-start}
-      .hero h1{font-size:38px}
-      .cases{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-    }
-
-    /* =========================================================
-       ✅ ADDED ONLY: "Full-bleed" Docs section (README + Wiki)
-       - Full-width (100vw) background band
-       ========================================================= */
-    .fullbleed{
-      width:100vw;
-      margin-left:calc(50% - 50vw);
-      padding:0;
-    }
-    .docs-band{
-      padding:54px 0 64px;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      background:
-        radial-gradient(1200px 620px at 20% 0%, rgba(17,224,255,.08), transparent 60%),
-        radial-gradient(900px 540px at 90% 30%, rgba(106,125,255,.07), transparent 62%),
-        rgba(18,24,36,.10);
-      backdrop-filter: blur(6px);
-    }
-    .docs-grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap:18px;
-      align-items:start;
-    }
-    .doc-card{
-      background: var(--card);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:16px;
-      padding:18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      min-height: 420px;
-      overflow:hidden;
-    }
-    .doc-head{
+    .section-head{
       display:flex;
-      align-items:flex-start;
+      align-items:flex-end;
       justify-content:space-between;
-      gap:10px;
-      margin-bottom:10px;
+      gap:24px;
+      margin-bottom:28px;
     }
-    .doc-head h3{margin:0;font-size:16px}
-    .doc-head .mini{
-      font-size:12px;
-      color: rgba(207,214,230,.78);
-      margin-top:2px;
+
+    .section-copy{
+      max-width:780px;
     }
-    .doc-actions{
-      display:flex;
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
       gap:8px;
+      color:#dffbff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .kicker::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 16px rgba(56,215,244,.75);
+    }
+
+    .section-title{
+      margin:10px 0 0;
+      font-size:clamp(28px, 4vw, 40px);
+      line-height:1.12;
+      letter-spacing:-.03em;
+    }
+
+    .section-sub{
+      margin:12px 0 0;
+      color:var(--muted);
+      max-width:74ch;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:40;
+      border-bottom:1px solid var(--line);
+      background:rgba(7,16,25,.84);
+      backdrop-filter:blur(14px);
+    }
+
+    nav .wrap{
+      min-height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.01em;
+    }
+
+    .brand-mark{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 18px rgba(56,215,244,.8);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-    .doc-actions a{
+
+    .nav-links a{
+      color:#d0d9e5;
+      font-size:13px;
+      font-weight:700;
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover{
+      color:#fff;
+    }
+
+    .hero{
+      padding:96px 0 72px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.18fr) minmax(280px,.82fr);
+      gap:44px;
+      align-items:center;
+    }
+
+    .hero-label{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--accent-border);
+      background:var(--accent-soft);
+      color:#dbfbff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.03em;
+    }
+
+    .hero h1{
+      margin:18px 0;
+      max-width:14ch;
+      font-size:clamp(44px, 7vw, 72px);
+      line-height:1.01;
+      letter-spacing:-.05em;
+    }
+
+    .hero-lead{
+      margin:0;
+      max-width:72ch;
+      color:#d3dce7;
+      font-size:17px;
+    }
+
+    .hero-lead strong{
+      color:#fff;
+    }
+
+    .hero-note{
+      margin-top:18px;
+      color:var(--soft);
+      font-size:13px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .button{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:7px 10px;
-      border-radius:10px;
-      font-weight:800;
-      font-size:12px;
-      background: rgba(18,24,36,.55);
-      border:1px solid rgba(255,255,255,.10);
-      color: rgba(235,242,255,.92);
-      backdrop-filter: blur(8px);
+      min-height:44px;
+      padding:10px 16px;
+      border-radius:11px;
+      border:1px solid transparent;
+      font-size:14px;
+      font-weight:900;
+      transition:.18s ease;
     }
-    .doc-actions a:hover{opacity:.95}
 
-    .md{
-      color: rgba(235,242,255,.92);
+    .button:hover{
+      transform:translateY(-1px);
+    }
+
+    .button.primary{
+      color:#041117;
+      background:var(--accent);
+      box-shadow:0 12px 30px rgba(56,215,244,.16);
+    }
+
+    .button.secondary{
+      color:#edf5fb;
+      background:rgba(255,255,255,.035);
+      border-color:var(--line-strong);
+    }
+
+    .profile-card{
+      position:relative;
+      overflow:hidden;
+      padding:26px;
+      border:1px solid var(--line-strong);
+      border-radius:24px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56,215,244,.10), transparent 36%),
+        rgba(17,28,41,.82);
+      box-shadow:var(--shadow);
+    }
+
+    .photo{
+      width:156px;
+      height:156px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid rgba(56,215,244,.82);
+      box-shadow:0 0 0 9px rgba(56,215,244,.06), 0 24px 60px rgba(0,0,0,.35);
+      margin-bottom:20px;
+    }
+
+    .profile-role{
+      font-size:17px;
+      font-weight:900;
+    }
+
+    .profile-copy{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .availability{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      margin-top:18px;
+      color:#d9e4ef;
+      font-size:13px;
+    }
+
+    .availability-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--success);
+      box-shadow:0 0 14px rgba(103,211,145,.65);
+    }
+
+    .mini-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .mini-tag{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:#dce7f2;
+      font-size:12px;
+      font-weight:750;
+    }
+
+    .capabilities{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      padding:21px;
+      border:1px solid var(--line-strong);
+      border-radius:var(--radius);
+      background:rgba(17,28,41,.76);
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:17px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .card ul{
+      margin:14px 0 0 18px;
+      padding:0;
+      color:#cbd6e2;
       font-size:13.5px;
-      line-height:1.65;
-      max-height: 340px;
-      overflow:auto;
-      padding-right:6px;
     }
-    .md h1,.md h2,.md h3{margin:14px 0 8px; line-height:1.2}
-    .md h1{font-size:18px}
-    .md h2{font-size:16px}
-    .md h3{font-size:14px}
-    .md p{margin:8px 0; color: rgba(207,214,230,.90)}
-    .md a{color: var(--brand)}
-    .md ul{margin:8px 0 8px 18px; color: rgba(207,214,230,.90)}
-    .md li{margin:4px 0}
-    .md code{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 12.5px;
-      background: rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.10);
-      padding:2px 6px;
-      border-radius:8px;
+
+    .card li{
+      margin:5px 0;
     }
-    .md pre{
-      background: rgba(0,0,0,.40);
-      border:1px solid rgba(255,255,255,.10);
+
+    .tool-groups{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .tool-group{
+      padding:20px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:rgba(14,24,36,.72);
+    }
+
+    .tool-group h3{
+      margin:0 0 14px;
+      font-size:14px;
+    }
+
+    .tool-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .tool{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:#d8e3ef;
+      font-size:12px;
+      font-weight:750;
+    }
+
+    .work-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .work-card{
+      display:flex;
+      flex-direction:column;
+      min-height:320px;
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid var(--line-strong);
+      background:rgba(14,24,36,.74);
+      box-shadow:var(--shadow);
+    }
+
+    .work-type{
+      margin-bottom:10px;
+      color:var(--accent);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .work-card h3{
+      margin:0 0 9px;
+      font-size:18px;
+    }
+
+    .work-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13.5px;
+    }
+
+    .work-card ul{
+      margin:14px 0 0 18px;
+      padding:0;
+      color:#cbd6e2;
+      font-size:13px;
+    }
+
+    .work-card li{
+      margin:5px 0;
+    }
+
+    .system-flow{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .flow-step{
+      position:relative;
+      min-height:110px;
+      padding:16px;
+      border:1px solid var(--line);
       border-radius:14px;
-      padding:12px;
-      overflow:auto;
-      margin:10px 0;
+      background:rgba(255,255,255,.025);
     }
-    .md pre code{
-      background: transparent;
-      border: none;
-      padding: 0;
+
+    .flow-step strong{
+      display:block;
+      margin-bottom:5px;
+      font-size:13px;
     }
-    .md hr{
-      border:0;
-      border-top:1px solid rgba(255,255,255,.10);
-      margin:12px 0;
+
+    .flow-step span{
+      color:var(--soft);
+      font-size:12px;
     }
-    .md .muted{
-      color: rgba(207,214,230,.72);
-      font-size: 12.5px;
-      margin-top: 8px;
+
+    .lab-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
     }
-    @media (max-width: 920px){
-      .docs-grid{grid-template-columns:1fr}
-      .doc-card{min-height: 360px}
-      .md{max-height: 260px}
+
+    .lab-panel{
+      padding:24px;
+      border:1px solid var(--line-strong);
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56,215,244,.08), transparent 35%),
+        rgba(17,28,41,.76);
+      box-shadow:var(--shadow);
+    }
+
+    .lab-panel h3{
+      margin:12px 0 9px;
+      font-size:24px;
+    }
+
+    .lab-panel p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .demo-label{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(242,200,107,.25);
+      background:rgba(242,200,107,.07);
+      color:#f7deb0;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .metric-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .metric{
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:rgba(0,0,0,.18);
+    }
+
+    .metric strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:18px;
+    }
+
+    .metric span{
+      color:var(--soft);
+      font-size:12px;
+    }
+
+    .lab-list{
+      display:grid;
+      gap:11px;
+      margin-top:6px;
+    }
+
+    .lab-item{
+      padding:14px 15px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .lab-item strong{
+      display:block;
+      margin-bottom:3px;
+      font-size:13px;
+    }
+
+    .lab-item span{
+      color:var(--soft);
+      font-size:12px;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .process-step{
+      padding:19px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.025);
+    }
+
+    .process-number{
+      color:var(--accent);
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .process-step h3{
+      margin:0 0 7px;
+      font-size:15px;
+    }
+
+    .process-step p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .repo-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:22px;
+      align-items:center;
+      padding:26px;
+      border:1px solid var(--line-strong);
+      border-radius:22px;
+      background:rgba(17,28,41,.72);
+      box-shadow:var(--shadow);
+    }
+
+    .repo-card h3{
+      margin:0 0 8px;
+      font-size:22px;
+    }
+
+    .repo-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .contact-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:22px;
+      align-items:center;
+      padding:28px;
+      border:1px solid var(--accent-border);
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56,215,244,.09), transparent 35%),
+        rgba(17,28,41,.74);
+    }
+
+    .contact-card h2{
+      margin:0 0 8px;
+      font-size:28px;
+    }
+
+    .contact-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:28px 0;
+      border-top:1px solid var(--line);
+      color:var(--soft);
+      font-size:13px;
+    }
+
+    @media(max-width:980px){
+      .hero-grid,
+      .lab-grid{
+        grid-template-columns:1fr;
+      }
+
+      .work-grid,
+      .tool-groups{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .system-flow{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .process-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media(max-width:720px){
+      .wrap{
+        width:min(var(--max), calc(100% - 28px));
+      }
+
+      nav .wrap{
+        align-items:flex-start;
+        padding:14px 0;
+      }
+
+      .nav-links{
+        gap:10px;
+      }
+
+      .nav-links a{
+        font-size:12px;
+      }
+
+      .hero{
+        padding:72px 0 54px;
+      }
+
+      .hero h1{
+        max-width:none;
+      }
+
+      .capabilities,
+      .work-grid,
+      .tool-groups,
+      .system-flow,
+      .process-grid,
+      .metric-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-head{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .repo-card,
+      .contact-card{
+        grid-template-columns:1fr;
+      }
+
+      .photo{
+        width:132px;
+        height:132px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="bg-vignette"></div>
-
   <nav>
     <div class="wrap">
-      <div class="logo"><span class="logo-dot"></span> Eriq Berdos</div>
-      <div class="links">
-        <a href="#services">What I Do</a>
+      <a class="brand" href="#top">
+        <span class="brand-mark"></span>
+        <span>Eriq Berdos</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#capabilities">Capabilities</a>
         <a href="#tools">Tools</a>
-        <a href="#cases">Case Studies</a>
-        <a href="#docs">Docs</a>
+        <a href="#work">Work</a>
+        <a href="#lab">Architecture Lab</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero">
+  <header id="top" class="hero">
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <div class="badge">Software & Web • Backend • Automation • CRM Engineering</div>
-          <h1>Build websites from scratch, integrate APIs, and automate CRMs clean, stable, end-to-end.</h1>
-          <p>
-            I build <strong>websites + backend systems</strong>, then connect them to <strong>CRMs + automation</strong> so your
-            business runs on a reliable system (not duct tape). From website to backend to integrations to operations.
+          <div class="hero-label">Software, Web, Automation and Systems Engineering</div>
+
+          <h1>Technical systems built to work together.</h1>
+
+          <p class="hero-lead">
+            I build and improve <strong>web applications, backend integrations, CRM workflows, analytics systems,
+            deployment pipelines, and operational tooling</strong>. My work focuses on the full implementation path,
+            from user interaction and data capture to automation, reporting, production verification, and long term maintainability.
           </p>
 
-          <div class="btns">
-            <a class="btn primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
-            <a class="btn secondary" href="#cases">See Case Studies</a>
+          <div class="buttons">
+            <a class="button primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">
+              Book a Call
+            </a>
+            <a class="button secondary" href="#work">
+              View Technical Work
+            </a>
+            <a class="button secondary" href="https://github.com/Qir05" target="_blank" rel="noopener">
+              Open GitHub
+            </a>
           </div>
 
-          <p class="section-sub" style="margin:14px 0 0; font-size:13px;">
-            Focus: Website Build • Backend APIs • Webhooks • CRM Architecture • Automation • Data Sync • Reporting • Error Handling
-          </p>
+          <div class="hero-note">
+            Current focus includes web systems, APIs, CRM architecture, automation, analytics implementation, technical SEO, deployment, QA, and systems integration.
+          </div>
         </div>
 
-        <div class="photo-wrap">
+        <aside class="profile-card">
           <img class="photo" src="assets/erique-photo.png" alt="Eriq Berdos" />
-        </div>
+
+          <div class="profile-role">Software, Web, Automation and Systems Engineer</div>
+
+          <p class="profile-copy">
+            Engineering focused implementation across websites, backend workflows, CRM operations, analytics, integrations, and production systems.
+          </p>
+
+          <div class="availability">
+            <span class="availability-dot"></span>
+            <span>Remote technical implementation and systems work</span>
+          </div>
+
+          <div class="mini-tags">
+            <span class="mini-tag">Next.js</span>
+            <span class="mini-tag">REST APIs</span>
+            <span class="mini-tag">GoHighLevel</span>
+            <span class="mini-tag">GTM</span>
+            <span class="mini-tag">GA4</span>
+            <span class="mini-tag">Vercel</span>
+            <span class="mini-tag">Supabase</span>
+          </div>
+        </aside>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- WHAT I DO -->
-    <section id="services" class="section">
+    <section id="capabilities" class="section">
       <div class="wrap">
-        <h2 class="section-title">What I Do</h2>
-        <p class="section-sub">
-          Strong software + IT foundation, not just automation. I build systems properly from the ground up.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Software & Web Development (From Scratch)</h3>
-            <p>Build websites/web apps: structure, UI, routing, performance, forms, tracking, and deployment.</p>
+        <div class="section-head">
+          <div class="section-copy">
+            <div class="kicker">Capabilities</div>
+            <h2 class="section-title">Work across the full technical implementation layer</h2>
+            <p class="section-sub">
+              My work is not limited to one platform. I handle the connection points between frontend systems,
+              backend logic, CRM operations, analytics, deployment, and production support.
+            </p>
           </div>
+        </div>
 
-          <div class="card">
-            <h3>Backend Systems, APIs & Webhooks</h3>
-            <p>REST APIs, webhooks, auth, payload mapping, logging, retries—clean, testable, and documented.</p>
-          </div>
+        <div class="capabilities">
+          <article class="card">
+            <h3>Software and Web Development</h3>
+            <p>
+              Responsive websites and web applications with routing, forms, APIs, state handling, tracking,
+              performance checks, deployment, and production QA.
+            </p>
+          </article>
 
-          <div class="card">
-            <h3>Automation & Orchestration</h3>
-            <p>Zapier / n8n / Make workflows with routers, queues, fallbacks, dedupe locks, and safe error handling.</p>
-          </div>
+          <article class="card">
+            <h3>Backend APIs and Integrations</h3>
+            <p>
+              REST APIs, webhooks, JSON payload mapping, authentication aware integrations, third party systems,
+              retries, logging, and error handling.
+            </p>
+          </article>
 
-          <div class="card">
-            <h3>CRM Setup & Lifecycle Automation</h3>
-            <p>GoHighLevel / HubSpot pipelines, lead routing, tagging, scoring, lifecycle stages, and automation cleanup.</p>
-          </div>
+          <article class="card">
+            <h3>CRM Architecture and Lifecycle Automation</h3>
+            <p>
+              GoHighLevel and HubSpot systems covering lead capture, pipeline stages, tags, routing, follow up logic,
+              booking workflows, communications, and operational cleanup.
+            </p>
+          </article>
 
-          <div class="card">
-            <h3>Data Sync, Sheets, Databases & Reporting</h3>
-            <p>CRM → Sheets/DB dashboards, KPI snapshots, exports/imports, and management reporting.</p>
-          </div>
+          <article class="card">
+            <h3>Analytics and Conversion Tracking</h3>
+            <p>
+              Google Tag Manager, GA4, custom events, conversion tracking, UTM handling, funnel measurement,
+              implementation audits, and duplicate event prevention.
+            </p>
+          </article>
 
-          <div class="card">
-            <h3>System Audits, Fixes & Scale</h3>
-            <p>Fix double-triggers, missed events, broken routing; reduce tech debt; document SOPs for long-term stability.</p>
-          </div>
+          <article class="card">
+            <h3>Technical SEO and Search Readiness</h3>
+            <p>
+              Metadata, heading structure, indexation controls, local search support, search visibility improvements,
+              structured content, and answer engine readiness.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Deployment, QA and Systems Operations</h3>
+            <p>
+              Git checkpoints, production builds, Vercel, Cloudways, DNS, SSL, sending domain configuration,
+              responsive QA, regression checks, and release verification.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- TOOLS -->
-    <section id="tools" class="section" style="padding-top:10px;">
+    <section id="tools" class="section compact">
       <div class="wrap">
-        <h2 class="section-title">Tools I Use</h2>
-        <p class="section-sub">Full stack across IT + Web Dev + Automation + CRM + VA operations.</p>
-
-        <div class="pill-row">
-          <span class="pill"><span class="dot"></span> HTML / CSS / JS</span>
-          <span class="pill"><span class="dot"></span> GitHub / GitHub Pages</span>
-          <span class="pill"><span class="dot"></span> Domains / DNS</span>
-          <span class="pill"><span class="dot"></span> Webhooks</span>
-          <span class="pill"><span class="dot"></span> REST APIs</span>
-          <span class="pill"><span class="dot"></span> Zapier</span>
-          <span class="pill"><span class="dot"></span> n8n</span>
-          <span class="pill"><span class="dot"></span> Make (Integromat)</span>
-          <span class="pill"><span class="dot"></span> GoHighLevel</span>
-          <span class="pill"><span class="dot"></span> HubSpot</span>
-          <span class="pill"><span class="dot"></span> Google Sheets</span>
-          <span class="pill"><span class="dot"></span> Airtable</span>
-          <span class="pill"><span class="dot"></span> CSV Imports/Exports</span>
-          <span class="pill"><span class="dot"></span> Calendly</span>
-          <span class="pill"><span class="dot"></span> Gmail</span>
-          <span class="pill"><span class="dot"></span> Zoom</span>
-          <span class="pill"><span class="dot"></span> SOPs / VA Ops</span>
-          <span class="pill"><span class="dot"></span> QA / Troubleshooting</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CASE STUDIES -->
-    <section id="cases" class="section">
-      <div class="wrap">
-        <h2 class="section-title">Case Studies (Snapshots)</h2>
-        <p class="section-sub">Short examples of real systems I build (architecture-first, reliability-focused).</p>
-
-        <div class="cases">
-          <div class="case">
-            <h4>Website + Booking + CRM Pipeline</h4>
-            <p>Landing page → form capture → CRM create/update → auto follow-ups → booked calls.</p>
-            <ul>
-              <li>Form tracking + routing</li>
-              <li>Dedupe + lifecycle stage updates</li>
-              <li>Email/SMS reminders + no-show recovery</li>
-            </ul>
-            <a class="btn secondary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
-          </div>
-
-          <div class="case">
-            <h4>API + Webhook Integrations</h4>
-            <p>Connect tools via REST + webhooks with clean payload mapping and error handling.</p>
-            <ul>
-              <li>Structured data mapping</li>
-              <li>Retries + fallbacks + logging</li>
-              <li>Alerting for failed runs</li>
-            </ul>
-            <a class="btn secondary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
-          </div>
-
-          <div class="case">
-            <h4>Automation Cleanup & Reliability Fix</h4>
-            <p>Stop double triggers, missing tags, and broken routing—make the system stable again.</p>
-            <ul>
-              <li>Audit triggers + remove duplicates</li>
-              <li>Standardize tags + stages</li>
-              <li>Document SOPs for the team</li>
-            </ul>
-            <a class="btn secondary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
+        <div class="section-head">
+          <div class="section-copy">
+            <div class="kicker">Tools and Platforms</div>
+            <h2 class="section-title">Technical stack used across real implementation work</h2>
+            <p class="section-sub">
+              Tools are grouped by function so reviewers can see where they fit in the system instead of seeing one long keyword list.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ✅ DOCS FULL-BLEED -->
-    <section id="docs" class="fullbleed">
-      <div class="docs-band">
-        <div class="wrap">
-          <h2 class="section-title">Docs (README + Wiki)</h2>
-          <p class="section-sub">
-            Documentation preview inside the portfolio. (Auto-pulled from GitHub: README.md + Wiki Home)
-          </p>
-
-          <div class="docs-grid">
-            <!-- README -->
-            <div class="doc-card">
-              <div class="doc-head">
-                <div>
-                  <h3>README.md</h3>
-                  <div class="mini">Repo overview + professional summary</div>
-                </div>
-                <div class="doc-actions">
-                  <a href="https://github.com/Qir05/PortfolioEbberdos" target="_blank" rel="noopener">Open Repo</a>
-                  <a href="https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md" target="_blank" rel="noopener">Raw</a>
-                </div>
-              </div>
-              <div id="readmeOut" class="md">
-                <div class="muted">Loading README…</div>
-              </div>
-            </div>
-
-            <!-- WIKI HOME -->
-            <div class="doc-card">
-              <div class="doc-head">
-                <div>
-                  <h3>Wiki — Home</h3>
-                  <div class="mini">Automation documentation & workflows</div>
-                </div>
-                <div class="doc-actions">
-                  <a href="https://github.com/Qir05/PortfolioEbberdos/wiki" target="_blank" rel="noopener">Open Wiki</a>
-                  <a href="https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md" target="_blank" rel="noopener">Raw</a>
-                </div>
-              </div>
-              <div id="wikiOut" class="md">
-                <div class="muted">Loading Wiki Home…</div>
-              </div>
+        <div class="tool-groups">
+          <div class="tool-group">
+            <h3>Development</h3>
+            <div class="tool-list">
+              <span class="tool">HTML</span>
+              <span class="tool">CSS</span>
+              <span class="tool">JavaScript</span>
+              <span class="tool">Next.js</span>
+              <span class="tool">React</span>
+              <span class="tool">Git</span>
+              <span class="tool">GitHub</span>
             </div>
           </div>
 
-          <p class="section-sub" style="margin-top:14px;font-size:12.5px;opacity:.9">
-            If your browser blocks external fetch, this page auto-falls back to a safe text proxy so the docs still show.
-          </p>
+          <div class="tool-group">
+            <h3>Backend and Data</h3>
+            <div class="tool-list">
+              <span class="tool">REST APIs</span>
+              <span class="tool">Webhooks</span>
+              <span class="tool">JSON</span>
+              <span class="tool">Supabase</span>
+              <span class="tool">Google Sheets</span>
+              <span class="tool">Airtable</span>
+              <span class="tool">CSV</span>
+            </div>
+          </div>
 
+          <div class="tool-group">
+            <h3>Automation</h3>
+            <div class="tool-list">
+              <span class="tool">Zapier</span>
+              <span class="tool">n8n</span>
+              <span class="tool">Make</span>
+              <span class="tool">Conditional Logic</span>
+              <span class="tool">Retries</span>
+              <span class="tool">Error Handling</span>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <h3>CRM and Client Operations</h3>
+            <div class="tool-list">
+              <span class="tool">GoHighLevel</span>
+              <span class="tool">HubSpot</span>
+              <span class="tool">PracticeQ</span>
+              <span class="tool">IntakeQ</span>
+              <span class="tool">Calendly</span>
+              <span class="tool">Gmail</span>
+              <span class="tool">Zoom</span>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Analytics and Search</h3>
+            <div class="tool-list">
+              <span class="tool">Google Tag Manager</span>
+              <span class="tool">Google Analytics 4</span>
+              <span class="tool">Microsoft Clarity</span>
+              <span class="tool">Technical SEO</span>
+              <span class="tool">Local SEO</span>
+              <span class="tool">AEO</span>
+              <span class="tool">GEO</span>
+            </div>
+          </div>
+
+          <div class="tool-group">
+            <h3>Web Operations</h3>
+            <div class="tool-list">
+              <span class="tool">Vercel</span>
+              <span class="tool">GitHub Pages</span>
+              <span class="tool">Cloudways</span>
+              <span class="tool">WordPress</span>
+              <span class="tool">Kadence</span>
+              <span class="tool">Squarespace</span>
+              <span class="tool">DNS</span>
+              <span class="tool">SSL</span>
+              <span class="tool">SPF</span>
+              <span class="tool">DKIM</span>
+              <span class="tool">DMARC</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section" style="padding-top:10px;">
+    <section id="work" class="section">
       <div class="wrap">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-sub">If you need a full end-to-end build (website to backend to automation to CRM), let’s talk.</p>
+        <div class="section-head">
+          <div class="section-copy">
+            <div class="kicker">Selected Technical Work</div>
+            <h2 class="section-title">Real implementation categories from active systems work</h2>
+            <p class="section-sub">
+              Client details are kept private. The examples below describe the technical work, system responsibilities,
+              and implementation patterns without exposing private business information.
+            </p>
+          </div>
+        </div>
 
-        <div class="btns">
-          <a class="btn primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-type">Web Systems</div>
+            <h3>Production Website Rebuild and Conversion Flow</h3>
+            <p>
+              Full website implementation work covering responsive layout, service or property presentation,
+              inquiry paths, booking actions, conversion structure, and production quality checks.
+            </p>
+            <ul>
+              <li>Responsive frontend implementation</li>
+              <li>Booking and inquiry routing</li>
+              <li>Performance and mobile QA</li>
+              <li>Deployment and production verification</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <div class="work-type">Analytics</div>
+            <h3>GTM and GA4 Tracking Architecture</h3>
+            <p>
+              Analytics audit and implementation work focused on centralizing event tracking,
+              reducing duplication, and improving measurement across websites and conversion paths.
+            </p>
+            <ul>
+              <li>Google Tag Manager implementation</li>
+              <li>GA4 custom events</li>
+              <li>UTM persistence</li>
+              <li>Live production verification</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <div class="work-type">CRM and Automation</div>
+            <h3>Lead Lifecycle and Follow Up Systems</h3>
+            <p>
+              CRM workflows covering lead intake, pipeline movement, lifecycle states, communications,
+              booking logic, follow up automation, and system cleanup.
+            </p>
+            <ul>
+              <li>GoHighLevel workflow configuration</li>
+              <li>Lead routing and tagging</li>
+              <li>Email and SMS automation</li>
+              <li>Pause, resume and recovery logic</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <div class="work-type">Backend Integration</div>
+            <h3>API and Webhook Data Flows</h3>
+            <p>
+              Multi platform integrations connecting forms, application systems, CRM platforms,
+              automation tools, and downstream operational processes.
+            </p>
+            <ul>
+              <li>REST and webhook integration</li>
+              <li>Payload mapping</li>
+              <li>Logging and failure handling</li>
+              <li>Data routing across platforms</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <div class="work-type">Internal Applications</div>
+            <h3>Role Aware Business Systems</h3>
+            <p>
+              Internal application work involving employee records, attendance, tasks, leave,
+              payroll related workflows, permissions, AI assisted lookup, testing, and build validation.
+            </p>
+            <ul>
+              <li>Role aware backend behavior</li>
+              <li>Operational workflow integration</li>
+              <li>Automated testing</li>
+              <li>Source control and production build checks</li>
+            </ul>
+          </article>
+
+          <article class="work-card">
+            <div class="work-type">Search and Web Operations</div>
+            <h3>Technical SEO and Production Operations</h3>
+            <p>
+              Search visibility and web operations work covering metadata, indexation,
+              local search support, deployment, domain configuration, and production verification.
+            </p>
+            <ul>
+              <li>Technical SEO structure</li>
+              <li>Local search and answer engine readiness</li>
+              <li>DNS and domain operations</li>
+              <li>Release and regression QA</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-copy">
+            <div class="kicker">System Thinking</div>
+            <h2 class="section-title">How I structure connected technical systems</h2>
+            <p class="section-sub">
+              The goal is to make every layer understandable, testable, and maintainable.
+            </p>
+          </div>
+        </div>
+
+        <div class="system-flow">
+          <div class="flow-step">
+            <strong>Frontend</strong>
+            <span>Website, forms, user actions, booking entry points</span>
+          </div>
+
+          <div class="flow-step">
+            <strong>Integration</strong>
+            <span>APIs, webhooks, payload validation, authentication</span>
+          </div>
+
+          <div class="flow-step">
+            <strong>CRM and Automation</strong>
+            <span>Lead state, pipelines, routing, notifications, follow up</span>
+          </div>
+
+          <div class="flow-step">
+            <strong>Data and Analytics</strong>
+            <span>Events, reporting, dashboards, UTM context, operational data</span>
+          </div>
+
+          <div class="flow-step">
+            <strong>Production Operations</strong>
+            <span>QA, deployment, error handling, verification, documentation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-copy">
+            <div class="kicker">Architecture Lab</div>
+            <h2 class="section-title">Enterprise Monitoring and Observability</h2>
+            <p class="section-sub">
+              This is a portfolio demonstration environment. It is used to show architecture thinking and monitoring concepts.
+              It is not presented as a live client deployment.
+            </p>
+          </div>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-panel">
+            <div class="demo-label">Demonstration Environment</div>
+            <h3>Observability Command Center</h3>
+            <p>
+              A realistic monitoring architecture concept covering service health, application performance,
+              centralized logs, KQL style analysis, incident workflows, alerting, AIOps correlation,
+              dependency mapping, and remediation concepts.
+            </p>
+
+            <div class="mini-tags">
+              <span class="mini-tag">Azure Monitor Concepts</span>
+              <span class="mini-tag">Log Analytics</span>
+              <span class="mini-tag">KQL</span>
+              <span class="mini-tag">APM</span>
+              <span class="mini-tag">Grafana Style Dashboards</span>
+              <span class="mini-tag">ServiceNow ITOM Concepts</span>
+              <span class="mini-tag">AIOps Concepts</span>
+              <span class="mini-tag">Ansible Concepts</span>
+            </div>
+
+            <div class="metric-grid">
+              <div class="metric">
+                <strong>99.94%</strong>
+                <span>Simulated service availability</span>
+              </div>
+              <div class="metric">
+                <strong>38 of 40</strong>
+                <span>Simulated healthy services</span>
+              </div>
+              <div class="metric">
+                <strong>7</strong>
+                <span>Simulated open incidents</span>
+              </div>
+              <div class="metric">
+                <strong>287 ms</strong>
+                <span>Simulated average API latency</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-panel">
+            <div class="lab-list">
+              <div class="lab-item">
+                <strong>Telemetry Collection</strong>
+                <span>Metrics, logs, traces, and events across applications, APIs, databases, cloud resources, and hybrid infrastructure.</span>
+              </div>
+
+              <div class="lab-item">
+                <strong>Analysis</strong>
+                <span>Centralized logging, KQL style investigation, service health, performance baselines, and application monitoring.</span>
+              </div>
+
+              <div class="lab-item">
+                <strong>Operational Response</strong>
+                <span>Alerts, incidents, ITSM integration concepts, correlation logic, and remediation workflows.</span>
+              </div>
+
+              <div class="lab-item">
+                <strong>Architecture Goal</strong>
+                <span>Make service impact easier to detect, investigate, and resolve while reducing unnecessary monitoring noise.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section compact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-copy">
+            <div class="kicker">Engineering Process</div>
+            <h2 class="section-title">A practical implementation process</h2>
+            <p class="section-sub">
+              I focus on understanding the system before making changes, then verify the result in production.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-number">01</div>
+            <h3>Audit</h3>
+            <p>Review the existing stack, data flow, dependencies, current issues, and production constraints.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">02</div>
+            <h3>Design</h3>
+            <p>Define the system flow, ownership, event logic, integration points, and failure handling before implementation.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">03</div>
+            <h3>Implement</h3>
+            <p>Build the frontend, backend logic, integrations, automations, tracking, or configuration needed for the system.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">04</div>
+            <h3>Verify</h3>
+            <p>Run build checks, responsive QA, production testing, regression review, and source control validation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="repo-card">
+          <div>
+            <h3>GitHub Repository</h3>
+            <p>
+              Source code and portfolio documentation are available in the repository.
+              The public portfolio focuses on technical work rather than exposing internal client details.
+            </p>
+          </div>
+
+          <div class="buttons" style="margin:0;">
+            <a class="button secondary" href="https://github.com/Qir05/PortfolioEbberdos" target="_blank" rel="noopener">
+              Open Repository
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section compact">
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <h2>Need someone who can work across the full system?</h2>
+            <p>
+              Web development, backend integrations, CRM automation, analytics implementation,
+              deployment, production QA, and technical troubleshooting.
+            </p>
+          </div>
+
+          <div class="buttons" style="margin:0;">
+            <a class="button primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">
+              Book a Call
+            </a>
+            <a class="button secondary" href="https://github.com/Qir05" target="_blank" rel="noopener">
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">© <span id="y"></span> Eriq Berdos — Software, Web & Automation Engineer</div>
+    <div class="wrap">
+      © <span id="year"></span> Eriq Berdos. Software, Web, Automation and Systems Engineer.
+    </div>
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    /* =========================================================
-       ✅ ADDED ONLY: Fetch + render README + Wiki (CORS-safe)
-       Strategy:
-       1) Try direct fetch (raw.githubusercontent.com)
-       2) If blocked, fallback to Jina proxy:
-          https://r.jina.ai/http(s)://...
-       ========================================================= */
-
-    const README_RAW = "https://raw.githubusercontent.com/Qir05/PortfolioEbberdos/main/README.md";
-    const WIKI_HOME_RAW = "https://raw.githubusercontent.com/wiki/Qir05/PortfolioEbberdos/Home.md";
-
-    function escapeHtml(str){
-      return str
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;");
-    }
-
-    // Minimal markdown renderer (headings, bold, links, code blocks, inline code, lists, hr, paragraphs)
-    function renderMarkdown(md){
-      const safe = escapeHtml(md);
-
-      // code blocks ``` ```
-      let out = safe.replace(/```([\s\S]*?)```/g, (m, code) => {
-        return `<pre><code>${code.replace(/^\n/,"")}</code></pre>`;
-      });
-
-      // hr
-      out = out.replace(/^\s*---\s*$/gm, "<hr>");
-
-      // headings
-      out = out.replace(/^###\s+(.+)$/gm, "<h3>$1</h3>");
-      out = out.replace(/^##\s+(.+)$/gm, "<h2>$1</h2>");
-      out = out.replace(/^#\s+(.+)$/gm, "<h1>$1</h1>");
-
-      // bold **text**
-      out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-
-      // inline code `code`
-      out = out.replace(/`([^`]+)`/g, "<code>$1</code>");
-
-      // links [text](url)
-      out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, `<a href="$2" target="_blank" rel="noopener">$1</a>`);
-
-      // unordered lists
-      out = out.replace
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
