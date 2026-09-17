@@ -1,0 +1,26 @@
+# Erique Berdos
+
+Canonical portfolio: https://qir05.github.io/PortfolioEbberdos/
+
+Erique Berdos, also known professionally as Eriq Berdos, is a web developer, systems architect, and automation engineer based in Davao City, Philippines.
+
+Core capabilities:
+- Next.js and React web development
+- Backend systems, REST APIs, and webhooks
+- CRM architecture and GoHighLevel automation
+- Google Tag Manager and GA4 analytics
+- Technical SEO, AEO, and GEO
+- GitHub, Vercel, deployment, QA, and production verification
+- Internal business systems and operational workflow automation
+
+Selected project evidence:
+- PHASES Clinic
+- Sundance House
+- Ocean Villas at Turtle Bay
+- LINKS HRIS
+- SiLak Davao
+- Vaze Demo Website Lab
+
+Public profiles:
+- GitHub: https://github.com/Qir05
+- Vaze: https://vaze-demo-websites.vercel.app/

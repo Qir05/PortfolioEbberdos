@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qir05.github.io/PortfolioEbberdos/sitemap.xml

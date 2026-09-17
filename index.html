@@ -1,1017 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Eriq Berdos technical portfolio covering software engineering, full stack web development, backend systems, databases, APIs, CRM automation, analytics, deployment, QA, and systems operations." />
-  <title>Eriq Berdos | Senior Software, Web, Backend and Systems Engineer</title>
-
-  <style>
-    :root{
-      --bg:#071019;
-      --bg2:#0b1520;
-      --panel:#101b28;
-      --panel-soft:#0d1722;
-      --text:#f7fbff;
-      --muted:#b8c6d6;
-      --soft:#8394a8;
-      --line:rgba(255,255,255,.085);
-      --line-strong:rgba(255,255,255,.13);
-      --accent:#37d7f4;
-      --accent-soft:rgba(55,215,244,.09);
-      --accent-line:rgba(55,215,244,.24);
-      --success:#62d18d;
-      --warning:#f1c66a;
-      --shadow:0 24px 70px rgba(0,0,0,.38);
-      --radius:18px;
-      --max:1200px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Erique Berdos | Web Developer, Systems Architect & Automation Engineer</title>
+<meta name="description" content="Erique Berdos is a web developer, systems architect, and automation engineer based in Davao City, Philippines. He builds Next.js websites, internal systems, CRM workflows, analytics, integrations, and production-ready automation.">
+<meta name="author" content="Erique Berdos">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://qir05.github.io/PortfolioEbberdos/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Erique Berdos | Web Developer, Systems Architect & Automation Engineer">
+<meta property="og:description" content="Web development, systems architecture, CRM automation, analytics, integrations, and technical operations.">
+<meta property="og:url" content="https://qir05.github.io/PortfolioEbberdos/">
+<meta property="og:site_name" content="Erique Berdos Portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Erique Berdos | Web Developer, Systems Architect & Automation Engineer">
+<meta name="twitter:description" content="Production-minded websites, internal systems, CRM workflows, analytics, integrations, and automation.">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Person",
+      "@id":"https://qir05.github.io/PortfolioEbberdos/#person",
+      "name":"Erique Berdos",
+      "alternateName":"Eriq Berdos",
+      "url":"https://qir05.github.io/PortfolioEbberdos/",
+      "image":"https://qir05.github.io/PortfolioEbberdos/assets/erique-photo.png",
+      "jobTitle":"Web Developer, Systems Architect & Automation Engineer",
+      "description":"Web developer, systems architect, and automation engineer working across Next.js, backend systems, APIs, CRM architecture, analytics, deployment, QA, and technical operations.",
+      "homeLocation":{"@type":"Place","name":"Davao City, Philippines"},
+      "knowsAbout":["Next.js","React","Web Development","Systems Architecture","REST APIs","Webhooks","CRM Automation","GoHighLevel","Google Tag Manager","Google Analytics 4","Technical SEO","Answer Engine Optimization","Generative Engine Optimization","Vercel","GitHub"],
+      "sameAs":["https://github.com/Qir05","https://vaze-demo-websites.vercel.app/"]
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://qir05.github.io/PortfolioEbberdos/#website",
+      "url":"https://qir05.github.io/PortfolioEbberdos/",
+      "name":"Erique Berdos Portfolio",
+      "publisher":{"@id":"https://qir05.github.io/PortfolioEbberdos/#person"}
+    },
+    {
+      "@type":"ProfilePage",
+      "@id":"https://qir05.github.io/PortfolioEbberdos/#profile",
+      "url":"https://qir05.github.io/PortfolioEbberdos/",
+      "name":"Erique Berdos | Web Developer, Systems Architect & Automation Engineer",
+      "mainEntity":{"@id":"https://qir05.github.io/PortfolioEbberdos/#person"},
+      "isPartOf":{"@id":"https://qir05.github.io/PortfolioEbberdos/#website"}
     }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      min-height:100%;
-      color:var(--text);
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      line-height:1.6;
-      background:
-        radial-gradient(circle at 14% 0%, rgba(55,215,244,.10), transparent 27%),
-        radial-gradient(circle at 90% 8%, rgba(92,113,255,.07), transparent 24%),
-        linear-gradient(180deg,var(--bg),var(--bg2));
-      overflow-x:hidden;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      background:
-        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
-      background-size:44px 44px;
-    }
-
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    .wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
-    .section{padding:82px 0}
-    .compact{padding-top:30px}
-
-    nav{
-      position:sticky;
-      top:0;
-      z-index:50;
-      border-bottom:1px solid var(--line);
-      background:rgba(7,16,25,.86);
-      backdrop-filter:blur(14px);
-    }
-
-    nav .wrap{
-      min-height:70px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-    }
-
-    .brand-dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 18px rgba(55,215,244,.8);
-    }
-
-    .nav-links{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      gap:18px;
-    }
-
-    .nav-links a{
-      color:#d2dce8;
-      font-size:13px;
-      font-weight:750;
-    }
-
-    .hero{
-      padding:102px 0 76px;
-      border-bottom:1px solid var(--line);
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.16fr) minmax(290px,.84fr);
-      gap:48px;
-      align-items:center;
-    }
-
-    .badge{
-      display:inline-flex;
-      padding:7px 11px;
-      border-radius:999px;
-      border:1px solid var(--accent-line);
-      background:var(--accent-soft);
-      color:#ddfaff;
-      font-size:12px;
-      font-weight:850;
-    }
-
-    .hero h1{
-      margin:18px 0;
-      max-width:14ch;
-      font-size:clamp(44px,7vw,72px);
-      line-height:1.01;
-      letter-spacing:-.05em;
-    }
-
-    .hero p{
-      margin:0;
-      max-width:76ch;
-      color:#d1dbe7;
-      font-size:17px;
-    }
-
-    .hero strong{color:#fff}
-    .hero-note{margin-top:18px;color:var(--soft);font-size:13px}
-
-    .buttons{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:26px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:44px;
-      padding:10px 16px;
-      border-radius:11px;
-      border:1px solid transparent;
-      font-size:14px;
-      font-weight:900;
-    }
-
-    .btn.primary{
-      color:#041117;
-      background:var(--accent);
-    }
-
-    .btn.secondary{
-      color:#eef6fc;
-      background:rgba(255,255,255,.035);
-      border-color:var(--line-strong);
-    }
-
-    .profile{
-      padding:28px;
-      border:1px solid var(--line-strong);
-      border-radius:24px;
-      background:rgba(16,27,40,.82);
-      box-shadow:var(--shadow);
-    }
-
-    .photo{
-      width:158px;
-      height:158px;
-      object-fit:cover;
-      border-radius:50%;
-      border:3px solid rgba(55,215,244,.80);
-      box-shadow:0 0 0 9px rgba(55,215,244,.06);
-      margin-bottom:20px;
-    }
-
-    .profile-role{font-size:18px;font-weight:900}
-    .profile-copy{margin-top:8px;color:var(--muted);font-size:13px}
-
-    .status{
-      display:flex;
-      align-items:center;
-      gap:9px;
-      margin-top:18px;
-      color:#dce6ef;
-      font-size:13px;
-    }
-
-    .status-dot{
-      width:9px;
-      height:9px;
-      border-radius:50%;
-      background:var(--success);
-    }
-
-    .tags,
-    .tool-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .tags{margin-top:18px}
-
-    .tag,
-    .tool{
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:#dce6f0;
-      font-size:12px;
-      font-weight:750;
-    }
-
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:24px;
-      margin-bottom:30px;
-    }
-
-    .section-copy{max-width:840px}
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:#e2fbff;
-      font-size:12px;
-      font-weight:850;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
-
-    .kicker::before{
-      content:"";
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:var(--accent);
-    }
-
-    .section-title{
-      margin:10px 0 0;
-      font-size:clamp(28px,4vw,40px);
-      line-height:1.12;
-      letter-spacing:-.03em;
-    }
-
-    .section-sub{margin:12px 0 0;color:var(--muted);max-width:78ch}
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-    }
-
-    .card,
-    .tool-group,
-    .work-card,
-    .layer{
-      border:1px solid var(--line-strong);
-      border-radius:var(--radius);
-      background:rgba(16,27,40,.75);
-    }
-
-    .card{padding:22px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px;font-size:17px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .card ul{margin:14px 0 0 18px;padding:0;color:#cbd6e2;font-size:13.5px}
-    .card li{margin:5px 0}
-
-    .layer{padding:20px}
-    .layer h3{margin:0 0 7px;font-size:15px}
-    .layer p{margin:0;color:var(--muted);font-size:13px}
-
-    .tool-group{padding:20px}
-    .tool-group h3{margin:0 0 14px;font-size:14px}
-
-    .work-card{
-      min-height:320px;
-      display:flex;
-      flex-direction:column;
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .work-type{
-      margin-bottom:10px;
-      color:var(--accent);
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
-
-    .work-card h3{margin:0 0 9px;font-size:18px}
-    .work-card p{margin:0;color:var(--muted);font-size:13.5px}
-    .work-card ul{margin:14px 0 0 18px;padding:0;color:#cbd6e2;font-size:13px}
-    .work-card li{margin:5px 0}
-
-    .architecture{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:18px;
-    }
-
-    .architecture-panel{
-      padding:24px;
-      border:1px solid var(--line-strong);
-      border-radius:22px;
-      background:rgba(16,27,40,.76);
-      box-shadow:var(--shadow);
-    }
-
-    .architecture-panel h3{margin:12px 0 9px;font-size:24px}
-    .architecture-panel p{margin:0;color:var(--muted)}
-
-    .demo-label{
-      display:inline-flex;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(241,198,106,.24);
-      background:rgba(241,198,106,.07);
-      color:#f6deb0;
-      font-size:11px;
-      font-weight:900;
-      text-transform:uppercase;
-    }
-
-    .arch-items{display:grid;gap:11px}
-
-    .arch-item{
-      padding:14px 15px;
-      border:1px solid var(--line);
-      border-radius:13px;
-      background:rgba(255,255,255,.025);
-    }
-
-    .arch-item strong{display:block;margin-bottom:4px;font-size:13px}
-    .arch-item span{color:var(--soft);font-size:12px}
-
-    .process{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:16px;
-    }
-
-    .process-step{
-      padding:19px;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.025);
-    }
-
-    .process-step .num{color:var(--accent);font-size:12px;font-weight:900;margin-bottom:8px}
-    .process-step h3{margin:0 0 7px;font-size:15px}
-    .process-step p{margin:0;color:var(--muted);font-size:13px}
-
-    .contact-card{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:22px;
-      align-items:center;
-      padding:28px;
-      border-radius:22px;
-      border:1px solid var(--accent-line);
-      background:rgba(16,27,40,.78);
-      box-shadow:var(--shadow);
-    }
-
-    .contact-card h2{margin:0 0 8px}
-    .contact-card p{margin:0;color:var(--muted)}
-
-    footer{
-      padding:28px 0;
-      border-top:1px solid var(--line);
-      color:var(--soft);
-      font-size:13px;
-    }
-
-    @media(max-width:1000px){
-      .hero-grid,
-      .architecture{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .process{grid-template-columns:repeat(2,minmax(0,1fr))}
-    }
-
-    @media(max-width:720px){
-      .wrap{width:min(var(--max),calc(100% - 28px))}
-      nav .wrap{align-items:flex-start;padding:14px 0}
-      .nav-links{gap:10px}
-      .nav-links a{font-size:12px}
-      .hero{padding:72px 0 54px}
-      .hero h1{max-width:none}
-      .grid-2,
-      .grid-3,
-      .process{grid-template-columns:1fr}
-      .section-head{align-items:flex-start;flex-direction:column}
-      .contact-card{grid-template-columns:1fr}
-      .photo{width:132px;height:132px}
-    }
-  </style>
+  ]
+}
+</script>
+<style>
+:root{--bg:#071019;--bg2:#0b1520;--panel:#101b28;--text:#f7fbff;--muted:#b8c6d6;--soft:#8394a8;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.14);--accent:#37d7f4;--accentsoft:rgba(55,215,244,.09);--shadow:0 24px 70px rgba(0,0,0,.38);--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;background:radial-gradient(circle at 14% 0%,rgba(55,215,244,.1),transparent 27%),linear-gradient(180deg,var(--bg),var(--bg2));overflow-x:hidden}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.section{padding:78px 0}nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(7,16,25,.88);backdrop-filter:blur(14px)}nav .wrap{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900}.nav{display:flex;flex-wrap:wrap;gap:16px}.nav a{font-size:13px;color:#d2dce8;font-weight:750}.hero{padding:100px 0 72px;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}.badge{display:inline-flex;padding:7px 11px;border:1px solid rgba(55,215,244,.25);border-radius:999px;background:var(--accentsoft);font-size:12px;font-weight:850}.hero h1{font-size:clamp(44px,7vw,72px);line-height:1.02;letter-spacing:-.05em;max-width:15ch;margin:18px 0}.hero p{font-size:17px;color:#d1dbe7;max-width:76ch}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:11px;font-weight:900;font-size:14px;border:1px solid transparent}.primary{background:var(--accent);color:#041117}.secondary{border-color:var(--line2);background:rgba(255,255,255,.035)}.profile,.card,.work,.faq details,.contact{border:1px solid var(--line2);background:rgba(16,27,40,.76);border-radius:18px;box-shadow:var(--shadow)}.profile{padding:28px}.photo{width:158px;height:158px;border-radius:50%;object-fit:cover;border:3px solid rgba(55,215,244,.8);margin-bottom:20px}.profile-role{font-size:18px;font-weight:900}.muted{color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{font-size:12px;font-weight:750;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.03)}.kicker{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:850;color:#e2fbff}.title{font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.03em;margin:10px 0}.sub{color:var(--muted);max-width:80ch}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card,.work{padding:22px}.card h3,.work h3{margin:0 0 8px}.work{min-height:285px;display:flex;flex-direction:column}.type{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:900;margin-bottom:10px}.proof{margin-top:auto;padding-top:18px;font-size:12px;font-weight:800;color:#dce6f0}.answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.facts{display:grid;gap:12px}.fact{border:1px solid var(--line);border-radius:13px;padding:15px;background:rgba(255,255,255,.025)}.fact strong{display:block}.faq{display:grid;gap:12px}.faq details{padding:16px 18px}.faq summary{font-weight:850;cursor:pointer}.faq p{color:var(--muted)}.contact{padding:28px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}footer{padding:28px 0;border-top:1px solid var(--line);color:var(--soft);font-size:13px}@media(max-width:900px){.hero-grid,.answer-grid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}}@media(max-width:700px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{gap:10px}.nav a{font-size:12px}.grid2,.grid3{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.hero{padding-top:72px}.hero h1{max-width:none}}
+</style>
 </head>
-
 <body>
-  <nav>
-    <div class="wrap">
-      <a class="brand" href="#top">
-        <span class="brand-dot"></span>
-        <span>Eriq Berdos</span>
-      </a>
+<nav><div class="wrap"><a class="brand" href="#top">Erique Berdos</a><div class="nav"><a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#work">Case Studies</a><a href="#answers">AEO</a><a href="#contact">Contact</a></div></div></nav>
 
-      <div class="nav-links">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#architecture">Systems Architecture</a>
-        <a href="#development">Development Expertise</a>
-        <a href="#tools">Tools and Platforms</a>
-        <a href="#work">Technical Work</a>
-        <a href="#lab">Observability Lab</a>
-        <a href="#process">Engineering Process</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+<header id="top" class="hero"><div class="wrap"><div class="hero-grid">
+<div>
+<div class="badge">Web Development • Systems Architecture • Automation • Analytics</div>
+<h1>Websites and systems built for real operations.</h1>
+<p>I’m <strong>Erique Berdos</strong>, a web developer, systems architect, and automation engineer based in Davao City, Philippines. I build <strong>production-ready websites, internal systems, CRM workflows, APIs, analytics implementations, and business automation</strong> that connect the customer experience to the operational systems behind it.</p>
+<div class="buttons"><a class="btn primary" href="#work">View Real Projects</a><a class="btn secondary" href="https://vaze-demo-websites.vercel.app/" target="_blank" rel="noopener">Open Vaze</a><a class="btn secondary" href="https://github.com/Qir05" target="_blank" rel="noopener">GitHub</a></div>
+<p class="muted">Also known professionally as <strong>Eriq Berdos</strong>. Core focus: Next.js, React, APIs, GoHighLevel, GTM, GA4, Vercel, deployment, QA, and technical operations.</p>
+</div>
+<aside class="profile"><img class="photo" src="assets/erique-photo.png" alt="Erique Berdos, web developer and systems architect"><div class="profile-role">Web Developer, Systems Architect & Automation Engineer</div><p class="muted">End-to-end implementation across frontend, backend, integrations, CRM, analytics, deployment, QA, and production support.</p><div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">REST APIs</span><span class="tag">GoHighLevel</span><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">Vercel</span><span class="tag">Systems Architecture</span></div></aside>
+</div></div></header>
 
-  <header id="top" class="hero">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <div class="badge">10+ Years Across Software Development, Web Engineering, Backend Systems, Automation and Technical Operations</div>
+<main>
+<section id="about" class="section"><div class="wrap answer-grid">
+<div><div class="kicker">Identity & Positioning</div><h2 class="title">Who is Erique Berdos?</h2><p class="sub">Erique Berdos is a technical practitioner with a background spanning infrastructure, networking, systems architecture, web development, business automation, CRM operations, analytics, and production support. His current work centers on connected digital systems: websites that are measurable, operational workflows that are automated, and internal tools that work in real business environments.</p></div>
+<div class="facts"><div class="fact"><strong>Primary Role</strong>Web Developer, Systems Architect & Automation Engineer</div><div class="fact"><strong>Location</strong>Davao City, Philippines</div><div class="fact"><strong>Core Platforms</strong>Next.js, React, GitHub, Vercel, GoHighLevel, GTM, GA4</div><div class="fact"><strong>Work Style</strong>Production-minded implementation, verification, documentation, and operational handoff</div></div>
+</div></section>
 
-          <h1>Full stack systems built for real operations.</h1>
+<section id="capabilities" class="section"><div class="wrap"><div class="kicker">Capabilities</div><h2 class="title">One technical owner across website, systems, automation, and measurement</h2><p class="sub">I work across the layers that make a digital system useful in production: user experience, backend logic, integrations, CRM, analytics, deployment, QA, and operational workflows.</p><div class="grid2" style="margin-top:30px">
+<article class="card"><h3>Web & Application Development</h3><p class="muted">Next.js, React, responsive interfaces, forms, booking flows, internal tools, admin interfaces, performance review, and production deployment.</p></article>
+<article class="card"><h3>Systems Architecture & Backend</h3><p class="muted">REST APIs, webhooks, validation, business rules, permissions, data flow, retries, logging, failure handling, and third-party integrations.</p></article>
+<article class="card"><h3>CRM & Business Automation</h3><p class="muted">GoHighLevel workflows, lead routing, lifecycle logic, tags, booking workflows, email/SMS automation, recovery flows, and operational cleanup.</p></article>
+<article class="card"><h3>Analytics & Search Visibility</h3><p class="muted">Google Tag Manager, GA4 event architecture, UTM persistence, conversion tracking, technical SEO, local SEO, AEO, GEO, and search-readiness audits.</p></article>
+<article class="card"><h3>Infrastructure & Technical Operations</h3><p class="muted">GitHub, Vercel, DNS, SSL, deployments, production verification, regression testing, troubleshooting, and technical documentation.</p></article>
+<article class="card"><h3>Internal Business Systems</h3><p class="muted">Employee workflows, payroll-related processes, permissions, secure file handling, operational records, reporting, and system orchestration.</p></article>
+</div></div></section>
 
-          <p>
-            I design, build, integrate, and support <strong>web applications, backend services, databases, APIs,
-            CRM systems, automation workflows, analytics, deployment environments, and production operations</strong>.
-            My work covers the complete technical lifecycle from application interfaces and backend logic to data,
-            integrations, reliability, monitoring, QA, and production verification.
-          </p>
+<section id="work" class="section"><div class="wrap"><div class="kicker">Selected Case Studies</div><h2 class="title">Real implementation work</h2><p class="sub">Healthcare, hospitality, internal business systems, analytics, and local-service projects.</p><div class="grid3" style="margin-top:30px">
+<article class="work"><div class="type">Healthcare • CRM • Analytics</div><h3>PHASES Clinic</h3><p class="muted">GoHighLevel workflows, provider onboarding paths, GA4/GTM migration, event architecture, UTM persistence, and production checks.</p><div class="proof">GHL • GTM • GA4 • conversion tracking</div></article>
+<article class="work"><div class="type">Hospitality • Next.js • Search</div><h3>Sundance House</h3><p class="muted">Next.js production work covering content architecture, structured data, technical SEO/AEO/GEO, analytics events, deployment verification, and mobile conversion QA.</p><div class="proof">Next.js • JSON-LD • GTM/GA4 • Vercel</div></article>
+<article class="work"><div class="type">Hospitality • Conversion UX</div><h3>Ocean Villas at Turtle Bay</h3><p class="muted">Rental and booking UX improvements including filtering, villa comparison, booking CTAs, inquiry flows, trust content, and responsive QA.</p><div class="proof">Booking UX • inquiry conversion • responsive QA</div></article>
+<article class="work"><div class="type">Internal System • Payroll • Security</div><h3>LINKS HRIS</h3><p class="muted">Role-based access, payroll workflows, secure storage integration, authorized downloads, idempotent processing, and test coverage.</p><div class="proof">Permissions • payroll • storage • testing • security</div></article>
+<article class="work"><div class="type">Local Business • Next.js</div><h3>SiLak Davao</h3><p class="muted">Next.js website architecture for swimming and freediving programs with responsive pages, local-search foundation, image interactions, and production deployment.</p><div class="proof">Next.js • local SEO • UX • Vercel</div></article>
+<article class="work"><div class="type">Demo Lab • Multi-Industry</div><h3>Vaze Demo Website Lab</h3><p class="muted">A multi-industry demo environment showcasing production-minded website structures, service flows, layout systems, and business-specific interface patterns.</p><div class="proof"><a href="https://vaze-demo-websites.vercel.app/" target="_blank" rel="noopener">Open Vaze</a></div></article>
+</div></div></section>
 
-          <div class="buttons">
-            <a class="btn primary" href="#work">View Technical Work</a>
-            <a class="btn secondary" href="#architecture">View Systems Architecture</a>
-            <a class="btn secondary" href="https://github.com/Qir05" target="_blank" rel="noopener">Open GitHub</a>
-          </div>
+<section id="answers" class="section"><div class="wrap"><div class="kicker">Answer Engine Ready</div><h2 class="title">Direct answers about Erique Berdos</h2><div class="faq" style="margin-top:28px">
+<details open><summary>Who is Erique Berdos?</summary><p>Erique Berdos is a web developer, systems architect, and automation engineer based in Davao City, Philippines. He works across websites, backend systems, APIs, CRM automation, analytics, deployment, QA, and technical operations.</p></details>
+<details><summary>What does Erique Berdos specialize in?</summary><p>His focus includes Next.js and React web development, business systems, GoHighLevel CRM architecture, API and webhook integrations, GTM/GA4 analytics, technical SEO, AEO, GEO, deployment, and production verification.</p></details>
+<details><summary>Does Erique Berdos build GoHighLevel systems?</summary><p>Yes. His work includes GoHighLevel pipelines, lifecycle automation, lead routing, tags, booking workflows, email and SMS automation, system cleanup, and integration with websites and analytics.</p></details>
+<details><summary>Does Erique Berdos build Next.js websites?</summary><p>Yes. His recent web work includes Next.js builds and migrations, structured data, responsive UX, analytics instrumentation, deployment on Vercel, and production QA.</p></details>
+<details><summary>What is Vaze?</summary><p>Vaze is Erique Berdos' multi-industry demo website lab. It showcases website structures and interface patterns built around realistic business use cases and supports the broader portfolio as a proof environment.</p></details>
+</div></div></section>
 
-          <div class="hero-note">
-            Core Focus: Software Engineering, Full Stack Web Development, Backend Systems, Databases, APIs, Integrations, CRM Architecture, Automation, Analytics, Deployment, QA, and Technical Operations.
-          </div>
-        </div>
+<section id="contact" class="section"><div class="wrap"><div class="contact"><div><h2>Need a developer who can work beyond the front end?</h2><p class="muted">Websites, internal systems, CRM workflows, integrations, analytics, automation, deployment, QA, and production support.</p></div><div class="buttons" style="margin:0"><a class="btn primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a><a class="btn secondary" href="https://github.com/Qir05" target="_blank" rel="noopener">GitHub</a></div></div></div></section>
+</main>
 
-        <aside class="profile">
-          <img class="photo" src="assets/erique-photo.png" alt="Eriq Berdos" />
-          <div class="profile-role">Senior Software, Web, Backend and Systems Engineer</div>
-          <div class="profile-copy">
-            Technical implementation across application, backend, database, integration, automation, analytics, deployment, and operations layers.
-          </div>
-
-          <div class="status">
-            <span class="status-dot"></span>
-            <span>Remote Technical Implementation and Systems Work</span>
-          </div>
-
-          <div class="tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">React</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">GoHighLevel</span>
-            <span class="tag">GTM</span>
-            <span class="tag">GA4</span>
-            <span class="tag">Vercel</span>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section id="capabilities" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-copy">
-            <div class="kicker">Technical Capabilities</div>
-            <h2 class="section-title">Complete Technical Implementation from Application to Production</h2>
-            <p class="section-sub">
-              I work across multiple technical disciplines that are often divided between frontend developers, backend engineers, database specialists, automation engineers, analytics implementers, and technical operations teams.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Software and Application Engineering</h3>
-            <p>Web applications, internal applications, admin interfaces, responsive interfaces, forms, routing, reusable components, application workflows, testing, deployment, and production support.</p>
-          </article>
-
-          <article class="card">
-            <h3>Backend Engineering and API Systems</h3>
-            <p>REST APIs, webhook endpoints, server side business logic, JSON processing, validation, authentication aware workflows, role based authorization logic, retries, logging, failure recovery, and third party integrations.</p>
-          </article>
-
-          <article class="card">
-            <h3>Database Architecture and Data Operations</h3>
-            <p>Supabase, PostgreSQL, relational data structures, operational records, submissions, permissions, CRM synchronized data, reporting data, structured JSON, CSV workflows, and data integrity checks.</p>
-          </article>
-
-          <article class="card">
-            <h3>CRM Architecture and Business Automation</h3>
-            <p>GoHighLevel, HubSpot, PracticeQ, IntakeQ, pipeline architecture, lead lifecycle logic, tags, routing, booking workflows, email automation, SMS automation, recovery logic, and system cleanup.</p>
-          </article>
-
-          <article class="card">
-            <h3>Analytics, Tracking and Search Systems</h3>
-            <p>Google Tag Manager, Google Analytics 4, Microsoft Clarity, custom events, conversion tracking, UTM persistence, technical SEO, local SEO, AEO, GEO, and search readiness.</p>
-          </article>
-
-          <article class="card">
-            <h3>Deployment, Reliability and Technical Operations</h3>
-            <p>Git, GitHub, Vercel, Cloudways, GitHub Pages, DNS, SSL, email domain configuration, production builds, responsive QA, regression testing, troubleshooting, release validation, and production verification.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="architecture" class="section compact">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-copy">
-            <div class="kicker">Systems Architecture</div>
-            <h2 class="section-title">Engineering Across the Complete Application Lifecycle</h2>
-            <p class="section-sub">
-              Each system layer has a clear responsibility so application behavior, data flow, integrations, reliability, and production operations remain understandable and maintainable.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <div class="layer">
-            <h3>Application Layer</h3>
-            <p>Web Applications, Internal Tools, Dashboards, Forms, Booking Interfaces, Admin Interfaces, and User Workflows.</p>
-          </div>
-
-          <div class="layer">
-            <h3>Backend Layer</h3>
-            <p>REST APIs, Webhook Processing, Business Logic, Validation, Authentication, Authorization Concepts, Role Based Access, Retry Handling, Error Handling, and Logging.</p>
-          </div>
-
-          <div class="layer">
-            <h3>Database Layer</h3>
-            <p>Supabase, PostgreSQL, Relational Records, Operational Data, Submissions, Permissions, Reporting Data, Audit Friendly Records, and Integration Identifiers.</p>
-          </div>
-
-          <div class="layer">
-            <h3>Integration Layer</h3>
-            <p>REST APIs, Webhooks, Zapier, n8n, Make, CRM Platforms, Third Party Services, Payload Mapping, and Data Synchronization.</p>
-          </div>
-
-          <div class="layer">
-            <h3>Observability Layer</h3>
-            <p>Application Logs, API Telemetry, Service Health, Database Health, Performance Metrics, Error Tracking, Alerting Concepts, and Operational Investigation.</p>
-          </div>
-
-          <div class="layer">
-            <h3>Operations Layer</h3>
-            <p>Source Control, Deployment, DNS, SSL, Production QA, Regression Testing, Release Validation, Troubleshooting, and Technical Documentation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="development" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-copy">
-            <div class="kicker">Development Expertise</div>
-            <h2 class="section-title">Strong Frontend, Backend, Database and Engineering Operations Capability</h2>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Frontend and Web Engineering</h3>
-            <ul>
-              <li>Semantic HTML</li>
-              <li>Modern CSS</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Responsive Layout Systems</li>
-              <li>Reusable Components</li>
-              <li>Component Architecture</li>
-              <li>Forms and Validation</li>
-              <li>Client Side Routing</li>
-              <li>Server Side Routing</li>
-              <li>Dynamic Content</li>
-              <li>State Driven Interfaces</li>
-              <li>API Connected Interfaces</li>
-              <li>Mobile QA</li>
-              <li>Cross Browser QA</li>
-              <li>Performance Review</li>
-              <li>Analytics Integration</li>
-              <li>Accessibility Awareness</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Backend Engineering</h3>
-            <ul>
-              <li>REST API Implementation</li>
-              <li>Webhook Endpoints</li>
-              <li>Server Side Logic</li>
-              <li>JSON Request and Response Processing</li>
-              <li>Payload Validation</li>
-              <li>Data Mapping</li>
-              <li>Authentication Aware Workflows</li>
-              <li>Role Based Authorization Logic</li>
-              <li>Business Rules</li>
-              <li>Error Handling</li>
-              <li>Retry Logic</li>
-              <li>Duplicate Prevention</li>
-              <li>Logging</li>
-              <li>Third Party Integrations</li>
-              <li>Backend Orchestration</li>
-              <li>Internal Application Workflows</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Database and Data Engineering</h3>
-            <ul>
-              <li>Supabase</li>
-              <li>PostgreSQL</li>
-              <li>Relational Data Structures</li>
-              <li>Application Records</li>
-              <li>Operational Data</li>
-              <li>Submission Storage</li>
-              <li>Role Based Data Access</li>
-              <li>CRM Synchronized Data</li>
-              <li>Structured JSON</li>
-              <li>CSV Imports and Exports</li>
-              <li>Google Sheets</li>
-              <li>Airtable</li>
-              <li>Reporting Data Preparation</li>
-              <li>Data Integrity Checks</li>
-              <li>Duplicate Prevention</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Engineering Quality and Production Readiness</h3>
-            <ul>
-              <li>Git Source Control</li>
-              <li>Repository Checkpoints</li>
-              <li>Production Build Validation</li>
-              <li>TypeScript Validation Where Applicable</li>
-              <li>Linting</li>
-              <li>Automated Testing Where Applicable</li>
-              <li>Regression Testing</li>
-              <li>API Validation</li>
-              <li>Responsive QA</li>
-              <li>Console Error Review</li>
-              <li>Production Verification</li>
-              <li>Technical Troubleshooting</li>
-              <li>Technical Documentation</li>
-              <li>Release Safety</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="tools" class="section compact">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-copy">
-            <div class="kicker">Tools and Platforms</div>
-            <h2 class="section-title">Technical Stack Used Across Implementation Work</h2>
-            <p class="section-sub">Tools are grouped by responsibility so reviewers can see how they fit into the system.</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <div class="tool-group">
-            <h3>Web and Application Development</h3>
-            <div class="tool-list">
-              <span class="tool">HTML</span>
-              <span class="tool">CSS</span>
-              <span class="tool">JavaScript</span>
-              <span class="tool">React</span>
-              <span class="tool">Next.js</span>
-              <span class="tool">Responsive UI</span>
-              <span class="tool">Component Architecture</span>
-              <span class="tool">Forms</span>
-              <span class="tool">Routing</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Backend and API</h3>
-            <div class="tool-list">
-              <span class="tool">REST APIs</span>
-              <span class="tool">Webhooks</span>
-              <span class="tool">JSON</span>
-              <span class="tool">Server Logic</span>
-              <span class="tool">Validation</span>
-              <span class="tool">Role Based Logic</span>
-              <span class="tool">Retry Handling</span>
-              <span class="tool">Logging</span>
-              <span class="tool">Error Handling</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Database and Data</h3>
-            <div class="tool-list">
-              <span class="tool">Supabase</span>
-              <span class="tool">PostgreSQL</span>
-              <span class="tool">Relational Data</span>
-              <span class="tool">Structured JSON</span>
-              <span class="tool">Google Sheets</span>
-              <span class="tool">Airtable</span>
-              <span class="tool">CSV</span>
-              <span class="tool">Operational Reporting</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Automation and Orchestration</h3>
-            <div class="tool-list">
-              <span class="tool">Zapier</span>
-              <span class="tool">n8n</span>
-              <span class="tool">Make</span>
-              <span class="tool">Conditional Logic</span>
-              <span class="tool">Scheduled Workflows</span>
-              <span class="tool">Retries</span>
-              <span class="tool">Data Synchronization</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>CRM and Client Operations</h3>
-            <div class="tool-list">
-              <span class="tool">GoHighLevel</span>
-              <span class="tool">HubSpot</span>
-              <span class="tool">PracticeQ</span>
-              <span class="tool">IntakeQ</span>
-              <span class="tool">Calendly</span>
-              <span class="tool">Pipeline Architecture</span>
-              <span class="tool">Lifecycle Automation</span>
-              <span class="tool">Lead Routing</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Analytics and Search</h3>
-            <div class="tool-list">
-              <span class="tool">Google Tag Manager</span>
-              <span class="tool">Google Analytics 4</span>
-              <span class="tool">Microsoft Clarity</span>
-              <span class="tool">Custom Events</span>
-              <span class="tool">Conversion Tracking</span>
-              <span class="tool">UTM Persistence</span>
-              <span class="tool">Technical SEO</span>
-              <span class="tool">Local SEO</span>
-              <span class="tool">AEO</span>
-              <span class="tool">GEO</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Deployment and Infrastructure Operations</h3>
-            <div class="tool-list">
-              <span class="tool">Git</span>
-              <span class="tool">GitHub</span>
-              <span class="tool">GitHub Pages</span>
-              <span class="tool">Vercel</span>
-              <span class="tool">Cloudways</span>
-              <span class="tool">WordPress</span>
-              <span class="tool">Kadence</span>
-              <span class="tool">Squarespace</span>
-              <span class="tool">DNS</span>
-              <span class="tool">SSL</span>
-              <span class="tool">SPF</span>
-              <span class="tool">DKIM</span>
-              <span class="tool">DMARC</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>QA and Technical Operations</h3>
-            <div class="tool-list">
-              <span class="tool">Build Validation</span>
-              <span class="tool">Regression Testing</span>
-              <span class="tool">Responsive QA</span>
-              <span class="tool">Production Verification</span>
-              <span class="tool">Troubleshooting</span>
-              <span class="tool">Technical Documentation</span>
-              <span class="tool">Source Control Checks</span>
-            </div>
-          </div>
-
-          <div class="tool-group">
-            <h3>Observability Architecture Lab</h3>
-            <div class="tool-list">
-              <span class="tool">Azure Monitor Concepts</span>
-              <span class="tool">Log Analytics</span>
-              <span class="tool">KQL</span>
-              <span class="tool">APM</span>
-              <span class="tool">Grafana Style Dashboards</span>
-              <span class="tool">ServiceNow ITOM Concepts</span>
-              <span class="tool">AIOps Concepts</span>
-              <span class="tool">Ansible Concepts</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-copy">
-            <div class="kicker">Selected Technical Work</div>
-            <h2 class="section-title">Production Systems, Backend Workflows, Analytics and Internal Applications</h2>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <article class="work-card">
-            <div class="work-type">Full Stack Engineering</div>
-            <h3>Production Web Application and Backend Systems</h3>
-            <p>Frontend interfaces connected to backend logic, forms, routing, APIs, data handling, tracking, deployment, and production QA.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-type">Backend and Database</div>
-            <h3>Role Based Internal Business Systems</h3>
-            <p>Internal applications involving operational records, employee data, permissions, attendance, tasks, leave, payroll related workflows, backend orchestration, and testing.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-type">Integration Engineering</div>
-            <h3>API and Webhook Data Systems</h3>
-            <p>Multi platform integrations connecting web applications, forms, CRM systems, automation tools, and downstream operational processes.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-type">CRM and Automation</div>
-            <h3>Lead Lifecycle and Operational Automation</h3>
-            <p>CRM workflows covering lead intake, pipelines, tags, routing, communications, booking logic, follow up automation, recovery flows, and system cleanup.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-type">Analytics Engineering</div>
-            <h3>GTM and GA4 Event Architecture</h3>
-            <p>Analytics audits and tracking implementations focused on centralized measurement, clean event architecture, and reliable production verification.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-type">Web Operations</div>
-            <h3>Technical SEO, Deployment and Production Operations</h3>
-            <p>Search visibility and technical operations covering metadata, indexation, local search, DNS, SSL, deployment, analytics, QA, and production verification.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="lab" class="section compact">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-copy">
-            <div class="kicker">Architecture Lab</div>
-            <h2 class="section-title">Enterprise Monitoring and Observability</h2>
-            <p class="section-sub">A clearly labeled demonstration environment used to show architecture thinking around monitoring, logging, performance, incidents, correlation, and remediation.</p>
-          </div>
-        </div>
-
-        <div class="architecture">
-          <div class="architecture-panel">
-            <div class="demo-label">Demonstration Environment</div>
-            <h3>Observability Command Center</h3>
-            <p>The lab models an enterprise environment with applications, APIs, databases, cloud resources, service dependencies, centralized telemetry, incidents, and remediation concepts.</p>
-
-            <div class="tags">
-              <span class="tag">Azure Monitor Concepts</span>
-              <span class="tag">Log Analytics</span>
-              <span class="tag">KQL</span>
-              <span class="tag">APM</span>
-              <span class="tag">Grafana Style Dashboards</span>
-              <span class="tag">ServiceNow ITOM Concepts</span>
-              <span class="tag">AIOps Concepts</span>
-              <span class="tag">Ansible Concepts</span>
-            </div>
-          </div>
-
-          <div class="architecture-panel">
-            <div class="arch-items">
-              <div class="arch-item">
-                <strong>Application Performance</strong>
-                <span>Request Volume, Latency, Error Rate, Endpoint Health, Dependencies, and Service Status.</span>
-              </div>
-              <div class="arch-item">
-                <strong>Database and Infrastructure Health</strong>
-                <span>Availability, Connection Pressure, Resource Utilization, Database Health, and Service Health.</span>
-              </div>
-              <div class="arch-item">
-                <strong>Logging and Investigation</strong>
-                <span>Centralized Logs, Correlation Identifiers, Severity Levels, KQL Style Investigation, and Operational Events.</span>
-              </div>
-              <div class="arch-item">
-                <strong>Incident and Response</strong>
-                <span>Alert Rules, Incident Severity, Service Ownership, SLA Awareness, AIOps Style Correlation, and Remediation Concepts.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-copy">
-            <div class="kicker">Engineering Process</div>
-            <h2 class="section-title">A Disciplined Implementation and Verification Process</h2>
-          </div>
-        </div>
-
-        <div class="process">
-          <div class="process-step">
-            <div class="num">01</div>
-            <h3>Audit</h3>
-            <p>Review Architecture, Code, Data Flow, Database Structure, Integrations, Dependencies, Analytics, Deployment, and Production Risks.</p>
-          </div>
-
-          <div class="process-step">
-            <div class="num">02</div>
-            <h3>Design</h3>
-            <p>Define Application Structure, Database Relationships, API Behavior, Permissions, Workflow Logic, Monitoring Needs, and Failure Handling.</p>
-          </div>
-
-          <div class="process-step">
-            <div class="num">03</div>
-            <h3>Implement</h3>
-            <p>Build the Application, Backend, Database, Integrations, Automation, Analytics, Deployment, and Operational Components.</p>
-          </div>
-
-          <div class="process-step">
-            <div class="num">04</div>
-            <h3>Verify</h3>
-            <p>Run Build Checks, API Validation, Log Review, Data Checks, Responsive QA, Regression Testing, and Production Verification.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section compact">
-      <div class="wrap">
-        <div class="contact-card">
-          <div>
-            <h2>Need Someone Who Can Work Across the Full Technical Stack?</h2>
-            <p>Software Development, Web Applications, Backend Systems, Databases, APIs, CRM Automation, Analytics, Deployment, QA, and Technical Operations.</p>
-          </div>
-
-          <div class="buttons" style="margin:0">
-            <a class="btn primary" href="https://calendly.com/ebberdos/eriq-personal-meeting" target="_blank" rel="noopener">Book a Call</a>
-            <a class="btn secondary" href="https://github.com/Qir05" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      © <span id="year"></span> Eriq Berdos. Senior Software, Web, Backend and Systems Engineer.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer><div class="wrap">© <span id="year"></span> Erique Berdos. Web Developer, Systems Architect & Automation Engineer.</div></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 </body>
 </html>
