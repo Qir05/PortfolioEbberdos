@@ -1,26 +1,25 @@
 # Erique Berdos
 
-Canonical portfolio: https://qir05.github.io/PortfolioEbberdos/
+> Erique Berdos, also known professionally as Eriq Berdos, is a web developer, systems architect and automation specialist based in Davao City, Philippines.
 
-Erique Berdos, also known professionally as Eriq Berdos, is a web developer, systems architect, and automation engineer based in Davao City, Philippines.
+## Official links
+- [Portfolio](https://qir05.github.io/PortfolioEbberdos/): Biography, services, selected work and contact details.
+- [GitHub](https://github.com/Qir05): Development profile.
+- [LinkedIn](https://www.linkedin.com/in/erique-berdos-0062aa309/): Professional profile.
+- [Vaze demo lab](https://vaze-demo-websites.vercel.app/): Multi-industry demonstration websites; demos are not client businesses.
 
-Core capabilities:
-- Next.js and React web development
-- Backend systems, REST APIs, and webhooks
-- CRM architecture and GoHighLevel automation
-- Google Tag Manager and GA4 analytics
-- Technical SEO, AEO, and GEO
-- GitHub, Vercel, deployment, QA, and production verification
-- Internal business systems and operational workflow automation
+## Services
+- Web development: Next.js, React, WordPress and Squarespace.
+- Systems architecture, REST APIs, webhooks and integrations.
+- GoHighLevel and HubSpot CRM workflows and business automation.
+- SEO, answer engine optimization (AEO) and generative engine optimization (GEO).
+- Social media management, content planning and page management.
+- Meta Ads: Facebook and Instagram campaigns and retargeting.
+- GA4, Google Tag Manager and conversion tracking.
+- Deployment, QA and technical operations.
 
-Selected project evidence:
-- PHASES Clinic
-- Sundance House
-- Ocean Villas at Turtle Bay
-- LINKS HRIS
-- SiLak Davao
-- Vaze Demo Website Lab
+## Contact
+- Email: ebberdos@gmail.com
+- [Book a project call](https://calendly.com/ebberdos/eriq-personal-meeting)
 
-Public profiles:
-- GitHub: https://github.com/Qir05
-- Vaze: https://vaze-demo-websites.vercel.app/
+Based in Davao City and working remotely with businesses in the United States, United Kingdom, Canada and Australia. This file describes services; it does not assert search rankings or guaranteed campaign results.
